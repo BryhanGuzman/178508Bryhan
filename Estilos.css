@@ -1609,4 +1609,41 @@ footer {
     text-align: left;
   }
 
+  .evidence-card.disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .evidence-card.disabled:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--border);
+  }
+
+  .evidence-card.disabled .evidence-arrow {
+    background: #f1f3f5;
+    color: #98a2b3;
+  }
+
+  .evidence-status {
+    position: absolute;
+    right: 28px;
+    top: 28px;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #f1f3f5;
+    color: #667085;
+
+    font-size: 0.68rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  
 }

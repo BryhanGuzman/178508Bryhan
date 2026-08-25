@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Actividad 03 - Registro y asociación temporal de eventos de teclado"
+  >
+
+  <meta
+    name="author"
+    content="Bryhan Eduardo Guzman Martinez"
+  >
+
+  <title>Actividad 03 | Portafolio</title>
+
+  <link rel="icon" type="image/x-icon" href="logito.ico">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS general del portafolio -->
+  <link rel="stylesheet" href="Estilo.css">
+
+  <!-- CSS exclusivo de Actividad 03 -->
+  <link rel="stylesheet" href="Actividad3.css">
+
+</head>
+
+<body>
+
+
+  <!-- =====================================================
+       NAVEGACIÓN
+  ====================================================== -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a href="index.html" class="brand">
+
+        <span class="brand-icon">
+          BG
+        </span>
+
+        <span class="brand-text">
+
+          <strong>
+            Bryhan Guzman
+          </strong>
+
+          <small>
+            Portafolio Digital
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <nav class="nav-menu">
+
+        <a href="index.html">
+          Inicio
+        </a>
+
+        <a href="#objetivo">
+          Objetivo
+        </a>
+
+        <a href="#implementacion">
+          Implementación
+        </a>
+
+        <a href="#evidencias">
+          Evidencias
+        </a>
+
+        <a href="#codigo">
+          Código
+        </a>
+
+        <a
+          href="index.html#evidencias"
+          class="nav-contacto"
+        >
+          Volver
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         PORTADA
+    ====================================================== -->
+
+    <section class="activity-hero">
+
+      <div class="activity-glow"></div>
+
+
+      <div class="activity-hero-container">
+
+
+        <div>
+
+          <div class="activity-badge">
+            PARCIAL I · FUNDAMENTOS DE CIBERSEGURIDAD
+          </div>
+
+
+          <p class="activity-label">
+            ACTIVIDAD 03
+          </p>
+
+
+          <h1>
+            No presiones Esc...
+            <span>todavía.</span>
+          </h1>
+
+
+          <p class="activity-intro">
+
+            Implementación y documentación de un programa
+            desarrollado en Python que permite detectar eventos
+            de teclado mediante <strong>pynput</strong>, registrar
+            cada evento en un archivo local y asociarlo con una
+            marca temporal para analizar su orden de ocurrencia.
+
+          </p>
+
+
+          <div class="activity-meta">
+
+            <span>
+              Python
+            </span>
+
+            <span>
+              pynput
+            </span>
+
+            <span>
+              Persistencia
+            </span>
+
+            <span>
+              Asociación temporal
+            </span>
+
+            <span>
+              Eventos de teclado
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Terminal -->
+
+        <div class="activity-terminal">
+
+          <div class="terminal-bar">
+
+            <div class="terminal-dots">
+
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+            <small>
+              actividad3.py
+            </small>
+
+          </div>
+
+
+          <div class="terminal-body">
+
+            <p>
+              <span class="green">
+                student@lab
+              </span>:~$
+
+              <span class="white">
+                python actividad3.py
+              </span>
+            </p>
+
+            <br>
+
+
+            <p class="blue">
+              REGISTRO DE EVENTOS DEL TECLADO
+            </p>
+
+            <p>
+              Presiona ESC para finalizar.
+            </p>
+
+            <br>
+
+
+            <p>
+              Tecla presionada:
+              <span class="white">
+                h
+              </span>
+            </p>
+
+            <p>
+              Tecla liberada:
+              <span class="white">
+                h
+              </span>
+            </p>
+
+            <p>
+              Tecla presionada:
+              <span class="white">
+                o
+              </span>
+            </p>
+
+            <p>
+              Tecla liberada:
+              <span class="white">
+                o
+              </span>
+            </p>
+
+            <br>
+
+            <p class="success">
+              ✓ Eventos registrados
+            </p>
+
+            <p class="success">
+              ✓ Eventos.txt actualizado
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         01 OBJETIVO
+    ====================================================== -->
+
+    <section
+      id="objetivo"
+      class="activity-section white"
+    >
+
+      <div class="activity-container">
+
+        <div class="activity-heading">
+
+          <span class="activity-number">
+            01
+          </span>
+
+          <div>
+
+            <small>
+              OBJETIVO
+            </small>
+
+            <h2>
+              Propósito de la actividad
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="objective-grid">
+
+          <div class="objective-main">
+
+            <h3>
+              Registro y análisis de eventos en un entorno controlado
+            </h3>
+
+            <p>
+
+              El objetivo de esta actividad es implementar y
+              documentar un programa capaz de detectar eventos
+              producidos por el teclado, almacenar dichos eventos
+              en un archivo local y asociarlos con información
+              temporal.
+
+            </p>
+
+            <p>
+
+              El ejercicio permite comprender cómo funcionan los
+              eventos de entrada dentro de un sistema y cómo es
+              posible conservar un registro ordenado para su
+              posterior análisis.
+
+            </p>
+
+            <p>
+
+              La práctica fue desarrollada exclusivamente como
+              ejercicio académico dentro de un entorno de
+              laboratorio controlado.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="objective-list">
+
+            <article class="objective-item">
+
+              <span>
+                01
+              </span>
+
+              <div>
+
+                <h4>
+                  Detectar eventos
+                </h4>
+
+                <p>
+                  Identificar cuándo una tecla es presionada
+                  o liberada.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="objective-item">
+
+              <span>
+                02
+              </span>
+
+              <div>
+
+                <h4>
+                  Conservar registros
+                </h4>
+
+                <p>
+                  Guardar los eventos en un archivo local sin
+                  eliminar los registros anteriores.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="objective-item">
+
+              <span>
+                03
+              </span>
+
+              <div>
+
+                <h4>
+                  Asociar temporalmente
+                </h4>
+
+                <p>
+                  Incorporar fecha, hora, orden de ocurrencia y
+                  tiempo transcurrido.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         02 FUNCIONAMIENTO
+    ====================================================== -->
+
+    <section class="activity-section soft">
+
+      <div class="activity-container">
+
+        <div class="activity-heading">
+
+          <span class="activity-number">
+            02
+          </span>
+
+          <div>
+
+            <small>
+              FUNCIONAMIENTO
+            </small>
+
+            <h2>
+              Flujo general del programa
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="flow-container">
+
+
+          <article class="flow-card">
+
+            <span>
+              PASO 01
+            </span>
+
+            <h3>
+              Entrada
+            </h3>
+
+            <p>
+              El usuario presiona o libera una tecla.
+            </p>
+
+          </article>
+
+
+          <article class="flow-card">
+
+            <span>
+              PASO 02
+            </span>
+
+            <h3>
+              Listener
+            </h3>
+
+            <p>
+              pynput detecta automáticamente el evento.
+            </p>
+
+          </article>
+
+
+          <article class="flow-card">
+
+            <span>
+              PASO 03
+            </span>
+
+            <h3>
+              Clasificación
+            </h3>
+
+            <p>
+              El programa identifica si ocurrió PRESS o RELEASE.
+            </p>
+
+          </article>
+
+
+          <article class="flow-card">
+
+            <span>
+              PASO 04
+            </span>
+
+            <h3>
+              Asociación
+            </h3>
+
+            <p>
+              Se agrega fecha, hora e identificador consecutivo.
+            </p>
+
+          </article>
+
+
+          <article class="flow-card">
+
+            <span>
+              PASO 05
+            </span>
+
+            <h3>
+              Persistencia
+            </h3>
+
+            <p>
+              La información se almacena en Eventos.txt.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         03 IMPLEMENTACIÓN
+    ====================================================== -->
+
+    <section
+      id="implementacion"
+      class="activity-section white"
+    >
+
+      <div class="activity-container">
+
+        <div class="activity-heading">
+
+          <span class="activity-number">
+            03
+          </span>
+
+          <div>
+
+            <small>
+              IMPLEMENTACIÓN TÉCNICA
+            </small>
+
+            <h2>
+              Componentes principales
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="implementation-grid">
+
+
+          <article class="implementation-card">
+
+            <div class="implementation-icon">
+              01
+            </div>
+
+            <h3>
+              pynput
+            </h3>
+
+            <p>
+
+              La clase Listener permite escuchar los eventos
+              generados por el teclado y ejecutar funciones
+              específicas al presionar o liberar una tecla.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="implementation-card">
+
+            <div class="implementation-icon">
+              02
+            </div>
+
+            <h3>
+              datetime
+            </h3>
+
+            <p>
+
+              Se utiliza para obtener la fecha y hora exacta
+              en la que ocurrió cada evento y permitir su
+              correlación temporal.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="implementation-card">
+
+            <div class="implementation-icon">
+              03
+            </div>
+
+            <h3>
+              Contador de eventos
+            </h3>
+
+            <p>
+
+              Cada registro recibe un identificador único y
+              consecutivo como evento_001, evento_002 y
+              evento_003.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="implementation-card">
+
+            <div class="implementation-icon">
+              04
+            </div>
+
+            <h3>
+              on_press()
+            </h3>
+
+            <p>
+
+              Función ejecutada automáticamente cuando el
+              Listener detecta que una tecla fue presionada.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="implementation-card">
+
+            <div class="implementation-icon">
+              05
+            </div>
+
+            <h3>
+              on_release()
+            </h3>
+
+            <p>
+
+              Registra la liberación de una tecla y permite
+              finalizar el programa cuando se detecta la
+              tecla ESC.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="implementation-card">
+
+            <div class="implementation-icon">
+              06
+            </div>
+
+            <h3>
+              Eventos.txt
+            </h3>
+
+            <p>
+
+              Archivo local utilizado para conservar los
+              registros generados durante la ejecución del
+              programa.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         04 PERSISTENCIA
+    ====================================================== -->
+
+    <section class="activity-section soft">
+
+      <div class="activity-container">
+
+        <div class="activity-heading">
+
+          <span class="activity-number">
+            04
+          </span>
+
+          <div>
+
+            <small>
+              PERSISTENCIA DEL REGISTRO
+            </small>
+
+            <h2>
+              Conservación de eventos
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="technical-grid">
+
+
+          <article class="technical-card">
+
+            <span class="tech-label">
+              ARCHIVO LOCAL
+            </span>
+
+            <h3>
+              Eventos.txt
+            </h3>
+
+            <p>
+
+              Cada evento registrado durante la ejecución es
+              almacenado dentro de un archivo de texto local.
+
+            </p>
+
+            <p>
+
+              El archivo se abre utilizando el modo
+              <code>"a"</code>, correspondiente a
+              <strong>append</strong>.
+
+            </p>
+
+
+            <div class="technical-checks">
+
+              <div>
+                <strong>✓</strong>
+                Conserva información anterior
+              </div>
+
+              <div>
+                <strong>✓</strong>
+                Agrega nuevos registros al final
+              </div>
+
+              <div>
+                <strong>✓</strong>
+                Mantiene evidencia después de finalizar
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="technical-card">
+
+            <span class="tech-label">
+              IMPLEMENTACIÓN
+            </span>
+
+            <h3>
+              Escritura del registro
+            </h3>
+
+            <p>
+
+              La función guardar_evento() recibe la información
+              del evento y la incorpora al archivo.
+
+            </p>
+
+
+            <div class="record-box">
+
+<pre>with open(
+    "Eventos.txt",
+    "a",
+    encoding="utf-8"
+) as archivo:
+
+    archivo.write(
+        informacion_evento
+    )</pre>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         05 ASOCIACIÓN TEMPORAL
+    ====================================================== -->
+
+    <section class="activity-section white">
+
+      <div class="activity-container">
+
+        <div class="activity-heading">
+
+          <span class="activity-number">
+            05
+          </span>
+
+          <div>
+
+            <small>
+              ASOCIACIÓN TEMPORAL
+            </small>
+
+            <h2>
+              ¿Cuándo ocurrió cada evento?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="technical-grid">
+
+          <article class="technical-card">
+
+            <span class="tech-label">
+              MARCA TEMPORAL
+            </span>
+
+            <h3>
+              Fecha y hora
+            </h3>
+
+            <p>
+
+              La librería datetime permite registrar el momento
+              exacto en que ocurre cada evento.
+
+            </p>
+
+            <div class="record-box">
+
+<pre>ahora = datetime.now()
+
+fecha_hora = ahora.strftime(
+    "%Y-%m-%d %H:%M:%S.%f"
+)[:-3]</pre>
+
+            </div>
+
+          </article>
+
+
+          <article class="technical-card">
+
+            <span class="tech-label">
+              CORRELACIÓN
+            </span>
+
+            <h3>
+              Tiempo entre eventos
+            </h3>
+
+            <p>
+
+              El programa también puede calcular cuánto tiempo
+              transcurrió desde el registro anterior.
+
+            </p>
+
+            <div class="record-box">
+
+<pre>tiempo_transcurrido = (
+    ahora - ultimo_evento
+).total_seconds()</pre>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+
+        <div style="margin-top: 55px;">
+
+          <div class="record-box">
+
+<pre>2026-08-24 22:31:01.052 | PRESS   | h         | evento_001 | 0.000 s
+2026-08-24 22:31:01.136 | RELEASE | h         | evento_002 | 0.084 s
+2026-08-24 22:31:01.452 | PRESS   | o         | evento_003 | 0.316 s
+2026-08-24 22:31:01.539 | RELEASE | o         | evento_004 | 0.087 s</pre>
+
+          </div>
+
+
+
+          <div class="record-explanation">
+
+
+            <article class="record-part">
+
+              <span>
+                01
+              </span>
+
+              <h4>
+                Fecha
+              </h4>
+
+              <p>
+                Día en que ocurrió el evento.
+              </p>
+
+            </article>
+
+
+
+            <article class="record-part">
+
+              <span>
+                02
+              </span>
+
+              <h4>
+                Hora
+              </h4>
+
+              <p>
+                Hora exacta y milisegundos.
+              </p>
+
+            </article>
+
+
+
+            <article class="record-part">
+
+              <span>
+                03
+              </span>
+
+              <h4>
+                Tipo
+              </h4>
+
+              <p>
+                PRESS o RELEASE.
+              </p>
+
+            </article>
+
+
+
+            <article class="record-part">
+
+              <span>
+                04
+              </span>
+
+              <h4>
+                Evento
+              </h4>
+
+              <p>
+                Identificador consecutivo.
+              </p>
+
+            </article>
+
+
+
+            <article class="record-part">
+
+              <span>
+                05
+              </span>
+
+              <h4>
+                Intervalo
+              </h4>
+
+              <p>
+                Tiempo desde el evento anterior.
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         06 EVIDENCIAS
+    ====================================================== -->
+
+    <section
+      id="evidencias"
+      class="activity-section soft"
+    >
+
+      <div class="activity-container">
+
+        <div class="activity-heading">
+
+          <span class="activity-number">
+            06
+          </span>
+
+          <div>
+
+            <small>
+              PRUEBAS
+            </small>
+
+            <h2>
+              Evidencias de funcionamiento
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="evidence-gallery">
+
+
+          <article class="evidence-box">
+
+            <img
+              src="codigo.png"
+              alt="Código fuente de la Actividad 03"
+              style="width: 100%; display: block;"
+            >
+
+            <div class="evidence-caption">
+
+              <small>
+                EVIDENCIA 01
+              </small>
+
+              <h3>
+                Código fuente del programa
+              </h3>
+
+            </div>
+
+          </article>
+
+
+        
+          <article class="evidence-box">
+
+            <img
+              src="terminal.png"
+              alt="Código fuente de la Actividad 03"
+              style="width: 100%; display: block;"
+            >
+
+            <div class="evidence-caption">
+
+              <small>
+                EVIDENCIA 02
+              </small>
+
+              <h3>
+                Programa en ejecución
+              </h3>
+
+            </div>
+
+          </article>
+
+
+          <article class="evidence-box">
+
+            <img
+              src="eventos.png"
+              alt="Código fuente de la Actividad 03"
+              style="width: 100%; display: block;"
+            >
+
+            <div class="evidence-caption">
+
+              <small>
+                EVIDENCIA 03
+              </small>
+
+              <h3>
+                Persistencia del registro
+              </h3>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         07 CÓDIGO FUENTE
+    ====================================================== -->
+
+    <section
+      id="codigo"
+      class="activity-section white"
+    >
+
+      <div class="activity-container">
+
+        <div class="activity-heading">
+
+          <span class="activity-number">
+            07
+          </span>
+
+          <div>
+
+            <small>
+              CÓDIGO FUENTE
+            </small>
+
+            <h2>
+              Implementación en Python
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="code-wrapper">
+
+          <div class="code-header">
+
+            <span>
+              actividad3.py
+            </span>
+
+            <button
+              class="copy-button"
+              onclick="copiarCodigo()"
+            >
+              Copiar código
+            </button>
+
+          </div>
+
+
+          <div class="code-content">
+
+<pre id="codigoPython">from pynput.keyboard import Key, Listener
+from datetime import datetime
+
+contador_eventos = 0
+ultimo_evento = None
+
+
+def generar_evento():
+
+    global contador_eventos
+
+    contador_eventos += 1
+
+    return f"evento_{contador_eventos:03d}"
+
+
+def obtener_tecla(key):
+
+    try:
+
+        return key.char
+
+    except AttributeError:
+
+        return str(key)
+
+
+def guardar_evento(tipo_evento, tecla):
+
+    global ultimo_evento
+
+    ahora = datetime.now()
+
+    fecha_hora = ahora.strftime(
+        "%Y-%m-%d %H:%M:%S.%f"
+    )[:-3]
+
+    evento = generar_evento()
+
+
+    if ultimo_evento is None:
+
+        tiempo_transcurrido = 0.000
+
+    else:
+
+        tiempo_transcurrido = (
+            ahora - ultimo_evento
+        ).total_seconds()
+
+
+    ultimo_evento = ahora
+
+
+    with open(
+        "Eventos.txt",
+        "a",
+        encoding="utf-8"
+    ) as archivo:
+
+        archivo.write(
+            f"{fecha_hora} | "
+            f"{tipo_evento:&lt;7} | "
+            f"{tecla:&lt;12} | "
+            f"{evento} | "
+            f"{tiempo_transcurrido:.3f} s\n"
+        )
+
+
+def on_press(key):
+
+    tecla = obtener_tecla(key)
+
+    print(
+        f"Tecla presionada: {tecla}"
+    )
+
+    guardar_evento(
+        "PRESS",
+        tecla
+    )
+
+
+def on_release(key):
+
+    tecla = obtener_tecla(key)
+
+    print(
+        f"Tecla liberada: {tecla}"
+    )
+
+    guardar_evento(
+        "RELEASE",
+        tecla
+    )
+
+
+    if key == Key.esc:
+
+        print(
+            "\nPrograma finalizado."
+        )
+
+        return False
+
+
+print(
+    "========================================"
+)
+
+print(
+    " REGISTRO DE EVENTOS DEL TECLADO"
+)
+
+print(
+    "========================================"
+)
+
+print(
+    "Presiona ESC para finalizar.\n"
+)
+
+
+with Listener(
+    on_press=on_press,
+    on_release=on_release
+) as listener:
+
+    listener.join()</pre>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         08 RESULTADOS
+    ====================================================== -->
+
+    <section class="activity-section soft">
+
+      <div class="activity-container">
+
+        <div class="activity-heading">
+
+          <span class="activity-number">
+            08
+          </span>
+
+          <div>
+
+            <small>
+              RESULTADOS
+            </small>
+
+            <h2>
+              Análisis de la ejecución
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="results-grid">
+
+
+          <article class="result-card">
+
+            <span class="result-number">
+              01
+            </span>
+
+            <h3>
+              Detección correcta
+            </h3>
+
+            <p>
+
+              El programa fue capaz de detectar eventos
+              producidos al presionar y liberar teclas
+              durante la ejecución.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="result-card">
+
+            <span class="result-number">
+              02
+            </span>
+
+            <h3>
+              Persistencia
+            </h3>
+
+            <p>
+
+              Los registros permanecieron almacenados
+              dentro de Eventos.txt después de finalizar
+              el programa.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="result-card">
+
+            <span class="result-number">
+              03
+            </span>
+
+            <h3>
+              Correlación temporal
+            </h3>
+
+            <p>
+
+              Las marcas temporales y los identificadores
+              permitieron determinar el orden en que
+              ocurrieron los eventos.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         09 ENTREGABLES
+    ====================================================== -->
+
+    <section class="activity-section white">
+
+      <div class="activity-container">
+
+        <div class="downloads">
+
+          <div>
+
+            <small>
+              ARCHIVOS DE LA ACTIVIDAD
+            </small>
+
+            <h2>
+              Entregables
+            </h2>
+
+            <p>
+              Código fuente, registros y presentación
+              correspondiente a la actividad.
+            </p>
+
+          </div>
+
+
+          <div class="download-buttons">
+
+            <!--
+              Cambia los nombres de los archivos
+              si utilizas nombres diferentes.
+            -->
+
+            <a
+              href="actividad3.py"
+              class="download-btn"
+              download
+            >
+              Código .py
+            </a>
+
+
+            <a
+              href="Eventos.txt"
+              class="download-btn"
+              download
+            >
+              Eventos.txt
+            </a>
+
+
+            <!--
+            CUANDO TENGAS TU PRESENTACIÓN:
+
+            <a
+              href="Actividad3.pdf"
+              class="download-btn primary"
+              target="_blank"
+            >
+              Ver presentación
+            </a>
+            -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         10 CONCLUSIÓN
+    ====================================================== -->
+
+    <section class="activity-section soft">
+
+      <div class="activity-container">
+
+        <div class="conclusion">
+
+          <div class="conclusion-number">
+            10
+          </div>
+
+          <h2>
+            Conclusión
+          </h2>
+
+          <p>
+
+            El desarrollo de esta actividad permitió comprender
+            cómo un programa puede detectar eventos generados por
+            dispositivos de entrada y conservar información sobre
+            ellos de manera estructurada. La incorporación de
+            persistencia y marcas temporales permitió relacionar
+            cada registro con su momento y orden de ocurrencia,
+            facilitando su análisis posterior.
+
+          </p>
+
+          <p style="margin-top: 18px;">
+
+            La práctica también permitió reforzar el uso de
+            Python, manejo de archivos, funciones, variables
+            globales y librerías externas dentro de un ejercicio
+            aplicado a fundamentos de ciberseguridad.
+
+          </p>
+
+
+          <a
+            href="index.html#evidencias"
+            class="back-home"
+          >
+            ← Volver a evidencias
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="activity-footer">
+
+    <div class="activity-footer-container">
+
+      <p>
+        © 2026 Bryhan Eduardo Guzman Martinez
+      </p>
+
+      <p>
+        Actividad 03 · Fundamentos de Ciberseguridad
+      </p>
+
+      <p>
+        Universidad Politécnica de San Luis Potosí
+      </p>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    function copiarCodigo() {
+
+      const codigo =
+        document.getElementById("codigoPython").innerText;
+
+
+      navigator.clipboard
+        .writeText(codigo)
+        .then(() => {
+
+          const boton =
+            document.querySelector(".copy-button");
+
+
+          boton.textContent =
+            "Código copiado ✓";
+
+
+          setTimeout(() => {
+
+            boton.textContent =
+              "Copiar código";
+
+          }, 2000);
+
+        });
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>
