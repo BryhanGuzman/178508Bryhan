@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Actividad 04 - Simulación controlada de ingeniería social con Social-Engineer Toolkit"
+  >
+
+  <meta
+    name="author"
+    content="Bryhan Eduardo Guzman Martinez"
+  >
+
+  <title>Actividad 04 | Portafolio</title>
+
+  <link rel="icon" type="image/x-icon" href="logito.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS general del portafolio -->
+  <link rel="stylesheet" href="Estilo.css">
+
+  <!-- CSS exclusivo de esta actividad -->
+  <link rel="stylesheet" href="Actividad4.css">
+</head>
+
+
+<body>
+
+
+  <!-- ==========================================
+       NAVEGACIÓN
+  =========================================== -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a href="index.html" class="brand">
+
+        <span class="brand-icon">
+          BG
+        </span>
+
+        <span class="brand-text">
+
+          <strong>
+            Bryhan Guzman
+          </strong>
+
+          <small>
+            Portafolio Digital
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <nav class="nav-menu">
+
+        <a href="index.html">
+          Inicio
+        </a>
+
+        <a href="#objetivo">
+          Objetivo
+        </a>
+
+        <a href="#laboratorio">
+          Laboratorio
+        </a>
+
+        <a href="#evidencias">
+          Evidencias
+        </a>
+
+        <a href="#prevencion">
+          Prevención
+        </a>
+
+        <a
+          href="index.html#evidencias"
+          class="nav-contacto"
+        >
+          Volver
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- ==========================================
+         HERO
+    =========================================== -->
+
+    <section class="a4-hero">
+
+      <div class="a4-glow a4-glow-one"></div>
+      <div class="a4-glow a4-glow-two"></div>
+
+
+      <div class="a4-hero-container">
+
+
+        <div class="a4-hero-content">
+
+          <div class="a4-badge">
+            PARCIAL I · FUNDAMENTOS DE CIBERSEGURIDAD
+          </div>
+
+
+          <p class="a4-label">
+            ACTIVIDAD 04
+          </p>
+
+
+          <h1>
+            Una página demasiado
+            <span>convincente.</span>
+          </h1>
+
+
+          <p class="a4-description">
+
+            Simulación controlada de ingeniería social utilizando
+            <strong>Social-Engineer Toolkit (SET)</strong> y una página
+            web ficticia para analizar cómo la información introducida
+            en un formulario puede llegar a un servidor y qué señales
+            permiten reconocer un intento de phishing.
+
+          </p>
+
+
+          <div class="a4-tags">
+
+            <span>SET</span>
+            <span>Kali Linux</span>
+            <span>Credential Harvester</span>
+            <span>HTTP</span>
+            <span>Ingeniería social</span>
+            <span>Phishing</span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Terminal decorativa -->
+
+        <div class="a4-terminal">
+
+          <div class="a4-terminal-header">
+
+            <div class="a4-terminal-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <small>
+              kali@lab
+            </small>
+
+          </div>
+
+
+          <div class="a4-terminal-body">
+
+            <p>
+              <span class="terminal-green">
+                kali@kali
+              </span>:~$
+
+              <span class="terminal-white">
+                setoolkit
+              </span>
+            </p>
+
+
+            <br>
+
+
+            <p class="terminal-blue">
+              Social-Engineer Toolkit
+            </p>
+
+            <p>
+              [1] Social-Engineering Attacks
+            </p>
+
+            <p>
+              [2] Website Attack Vectors
+            </p>
+
+            <p>
+              [3] Credential Harvester
+            </p>
+
+
+            <br>
+
+
+            <p class="terminal-muted">
+              Entorno:
+            </p>
+
+            <p class="terminal-white">
+              Laboratorio local
+            </p>
+
+
+            <br>
+
+
+            <p class="terminal-success">
+              ✓ Datos ficticios
+            </p>
+
+            <p class="terminal-success">
+              ✓ Red privada
+            </p>
+
+            <p class="terminal-success">
+              ✓ Sin servicios externos
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         01 OBJETIVO
+    =========================================== -->
+
+    <section
+      id="objetivo"
+      class="a4-section a4-white"
+    >
+
+      <div class="a4-container">
+
+        <div class="a4-heading">
+
+          <span class="a4-number">
+            01
+          </span>
+
+          <div>
+
+            <small>
+              OBJETIVO DE LA ACTIVIDAD
+            </small>
+
+            <h2>
+              Comprender el riesgo detrás de una interfaz confiable
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="a4-objective-grid">
+
+          <div class="a4-objective-text">
+
+            <h3>
+              Simulación de ingeniería social en un entorno controlado
+            </h3>
+
+            <p>
+
+              La actividad consistió en implementar y analizar una
+              simulación de ingeniería social mediante una página web
+              ficticia y Social-Engineer Toolkit.
+
+            </p>
+
+            <p>
+
+              El objetivo principal fue comprender cómo los valores
+              introducidos por un usuario en un formulario pueden
+              transmitirse mediante HTTP y quedar registrados en el
+              servidor que procesa la solicitud.
+
+            </p>
+
+            <p>
+
+              Además de observar el funcionamiento técnico, se analizaron
+              las señales que permiten reconocer una página potencialmente
+              fraudulenta y los controles que pueden reducir este tipo
+              de riesgos.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="a4-objective-list">
+
+            <article class="a4-objective-card">
+
+              <span>
+                01
+              </span>
+
+              <div>
+
+                <h4>
+                  Configurar el escenario
+                </h4>
+
+                <p>
+                  Preparar SET y una página web ficticia en un
+                  laboratorio local.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="a4-objective-card">
+
+              <span>
+                02
+              </span>
+
+              <div>
+
+                <h4>
+                  Analizar el flujo
+                </h4>
+
+                <p>
+                  Observar el recorrido de la información desde el
+                  navegador hasta el servidor.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="a4-objective-card">
+
+              <span>
+                03
+              </span>
+
+              <div>
+
+                <h4>
+                  Reconocer señales
+                </h4>
+
+                <p>
+                  Identificar elementos visuales y técnicos
+                  relacionados con phishing.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         02 ESCENARIO
+    =========================================== -->
+
+    <section class="a4-section a4-soft">
+
+      <div class="a4-container">
+
+        <div class="a4-heading">
+
+          <span class="a4-number">
+            02
+          </span>
+
+          <div>
+
+            <small>
+              ESCENARIO
+            </small>
+
+            <h2>
+              Portal académico ficticio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="a4-scenario">
+
+          <div class="a4-scenario-main">
+
+            <p>
+
+              El escenario representa una situación en la que un usuario
+              encuentra un supuesto portal institucional que informa que
+              su sesión ha expirado y solicita volver a iniciar sesión.
+
+            </p>
+
+            <p>
+
+              Para la práctica se creó un portal local denominado
+              <strong>“Portal Académico”</strong>, con campos de usuario
+              y contraseña y el mensaje:
+
+            </p>
+
+
+            <blockquote>
+
+              “Su sesión ha expirado. Inicie sesión nuevamente para
+              continuar”.
+
+            </blockquote>
+
+
+            <p>
+
+              La página no pertenecía a ninguna institución real y fue
+              utilizada únicamente dentro de la máquina virtual.
+
+            </p>
+
+          </div>
+
+
+
+          <aside class="a4-scope">
+
+            <span class="a4-scope-label">
+              ALCANCE DE LA PRÁCTICA
+            </span>
+
+            <div>
+              <strong>✓</strong>
+              Página creada específicamente para el laboratorio
+            </div>
+
+            <div>
+              <strong>✓</strong>
+              Dirección IP privada
+            </div>
+
+            <div>
+              <strong>✓</strong>
+              Credenciales ficticias
+            </div>
+
+            <div>
+              <strong>✓</strong>
+              Ejecución local
+            </div>
+
+            <div>
+              <strong>✓</strong>
+              Sin dominios externos
+            </div>
+
+            <div>
+              <strong>✓</strong>
+              Sin servicios reales
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         03 LABORATORIO
+    =========================================== -->
+
+    <section
+      id="laboratorio"
+      class="a4-section a4-white"
+    >
+
+      <div class="a4-container">
+
+        <div class="a4-heading">
+
+          <span class="a4-number">
+            03
+          </span>
+
+          <div>
+
+            <small>
+              CONFIGURACIÓN
+            </small>
+
+            <h2>
+              Entorno de laboratorio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="a4-lab-grid">
+
+          <div class="a4-lab-table">
+
+            <div>
+              <span>
+                Hipervisor
+              </span>
+
+              <strong>
+                Oracle VirtualBox
+              </strong>
+            </div>
+
+
+            <div>
+              <span>
+                Sistema operativo
+              </span>
+
+              <strong>
+                Kali Linux 2026.2
+              </strong>
+            </div>
+
+
+            <div>
+              <span>
+                Herramienta
+              </span>
+
+              <strong>
+                Social-Engineer Toolkit
+              </strong>
+            </div>
+
+
+            <div>
+              <span>
+                Vector
+              </span>
+
+              <strong>
+                Website Attack Vectors
+              </strong>
+            </div>
+
+
+            <div>
+              <span>
+                Método
+              </span>
+
+              <strong>
+                Credential Harvester
+              </strong>
+            </div>
+
+
+            <div>
+              <span>
+                Tipo de sitio
+              </span>
+
+              <strong>
+                Custom Import
+              </strong>
+            </div>
+
+
+            <div>
+              <span>
+                Ruta local
+              </span>
+
+              <strong>
+                /home/kali/act04/
+              </strong>
+            </div>
+
+
+            <div>
+              <span>
+                IPv4 privada
+              </span>
+
+              <strong>
+                10.0.2.15
+              </strong>
+            </div>
+
+
+            <div>
+              <span>
+                Servidor
+              </span>
+
+              <strong>
+                HTTP local
+              </strong>
+            </div>
+
+
+            <div>
+              <span>
+                Navegador
+              </span>
+
+              <strong>
+                Firefox
+              </strong>
+            </div>
+
+          </div>
+
+
+
+          <div class="a4-ip-card">
+
+            <span class="a4-mini-label">
+              DIRECCIÓN LOCAL
+            </span>
+
+            <h3>
+              10.0.2.15
+            </h3>
+
+            <p>
+
+              La dirección IPv4 privada de Kali Linux fue utilizada
+              como dirección del servidor web local dentro de la
+              práctica.
+
+            </p>
+
+
+            <div class="a4-ip-code">
+
+              <span>
+                kali@kali:~$
+              </span>
+
+              hostname -I
+
+              <strong>
+                10.0.2.15
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         04 CREDENTIAL HARVESTER
+    =========================================== -->
+
+    <section class="a4-section a4-dark">
+
+      <div class="a4-container">
+
+        <div class="a4-heading a4-heading-dark">
+
+          <span class="a4-number">
+            04
+          </span>
+
+          <div>
+
+            <small>
+              CREDENTIAL HARVESTER
+            </small>
+
+            <h2>
+              ¿Qué ocurre con el formulario?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="a4-concept-grid">
+
+          <article class="a4-concept-card">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Página ficticia
+            </h3>
+
+            <p>
+
+              El navegador muestra un formulario de autenticación
+              preparado exclusivamente para el laboratorio.
+
+            </p>
+
+          </article>
+
+
+          <article class="a4-concept-card">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Solicitud HTTP
+            </h3>
+
+            <p>
+
+              Cuando el usuario envía el formulario, los valores de
+              prueba viajan mediante una solicitud hacia el servidor
+              local.
+
+            </p>
+
+          </article>
+
+
+          <article class="a4-concept-card">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Registro de parámetros
+            </h3>
+
+            <p>
+
+              SET analiza los parámetros recibidos e identifica
+              los campos relacionados con el usuario y la contraseña.
+
+            </p>
+
+          </article>
+
+        </div>
+
+
+        <div class="a4-warning">
+
+          <span>
+            IMPORTANTE
+          </span>
+
+          <p>
+
+            La actividad demuestra que una página de phishing no necesita
+            vulnerar o descifrar una contraseña. El riesgo aparece cuando
+            el propio usuario entrega información a una interfaz que
+            considera legítima.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         05 FLUJO
+    =========================================== -->
+
+    <section class="a4-section a4-white">
+
+      <div class="a4-container">
+
+        <div class="a4-heading">
+
+          <span class="a4-number">
+            05
+          </span>
+
+          <div>
+
+            <small>
+              FLUJO DE INFORMACIÓN
+            </small>
+
+            <h2>
+              Del navegador al servidor
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="a4-flow">
+
+          <article class="a4-flow-card">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Usuario de prueba
+            </h3>
+
+            <p>
+              Abre el portal ficticio desde Firefox.
+            </p>
+
+          </article>
+
+
+          <div class="a4-flow-arrow">
+            →
+          </div>
+
+
+          <article class="a4-flow-card">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Página HTML
+            </h3>
+
+            <p>
+              El navegador solicita y recibe el documento.
+            </p>
+
+          </article>
+
+
+          <div class="a4-flow-arrow">
+            →
+          </div>
+
+
+          <article class="a4-flow-card">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Formulario POST
+            </h3>
+
+            <p>
+              Se envían únicamente datos ficticios.
+            </p>
+
+          </article>
+
+
+          <div class="a4-flow-arrow">
+            →
+          </div>
+
+
+          <article class="a4-flow-card">
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              SET
+            </h3>
+
+            <p>
+              Credential Harvester registra los parámetros.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         06 HTTP
+    =========================================== -->
+
+    <section class="a4-section a4-soft">
+
+      <div class="a4-container">
+
+        <div class="a4-heading">
+
+          <span class="a4-number">
+            06
+          </span>
+
+          <div>
+
+            <small>
+              ANÁLISIS HTTP
+            </small>
+
+            <h2>
+              Interpretación de las solicitudes
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="a4-http-grid">
+
+          <article class="a4-http-card success">
+
+            <span class="a4-http-code">
+              200
+            </span>
+
+            <div>
+
+              <h3>
+                GET /
+              </h3>
+
+              <p>
+
+                El servidor entregó correctamente el documento
+                principal de la página.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="a4-http-card warning">
+
+            <span class="a4-http-code">
+              404
+            </span>
+
+            <div>
+
+              <h3>
+                GET /style.css
+              </h3>
+
+              <p>
+
+                El navegador intentó recuperar la hoja de estilos,
+                pero el recurso no fue localizado.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="a4-http-card post">
+
+            <span class="a4-http-code">
+              POST
+            </span>
+
+            <div>
+
+              <h3>
+                Envío del formulario
+              </h3>
+
+              <p>
+
+                Los campos completados fueron transmitidos hacia
+                el servidor local para su procesamiento.
+
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         07 PREVENCIÓN
+    =========================================== -->
+
+    <section
+      id="prevencion"
+      class="a4-section a4-white"
+    >
+
+      <div class="a4-container">
+
+        <div class="a4-heading">
+
+          <span class="a4-number">
+            07
+          </span>
+
+          <div>
+
+            <small>
+              INDICADORES DE PHISHING
+            </small>
+
+            <h2>
+              ¿Cómo reconocer una página sospechosa?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="a4-indicator-grid">
+
+
+          <article class="a4-indicator-card">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Urgencia o presión
+            </h3>
+
+            <p>
+
+              Mensajes como “su sesión ha expirado” buscan
+              provocar una reacción rápida.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="a4-indicator-card">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Dominio inesperado
+            </h3>
+
+            <p>
+
+              Una dirección desconocida, una IP directa o un dominio
+              ligeramente diferente pueden indicar una suplantación.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="a4-indicator-card">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              HTTP / Not Secure
+            </h3>
+
+            <p>
+
+              La ausencia de HTTPS en un portal de autenticación
+              representa una señal importante de alerta.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="a4-indicator-card">
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Credenciales inesperadas
+            </h3>
+
+            <p>
+
+              Una solicitud inesperada para volver a escribir
+              usuario y contraseña debe verificarse.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="a4-indicator-card">
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Diseño inconsistente
+            </h3>
+
+            <p>
+
+              Errores visuales, estilos faltantes o recursos 404
+              pueden revelar una página mal replicada.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="a4-indicator-card">
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              Remitente desconocido
+            </h3>
+
+            <p>
+
+              Mensajes procedentes de dominios o remitentes
+              poco habituales deben revisarse cuidadosamente.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         08 CONTROLES
+    =========================================== -->
+
+    <section class="a4-section a4-dark">
+
+      <div class="a4-container">
+
+        <div class="a4-heading a4-heading-dark">
+
+          <span class="a4-number">
+            08
+          </span>
+
+          <div>
+
+            <small>
+              CONTROLES DE SEGURIDAD
+            </small>
+
+            <h2>
+              Reducir el impacto del phishing
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="a4-controls-grid">
+
+
+          <article>
+            <span>01</span>
+            <h3>MFA resistente al phishing</h3>
+            <p>FIDO2, WebAuthn y passkeys.</p>
+          </article>
+
+
+          <article>
+            <span>02</span>
+            <h3>Capacitación</h3>
+            <p>Reconocer dominios, urgencia y solicitudes sospechosas.</p>
+          </article>
+
+
+          <article>
+            <span>03</span>
+            <h3>SPF, DKIM y DMARC</h3>
+            <p>Reducir la suplantación de remitentes.</p>
+          </article>
+
+
+          <article>
+            <span>04</span>
+            <h3>Filtrado DNS y URL</h3>
+            <p>Bloquear dominios asociados con contenido malicioso.</p>
+          </article>
+
+
+          <article>
+            <span>05</span>
+            <h3>HTTPS y HSTS</h3>
+            <p>Proteger la comunicación de los portales legítimos.</p>
+          </article>
+
+
+          <article>
+            <span>06</span>
+            <h3>Gestores de contraseñas</h3>
+            <p>Ayudar a detectar dominios donde no corresponde autocompletar.</p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         09 CONCLUSIÓN
+    =========================================== -->
+
+    <section class="a4-section a4-soft">
+
+      <div class="a4-container">
+
+        <div class="a4-conclusion">
+
+          <div class="a4-conclusion-number">
+            09
+          </div>
+
+
+          <p class="a4-conclusion-label">
+            CONCLUSIÓN
+          </p>
+
+
+          <h2>
+            La confianza también forma parte de la superficie de ataque
+          </h2>
+
+
+          <p>
+
+            La práctica permitió observar que una página aparentemente
+            legítima puede obtener información cuando el usuario confía
+            en ella y completa voluntariamente un formulario.
+
+          </p>
+
+          <p>
+
+            El análisis permitió relacionar conceptos como HTTP,
+            servidores web, parámetros de formularios e ingeniería
+            social, además de reconocer que la prevención requiere una
+            combinación de controles técnicos y capacitación del usuario.
+
+          </p>
+
+          <p>
+
+            Todas las pruebas se realizaron dentro de un laboratorio
+            local, utilizando información ficticia y sin afectar
+            usuarios, servicios o infraestructura externa.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         10 INFORME
+    =========================================== -->
+
+    <section class="a4-section a4-white">
+
+      <div class="a4-container">
+
+        <div class="a4-download">
+
+          <div>
+
+            <span>
+              INFORME COMPLETO
+            </span>
+
+            <h2>
+              Actividad 04
+            </h2>
+
+            <p>
+
+              Consulta el documento completo con la descripción
+              detallada, evidencias, análisis y referencias.
+
+            </p>
+
+          </div>
+
+
+          <a
+            href="Actividad4_178508.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="a4-download-btn"
+          >
+            Ver informe PDF
+            <strong>↗</strong>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+  </main>
+
+
+
+  <!-- ==========================================
+       FOOTER
+  =========================================== -->
+
+  <footer class="a4-footer">
+
+    <div class="a4-footer-container">
+
+      <p>
+        © 2026 Bryhan Eduardo Guzman Martinez
+      </p>
+
+      <p>
+        Actividad 04 · Fundamentos de Ciberseguridad
+      </p>
+
+      <p>
+        Universidad Politécnica de San Luis Potosí
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
