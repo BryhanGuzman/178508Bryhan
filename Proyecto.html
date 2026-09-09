@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Proyecto de Fundamentos de Ciberseguridad - Walkthrough de una máquina virtual vulnerable"
+  >
+
+  <meta
+    name="author"
+    content="Bryhan Eduardo Guzman Martinez"
+  >
+
+  <title>Proyecto | Portafolio</title>
+
+  <link rel="icon" type="image/x-icon" href="logito.ico">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS general -->
+  <link rel="stylesheet" href="Estilo.css">
+
+  <!-- CSS del proyecto -->
+  <link rel="stylesheet" href="Proyecto.css">
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       NAVEGACIÓN
+  ========================================== -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a href="index.html" class="brand">
+
+        <span class="brand-icon">
+          BG
+        </span>
+
+        <span class="brand-text">
+
+          <strong>
+            Bryhan Guzman
+          </strong>
+
+          <small>
+            Portafolio Digital
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <nav class="nav-menu">
+
+        <a href="index.html">
+          Inicio
+        </a>
+
+        <a href="#objetivo">
+          Objetivo
+        </a>
+
+        <a href="#metodologia">
+          Metodología
+        </a>
+
+        <a href="#video">
+          Video
+        </a>
+
+        <a href="#aprendizajes">
+          Aprendizajes
+        </a>
+
+        <a
+          href="index.html#evidencias"
+          class="nav-contacto"
+        >
+          Volver
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="project-hero">
+
+      <div class="project-glow project-glow-one"></div>
+      <div class="project-glow project-glow-two"></div>
+
+
+      <div class="project-hero-container">
+
+
+        <div class="project-hero-content">
+
+          <div class="project-badge">
+            PROYECTO · FUNDAMENTOS DE CIBERSEGURIDAD
+          </div>
+
+
+          <p class="project-label">
+            WALKTHROUGH
+          </p>
+
+
+          <h1>
+            De la teoría a la práctica:
+            <span>seguridad en acción.</span>
+          </h1>
+
+
+          <p class="project-description">
+
+            Aplicación práctica de conceptos de seguridad informática
+            mediante el análisis controlado de una máquina virtual
+            vulnerable, documentando las diferentes fases de una
+            metodología de pentesting dentro de un entorno académico.
+
+          </p>
+
+
+          <div class="project-tags">
+
+            <span>Reconocimiento</span>
+
+            <span>Enumeración</span>
+
+            <span>Análisis</span>
+
+            <span>Explotación controlada</span>
+
+            <span>Post-explotación</span>
+
+            <span>Documentación</span>
+
+          </div>
+
+
+          <div class="project-buttons">
+
+            <a
+              href="#video"
+              class="project-btn primary"
+            >
+              Ver walkthrough
+              <span>▶</span>
+            </a>
+
+            <a
+              href="#metodologia"
+              class="project-btn secondary"
+            >
+              Ver metodología
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Tarjeta lateral -->
+
+        <div class="project-status">
+
+          <div class="project-status-header">
+
+            <div class="window-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <small>
+              project.status
+            </small>
+
+          </div>
+
+
+          <div class="project-status-body">
+
+            <p>
+              <span class="status-green">
+                student@lab
+              </span>:~$
+              project_info
+            </p>
+
+
+            <div class="status-line">
+              <span>Máquina</span>
+              <strong>SNAKEOIL</strong>
+            </div>
+
+
+            <div class="status-line">
+              <span>Tipo</span>
+              <strong>Máquina vulnerable</strong>
+            </div>
+
+
+            <div class="status-line">
+              <span>Entorno</span>
+              <strong>Laboratorio aislado</strong>
+            </div>
+
+
+            <div class="status-line">
+              <span>Duración</span>
+              <strong>≈ 7 horas</strong>
+            </div>
+
+
+            <div class="status-line">
+              <span>Entrega</span>
+              <strong>Video + documentación</strong>
+            </div>
+
+
+            <p class="status-success">
+              ✓ Proyecto documentado
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         01 OBJETIVO
+    ========================================== -->
+
+    <section
+      id="objetivo"
+      class="project-section white"
+    >
+
+      <div class="project-container">
+
+        <div class="project-heading">
+
+          <span class="project-number">
+            01
+          </span>
+
+          <div>
+
+            <small>
+              OBJETIVO GENERAL
+            </small>
+
+            <h2>
+              Aplicar conocimientos teóricos en un escenario práctico
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="objective-layout">
+
+
+          <div class="objective-main">
+
+            <h3>
+              Análisis controlado de una máquina vulnerable
+            </h3>
+
+            <p>
+
+              El proyecto busca demostrar la capacidad de aplicar
+              conocimientos teóricos de seguridad informática dentro
+              de un entorno práctico y controlado.
+
+            </p>
+
+            <p>
+
+              A través de un walkthrough se documentan las diferentes
+              fases utilizadas para analizar una máquina virtual
+              vulnerable, identificar posibles vectores de ataque,
+              evaluar vulnerabilidades y comprender su impacto.
+
+            </p>
+
+            <p>
+
+              Todo el proceso se realiza dentro de un entorno de
+              virtualización aislado diseñado específicamente con
+              fines académicos.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="objective-cards">
+
+
+            <article>
+
+              <span>01</span>
+
+              <h4>
+                Configuración
+              </h4>
+
+              <p>
+                Preparar un entorno de virtualización aislado y seguro.
+              </p>
+
+            </article>
+
+
+            <article>
+
+              <span>02</span>
+
+              <h4>
+                Reconocimiento
+              </h4>
+
+              <p>
+                Identificar servicios y características del sistema.
+              </p>
+
+            </article>
+
+
+            <article>
+
+              <span>03</span>
+
+              <h4>
+                Análisis
+              </h4>
+
+              <p>
+                Investigar vulnerabilidades asociadas a los servicios.
+              </p>
+
+            </article>
+
+
+            <article>
+
+              <span>04</span>
+
+              <h4>
+                Documentación
+              </h4>
+
+              <p>
+                Registrar el proceso, resultados y conclusiones.
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         02 METODOLOGÍA
+    ========================================== -->
+
+    <section
+      id="metodologia"
+      class="project-section soft"
+    >
+
+      <div class="project-container">
+
+        <div class="project-heading">
+
+          <span class="project-number">
+            02
+          </span>
+
+          <div>
+
+            <small>
+              METODOLOGÍA
+            </small>
+
+            <h2>
+              Fases desarrolladas
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="method-grid">
+
+
+          <article class="method-card">
+
+            <span class="method-index">
+              01
+            </span>
+
+            <div class="method-icon">
+              R
+            </div>
+
+            <h3>
+              Reconocimiento
+            </h3>
+
+            <p>
+
+              Identificación inicial del sistema objetivo y
+              recopilación de información sobre el entorno.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="method-card">
+
+            <span class="method-index">
+              02
+            </span>
+
+            <div class="method-icon">
+              E
+            </div>
+
+            <h3>
+              Enumeración
+            </h3>
+
+            <p>
+
+              Identificación de servicios, aplicaciones y recursos
+              disponibles en el sistema analizado.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="method-card">
+
+            <span class="method-index">
+              03
+            </span>
+
+            <div class="method-icon">
+              A
+            </div>
+
+            <h3>
+              Análisis
+            </h3>
+
+            <p>
+
+              Investigación de vulnerabilidades conocidas asociadas
+              con los componentes identificados.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="method-card">
+
+            <span class="method-index">
+              04
+            </span>
+
+            <div class="method-icon">
+              X
+            </div>
+
+            <h3>
+              Explotación
+            </h3>
+
+            <p>
+
+              Validación controlada de las vulnerabilidades
+              seleccionadas dentro del entorno académico.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="method-card">
+
+            <span class="method-index">
+              05
+            </span>
+
+            <div class="method-icon">
+              P
+            </div>
+
+            <h3>
+              Post-explotación
+            </h3>
+
+            <p>
+
+              Análisis del nivel de acceso obtenido y del impacto
+              potencial de la vulnerabilidad.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="method-card">
+
+            <span class="method-index">
+              06
+            </span>
+
+            <div class="method-icon">
+              D
+            </div>
+
+            <h3>
+              Documentación
+            </h3>
+
+            <p>
+
+              Registro de resultados, evidencias y explicación
+              de cada etapa del walkthrough.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         03 FLUJO
+    ========================================== -->
+
+    <section class="project-section white">
+
+      <div class="project-container">
+
+        <div class="project-heading">
+
+          <span class="project-number">
+            03
+          </span>
+
+          <div>
+
+            <small>
+              FLUJO DEL PROYECTO
+            </small>
+
+            <h2>
+              Del reconocimiento al análisis final
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="project-flow">
+
+
+          <div class="flow-step">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Preparación
+            </h3>
+
+            <p>
+              Configuración del entorno vulnerable.
+            </p>
+
+          </div>
+
+
+          <div class="flow-arrow">
+            →
+          </div>
+
+
+          <div class="flow-step">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Exploración
+            </h3>
+
+            <p>
+              Reconocimiento y enumeración.
+            </p>
+
+          </div>
+
+
+          <div class="flow-arrow">
+            →
+          </div>
+
+
+          <div class="flow-step">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Evaluación
+            </h3>
+
+            <p>
+              Análisis de vulnerabilidades.
+            </p>
+
+          </div>
+
+
+          <div class="flow-arrow">
+            →
+          </div>
+
+
+          <div class="flow-step">
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Validación
+            </h3>
+
+            <p>
+              Pruebas dentro del laboratorio.
+            </p>
+
+          </div>
+
+
+          <div class="flow-arrow">
+            →
+          </div>
+
+
+          <div class="flow-step">
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Evidencia
+            </h3>
+
+            <p>
+              Documentación y video.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         04 VIDEO
+    ========================================== -->
+
+    <section
+      id="video"
+      class="project-section project-video-section"
+    >
+
+      <div class="project-container">
+
+        <div class="project-heading dark-heading">
+
+          <span class="project-number">
+            04
+          </span>
+
+          <div>
+
+            <small>
+              VIDEO WALKTHROUGH
+            </small>
+
+            <h2>
+              Desarrollo completo del proyecto
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="video-layout">
+
+
+          <div class="video-wrapper">
+
+            <video controls class="local-video">
+
+              <source
+                src="ProyectoSnakeoil.mp4"
+                type="video/mp4"
+              >
+
+            </video>
+
+          </div>
+
+
+
+          <aside class="video-info">
+
+            <span class="video-label">
+              PROYECTO FINAL
+            </span>
+
+            <h3>
+              Walkthrough completo
+            </h3>
+
+            <p>
+
+              En el video se presenta de manera ordenada el proceso
+              realizado sobre la máquina virtual vulnerable, explicando
+              las decisiones tomadas y la relación entre cada etapa y
+              los conceptos de seguridad informática.
+
+            </p>
+
+
+            <div class="video-detail">
+
+              <span>01</span>
+
+              <div>
+                <small>Formato</small>
+                <strong>Video explicativo</strong>
+              </div>
+
+            </div>
+
+
+            <div class="video-detail">
+
+              <span>02</span>
+
+              <div>
+                <small>Contenido</small>
+                <strong>Walkthrough técnico</strong>
+              </div>
+
+            </div>
+
+
+            <div class="video-detail">
+
+              <span>03</span>
+
+              <div>
+                <small>Entorno</small>
+                <strong>Laboratorio controlado</strong>
+              </div>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         05 EXPLICACIÓN TEÓRICA
+    ========================================== -->
+
+    <section class="project-section white">
+
+      <div class="project-container">
+
+        <div class="project-heading">
+
+          <span class="project-number">
+            05
+          </span>
+
+          <div>
+
+            <small>
+              FUNDAMENTOS
+            </small>
+
+            <h2>
+              Teoría detrás de la práctica
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="theory-grid">
+
+
+          <article>
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Reconocimiento
+            </h3>
+
+            <p>
+
+              Fase inicial orientada a recopilar información
+              relevante sobre el sistema objetivo antes de realizar
+              pruebas más específicas.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Enumeración
+            </h3>
+
+            <p>
+
+              Proceso mediante el cual se obtiene información más
+              detallada sobre servicios, aplicaciones y recursos
+              accesibles.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Vulnerabilidad
+            </h3>
+
+            <p>
+
+              Debilidad presente en un sistema, servicio o
+              configuración que puede representar un riesgo de
+              seguridad.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Explotación
+            </h3>
+
+            <p>
+
+              Validación de una vulnerabilidad con el propósito de
+              determinar su impacto dentro de un entorno autorizado.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Escalamiento
+            </h3>
+
+            <p>
+
+              Evaluación de si el acceso inicial permite obtener
+              privilegios adicionales dentro del sistema.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              Post-explotación
+            </h3>
+
+            <p>
+
+              Fase destinada a analizar el alcance y las consecuencias
+              del acceso conseguido durante la prueba.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         06 EVIDENCIAS / RESULTADOS
+    ========================================== -->
+
+    <section class="project-section soft">
+
+      <div class="project-container">
+
+        <div class="project-heading">
+
+          <span class="project-number">
+            06
+          </span>
+
+          <div>
+
+            <small>
+              DOCUMENTACIÓN
+            </small>
+
+            <h2>
+              Evidencias del proceso
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="results-grid">
+
+
+          <article class="result-card">
+
+            <span class="result-number">
+              01
+            </span>
+
+            <h3>
+              Proceso documentado
+            </h3>
+
+            <p>
+
+              Cada fase del walkthrough fue registrada mediante
+              capturas, resultados y explicaciones.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="result-card">
+
+            <span class="result-number">
+              02
+            </span>
+
+            <h3>
+              Análisis técnico
+            </h3>
+
+            <p>
+
+              Los resultados obtenidos fueron relacionados con
+              conceptos y fundamentos de seguridad informática.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="result-card">
+
+            <span class="result-number">
+              03
+            </span>
+
+            <h3>
+              Video explicativo
+            </h3>
+
+            <p>
+
+              El proceso completo fue presentado mediante un video
+              walkthrough con explicación de cada etapa.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         07 APRENDIZAJES
+    ========================================== -->
+
+    <section
+      id="aprendizajes"
+      class="project-section white"
+    >
+
+      <div class="project-container">
+
+        <div class="project-heading">
+
+          <span class="project-number">
+            07
+          </span>
+
+          <div>
+
+            <small>
+              APRENDIZAJES
+            </small>
+
+            <h2>
+              Lo más importante del proyecto
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="learning-layout">
+
+
+          <div class="learning-main">
+
+            <p class="learning-highlight">
+
+              La seguridad informática no consiste únicamente en
+              ejecutar herramientas, sino en comprender qué información
+              proporciona cada etapa y cómo utilizarla para evaluar el
+              riesgo de un sistema.
+
+            </p>
+
+
+            <p>
+
+              El proyecto permitió relacionar los conceptos estudiados
+              durante el curso con un escenario práctico, aplicando una
+              metodología ordenada para analizar una máquina vulnerable.
+
+            </p>
+
+
+            <p>
+
+              También permitió reforzar la importancia de documentar
+              cada prueba, interpretar los resultados y mantener todas
+              las actividades dentro de un entorno previamente
+              autorizado y controlado.
+
+            </p>
+
+          </div>
+
+
+
+          <aside class="learning-card">
+
+            <span>
+              PRINCIPIOS
+            </span>
+
+            <div>
+              <strong>✓</strong>
+              Entorno controlado
+            </div>
+
+            <div>
+              <strong>✓</strong>
+              Metodología estructurada
+            </div>
+
+            <div>
+              <strong>✓</strong>
+              Interpretación de resultados
+            </div>
+
+            <div>
+              <strong>✓</strong>
+              Documentación técnica
+            </div>
+
+            <div>
+              <strong>✓</strong>
+              Uso académico y autorizado
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         08 CONCLUSIÓN
+    ========================================== -->
+
+    <section class="project-section conclusion-section">
+
+      <div class="project-container">
+
+        <div class="project-conclusion">
+
+          <div class="conclusion-number">
+            08
+          </div>
+
+          <p class="conclusion-label">
+            CONCLUSIÓN
+          </p>
+
+
+          <h2>
+            Del conocimiento teórico a una metodología aplicada
+          </h2>
+
+
+          <p>
+
+            Este proyecto permitió integrar los conocimientos adquiridos
+            durante la asignatura en una práctica completa de análisis de
+            seguridad sobre una máquina virtual vulnerable.
+
+          </p>
+
+
+          <p>
+
+            El walkthrough muestra la importancia de seguir una
+            metodología ordenada, comprender los resultados obtenidos
+            y documentar correctamente cada etapa para poder explicar
+            tanto el proceso técnico como sus fundamentos.
+
+          </p>
+
+
+          <a
+            href="index.html#evidencias"
+            class="back-portfolio"
+          >
+            ← Volver al portafolio
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer class="project-footer">
+
+    <div class="project-footer-container">
+
+      <p>
+        © 2026 Bryhan Eduardo Guzman Martinez
+      </p>
+
+      <p>
+        Proyecto · Fundamentos de Ciberseguridad
+      </p>
+
+      <p>
+        Universidad Politécnica de San Luis Potosí
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
