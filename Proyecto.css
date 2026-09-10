@@ -765,14 +765,9 @@
 
 
 /* Contenedor del video */
-
 .video-wrapper {
   width: 100%;
-
-  /* Quitamos el padding-top anterior */
-  padding-top: 0;
-
-  position: relative;
+  aspect-ratio: 16 / 9;
 
   overflow: hidden;
 
@@ -788,9 +783,13 @@
     rgba(0,0,0,0.3);
 }
 
-.video-wrapper {
+.video-wrapper iframe {
   width: 100%;
-  max-width: 900px;
+  height: 100%;
+
+  display: block;
+
+  border: none;
 }
 
 /* Video MP4 */
@@ -804,18 +803,6 @@
   background: #000;
 
   border-radius: 20px;
-}
-
-
-.video-wrapper iframe {
-  width: 100%;
-  height: 100%;
-
-  position: absolute;
-
-  inset: 0;
-
-  border: none;
 }
 
 
