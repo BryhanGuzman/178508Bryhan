@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="author"
+    content="Bryhan Eduardo Guzman Martinez"
+  >
+
+  <meta
+    name="description"
+    content="Actividad 05 - Ingeniería Social: análisis de un incidente de vishing"
+  >
+
+  <title>
+    Actividad 05 | Ingeniería Social
+  </title>
+
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="logito.ico"
+  >
+
+
+  <!-- Google Fonts -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- CSS general -->
+
+  <link
+    rel="stylesheet"
+    href="Estilo.css"
+  >
+
+
+  <!-- CSS de Actividad 05 -->
+
+  <link
+    rel="stylesheet"
+    href="Actividad5.css"
+  >
+
+</head>
+
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVEGACIÓN
+  ====================================================== -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <span class="brand-icon">
+          BG
+        </span>
+
+
+        <span class="brand-text">
+
+          <strong>
+            Bryhan Guzman
+          </strong>
+
+          <small>
+            Portafolio Digital
+          </small>
+
+        </span>
+
+      </a>
+
+
+
+      <nav class="nav-menu">
+
+        <a href="index.html">
+          Inicio
+        </a>
+
+        <a href="#caso">
+          El caso
+        </a>
+
+        <a href="#cuestionario">
+          Cuestionario
+        </a>
+
+        <a href="#aprendizajes">
+          Aprendizajes
+        </a>
+
+        <a href="#documento">
+          Documento
+        </a>
+
+        <a
+          href="index.html#evidencias"
+          class="nav-contacto"
+        >
+          Volver
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="a5-hero">
+
+      <div class="a5-glow a5-glow-one"></div>
+
+      <div class="a5-glow a5-glow-two"></div>
+
+
+
+      <div class="a5-hero-container">
+
+
+        <div class="a5-hero-content">
+
+
+          <div class="a5-badge">
+
+            ACTIVIDAD 05 · SEGURIDAD INFORMÁTICA
+
+          </div>
+
+
+          <p class="a5-label">
+
+            INGENIERÍA SOCIAL
+
+          </p>
+
+
+          <h1>
+
+            El arte del
+            <span>engaño.</span>
+
+          </h1>
+
+
+          <p class="a5-description">
+
+            Análisis de un incidente de ingeniería social basado
+            en <strong>vishing</strong>, suplantación de identidad
+            y manipulación psicológica que derivó en el robo de
+            aproximadamente 238 millones de dólares en Bitcoin.
+
+          </p>
+
+
+          <div class="a5-tags">
+
+            <span>
+              Vishing
+            </span>
+
+            <span>
+              Ingeniería social
+            </span>
+
+            <span>
+              Suplantación
+            </span>
+
+            <span>
+              AnyDesk
+            </span>
+
+            <span>
+              Bitcoin
+            </span>
+
+            <span>
+              Factor humano
+            </span>
+
+          </div>
+
+
+          <a
+            href="#cuestionario"
+            class="a5-main-button"
+          >
+
+            Ver cuestionario
+
+            <span>
+              ↓
+            </span>
+
+          </a>
+
+        </div>
+
+
+
+        <!-- PANEL DEL CASO -->
+
+        <aside class="a5-case-panel">
+
+
+          <div class="a5-panel-header">
+
+            <div class="a5-dots">
+
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+
+            <small>
+
+              incident.summary
+
+            </small>
+
+          </div>
+
+
+
+          <div class="a5-panel-content">
+
+
+            <p class="a5-console">
+
+              <span>
+                analyst@lab
+              </span>:~$
+
+              case_summary
+
+            </p>
+
+
+
+            <div class="a5-case-data">
+
+              <div>
+
+                <span>
+                  Vector
+                </span>
+
+                <strong>
+                  Vishing
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Técnica
+                </span>
+
+                <strong>
+                  Suplantación
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Acceso remoto
+                </span>
+
+                <strong>
+                  AnyDesk
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Activo
+                </span>
+
+                <strong>
+                  Bitcoin
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Impacto
+                </span>
+
+                <strong>
+                  ≈ $238 M USD
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <p class="a5-status">
+
+              ✓ Caso analizado
+
+            </p>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         01 EL CASO
+    ====================================================== -->
+
+    <section
+      id="caso"
+      class="a5-section white"
+    >
+
+      <div class="a5-container">
+
+
+        <div class="a5-heading">
+
+          <span class="a5-number">
+            01
+          </span>
+
+
+          <div>
+
+            <small>
+              CONTEXTO
+            </small>
+
+            <h2>
+              Anatomía de un ataque de ingeniería social
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="a5-context-grid">
+
+
+          <div class="a5-context-main">
+
+            <h3>
+
+              Cuando el objetivo principal no es la computadora,
+              sino la persona
+
+            </h3>
+
+
+            <p>
+
+              El caso analizado muestra cómo una operación de
+              ingeniería social puede comenzar mediante una llamada
+              y aprovechar factores psicológicos como la confianza
+              y la urgencia.
+
+            </p>
+
+
+            <p>
+
+              La víctima fue convencida de que sus cuentas estaban
+              en peligro. A partir de esa situación, los involucrados
+              consiguieron acceso y realizaron movimientos de
+              criptomonedas.
+
+            </p>
+
+
+            <p>
+
+              El incidente demuestra la importancia del
+              <strong>factor humano</strong> dentro de la
+              ciberseguridad: incluso cuando existen controles
+              tecnológicos, una persona manipulada puede realizar
+              acciones que comprometan sus propios recursos.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="a5-context-cards">
+
+
+            <article>
+
+              <span>
+                01
+              </span>
+
+              <h4>
+                Contacto
+              </h4>
+
+              <p>
+                El ataque comienza mediante vishing.
+              </p>
+
+            </article>
+
+
+
+            <article>
+
+              <span>
+                02
+              </span>
+
+              <h4>
+                Manipulación
+              </h4>
+
+              <p>
+                Se explotan confianza y urgencia.
+              </p>
+
+            </article>
+
+
+
+            <article>
+
+              <span>
+                03
+              </span>
+
+              <h4>
+                Acceso
+              </h4>
+
+              <p>
+                Se utiliza software de acceso remoto.
+              </p>
+
+            </article>
+
+
+
+            <article>
+
+              <span>
+                04
+              </span>
+
+              <h4>
+                Movimiento
+              </h4>
+
+              <p>
+                Los activos son distribuidos entre diferentes carteras.
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         02 CONCEPTOS CLAVE
+    ====================================================== -->
+
+    <section class="a5-section soft">
+
+      <div class="a5-container">
+
+
+        <div class="a5-heading">
+
+          <span class="a5-number">
+            02
+          </span>
+
+
+          <div>
+
+            <small>
+              CONCEPTOS CLAVE
+            </small>
+
+            <h2>
+              Elementos identificados en el caso
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="a5-concepts-grid">
+
+
+          <article class="a5-concept-card">
+
+            <span class="concept-index">
+              01
+            </span>
+
+            <h3>
+              Vishing
+            </h3>
+
+            <p>
+
+              Técnica de ingeniería social en la que se utiliza
+              comunicación por voz para manipular a una persona y
+              conseguir que revele información o realice determinadas
+              acciones.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="a5-concept-card">
+
+            <span class="concept-index">
+              02
+            </span>
+
+            <h3>
+              Suplantación
+            </h3>
+
+            <p>
+
+              Los atacantes se presentan como entidades o personas
+              confiables con el objetivo de aumentar la credibilidad
+              del engaño.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="a5-concept-card">
+
+            <span class="concept-index">
+              03
+            </span>
+
+            <h3>
+              Factor humano
+            </h3>
+
+            <p>
+
+              La confianza de la víctima y la presión psicológica
+              facilitaron acciones que comprometieron sus cuentas.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="a5-concept-card">
+
+            <span class="concept-index">
+              04
+            </span>
+
+            <h3>
+              Acceso remoto
+            </h3>
+
+            <p>
+
+              AnyDesk aparece en el caso como la herramienta mediante
+              la cual la víctima fue convencida de compartir acceso
+              a su computadora.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         03 FLUJO DEL INCIDENTE
+    ====================================================== -->
+
+    <section class="a5-section white">
+
+      <div class="a5-container">
+
+
+        <div class="a5-heading">
+
+          <span class="a5-number">
+            03
+          </span>
+
+
+          <div>
+
+            <small>
+              FLUJO DEL INCIDENTE
+            </small>
+
+            <h2>
+              Del engaño al movimiento de los fondos
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="a5-flow">
+
+
+          <article class="a5-flow-card">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Vishing
+            </h3>
+
+            <p>
+              Contacto con la víctima.
+            </p>
+
+          </article>
+
+
+          <div class="a5-flow-arrow">
+            →
+          </div>
+
+
+          <article class="a5-flow-card">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Urgencia
+            </h3>
+
+            <p>
+              Se genera una situación de presión.
+            </p>
+
+          </article>
+
+
+          <div class="a5-flow-arrow">
+            →
+          </div>
+
+
+          <article class="a5-flow-card">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Confianza
+            </h3>
+
+            <p>
+              La víctima confía en los involucrados.
+            </p>
+
+          </article>
+
+
+          <div class="a5-flow-arrow">
+            →
+          </div>
+
+
+          <article class="a5-flow-card">
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Acceso remoto
+            </h3>
+
+            <p>
+              Se emplea AnyDesk.
+            </p>
+
+          </article>
+
+
+          <div class="a5-flow-arrow">
+            →
+          </div>
+
+
+          <article class="a5-flow-card">
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Transferencias
+            </h3>
+
+            <p>
+              Los bitcoins son movidos entre carteras.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         04 CUESTIONARIO
+    ====================================================== -->
+
+    <section
+      id="cuestionario"
+      class="a5-section questionnaire-section"
+    >
+
+      <div class="a5-container">
+
+
+        <div class="a5-heading dark">
+
+          <span class="a5-number">
+            04
+          </span>
+
+
+          <div>
+
+            <small>
+              CUESTIONARIO
+            </small>
+
+            <h2>
+              Análisis del incidente
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <p class="questionnaire-intro">
+
+          Selecciona cada pregunta para consultar la respuesta
+          desarrollada durante la actividad.
+
+        </p>
+
+
+
+        <div class="question-list">
+
+
+          <!-- PREGUNTA 01 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>
+                01
+              </span>
+
+              <h3>
+                ¿Cuál fue el principal vector de ataque utilizado por Lam Malone?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+                Fue por <strong>vishing</strong>.
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 02 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>02</span>
+
+              <h3>
+                ¿Qué principio psicológico explotó para lograr transferencias millonarias?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                Confianza y urgencia, haciendo creer a la víctima
+                que sus cuentas estaban en peligro.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 03 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>03</span>
+
+              <h3>
+                ¿Qué tipo de ataque de ingeniería social se identifica en este caso?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                Ingeniería social mediante vishing,
+                acompañado de suplantación de identidad.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 04 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>04</span>
+
+              <h3>
+                ¿Qué debilidad de seguridad informática facilitó el fraude?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                El factor humano. La víctima confió en los atacantes
+                y les permitió realizar acciones que comprometieron
+                sus cuentas.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 05 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>05</span>
+
+              <h3>
+                ¿Cómo complementaban Chetal Veer y Serrano Jeandiel el ataque iniciado por Lam?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                Ayudando a obtener acceso a las cuentas por medio
+                de aplicaciones como AnyDesk y también a transferir
+                los fondos y distribuirlos entre distintas direcciones
+                para dificultar su rastreo.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 06 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>06</span>
+
+              <h3>
+                ¿Cuál fue el resultado económico total del esquema fraudulento?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                Aproximadamente
+                <strong>238 millones de dólares en Bitcoin</strong>.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 07 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>07</span>
+
+              <h3>
+                ¿Qué evento marcó el punto de quiebre del caso?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                Cuando las grandes transferencias de Bitcoin comenzaron
+                a ser rastreadas, relacionando las direcciones de
+                criptomonedas con los involucrados y posteriormente
+                realizando las detenciones.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 08 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>08</span>
+
+              <h3>
+                ¿Qué evidencia física encontraron las autoridades al detener a Chetal Veer?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                Dispositivos electrónicos y evidencia asociada con
+                sus operaciones y su lujoso estilo de vida.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 09 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>09</span>
+
+              <h3>
+                ¿Qué decisión tomó Chetal Veer frente al proceso judicial?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                Colaborar con las autoridades y aceptar su participación
+                dentro del esquema fraudulento.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 10 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>10</span>
+
+              <h3>
+                ¿Qué consecuencias legales enfrenta el grupo por estos hechos?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                Cargos federales por fraude electrónico, robo de
+                criptomonedas, lavado de dinero y otros delitos
+                financieros.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 11 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>11</span>
+
+              <h3>
+                ¿Qué empresas fueron suplantadas durante el ataque?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                Google y Gemini, la plataforma de intercambio
+                de criptomonedas.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 12 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>12</span>
+
+              <h3>
+                ¿Qué herramienta de acceso remoto fue utilizada para comprometer a la víctima?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                <strong>AnyDesk</strong>, mediante la cual convencieron
+                a la víctima de compartir su computadora.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 13 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>13</span>
+
+              <h3>
+                ¿Qué acción realizaron inmediatamente después del robo para ocultar los fondos?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                Comenzaron a dividir y mover los bitcoins entre
+                numerosas carteras y servicios, utilizando técnicas
+                de lavado de criptomonedas.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 14 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>14</span>
+
+              <h3>
+                ¿Quién contribuyó al rastreo de las transacciones y exposición del caso?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                ZachXBT, quien analizó las transacciones en la cadena
+                de bloques, ayudó a relacionar las direcciones y
+                consiguió videos relacionados con el fraude.
+
+              </p>
+
+            </div>
+
+          </details>
+
+
+
+          <!-- PREGUNTA 15 -->
+
+          <details class="question-card">
+
+            <summary>
+
+              <span>15</span>
+
+              <h3>
+                ¿Cuál fue el detallito que tuvo con Skylar Harrison?
+              </h3>
+
+              <div class="question-toggle">
+                +
+              </div>
+
+            </summary>
+
+
+            <div class="answer">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <p>
+
+                Un carro de lujo:
+                <strong>un Lamborghini rosa</strong>.
+
+              </p>
+
+            </div>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         05 APRENDIZAJES
+    ====================================================== -->
+
+    <section
+      id="aprendizajes"
+      class="a5-section white"
+    >
+
+      <div class="a5-container">
+
+
+        <div class="a5-heading">
+
+          <span class="a5-number">
+            05
+          </span>
+
+
+          <div>
+
+            <small>
+              REFLEXIÓN
+            </small>
+
+            <h2>
+              Aprendizajes del caso
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="learning-layout">
+
+
+          <div class="learning-text">
+
+            <p class="learning-highlight">
+
+              Una de las vulnerabilidades más difíciles de proteger
+              no siempre se encuentra en el software: puede encontrarse
+              en la confianza de la persona que lo utiliza.
+
+            </p>
+
+
+            <p>
+
+              El caso permite observar cómo técnicas de ingeniería
+              social pueden combinar presión psicológica, suplantación
+              de identidad y herramientas legítimas de acceso remoto
+              para conseguir un objetivo.
+
+            </p>
+
+
+            <p>
+
+              También muestra que las transacciones realizadas con
+              criptomonedas pueden dejar información en la cadena de
+              bloques que posteriormente puede ser analizada para
+              relacionar movimientos y direcciones.
+
+            </p>
+
+          </div>
+
+
+
+          <aside class="learning-points">
+
+            <span>
+              LECCIONES CLAVE
+            </span>
+
+
+            <div>
+              <strong>01</strong>
+              Verificar la identidad del interlocutor.
+            </div>
+
+
+            <div>
+              <strong>02</strong>
+              Desconfiar de situaciones de urgencia.
+            </div>
+
+
+            <div>
+              <strong>03</strong>
+              No proporcionar acceso remoto sin verificar.
+            </div>
+
+
+            <div>
+              <strong>04</strong>
+              Confirmar solicitudes desde canales oficiales.
+            </div>
+
+
+            <div>
+              <strong>05</strong>
+              Considerar el factor humano dentro de la seguridad.
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         06 DOCUMENTO
+    ====================================================== -->
+
+    <section
+      id="documento"
+      class="a5-section soft"
+    >
+
+      <div class="a5-container">
+
+
+        <div class="document-card">
+
+
+          <div>
+
+            <span class="document-label">
+              DOCUMENTO ORIGINAL
+            </span>
+
+
+            <h2>
+              Actividad 05
+            </h2>
+
+
+            <p>
+
+              Consulta el cuestionario original entregado para
+              la actividad de Ingeniería Social.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="document-actions">
+
+            <a
+              href="Actividad5_178508.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="document-button primary"
+            >
+              Ver PDF ↗
+            </a>
+
+
+            <a
+              href="Actividad5_178508.pdf"
+              download
+              class="document-button secondary"
+            >
+              Descargar
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="a5-footer">
+
+    <div class="a5-footer-container">
+
+      <p>
+        © 2026 Bryhan Eduardo Guzman Martinez
+      </p>
+
+      <p>
+        Actividad 05 · Ingeniería Social
+      </p>
+
+      <p>
+        Universidad Politécnica de San Luis Potosí
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>

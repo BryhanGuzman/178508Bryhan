@@ -1,0 +1,1561 @@
+/* =====================================================
+   ACTIVIDAD 05
+   Ingeniería Social · El arte del engaño
+===================================================== */
+
+:root {
+
+  --a5-blue: #286cff;
+  --a5-cyan: #22d3ee;
+  --a5-green: #20d89b;
+
+  --a5-red: #f04465;
+  --a5-purple: #875bf7;
+
+  --a5-dark: #070c17;
+  --a5-dark-card: #111a2e;
+
+  --a5-text: #172033;
+  --a5-soft: #667085;
+
+  --a5-border: #e4e8ef;
+  --a5-background: #f6f8fb;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.a5-hero {
+
+  min-height: 690px;
+
+  padding:
+    150px 28px
+    95px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      140deg,
+      #060a14 0%,
+      #0b1428 52%,
+      #101e37 100%
+    );
+
+}
+
+
+.a5-hero::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.14;
+
+  background-image:
+
+    linear-gradient(
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    50px 50px;
+
+}
+
+
+.a5-glow {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter:
+    blur(120px);
+
+}
+
+
+.a5-glow-one {
+
+  width: 520px;
+  height: 520px;
+
+  right: -170px;
+  top: 20px;
+
+  background:
+    rgba(135,91,247,0.20);
+
+}
+
+
+.a5-glow-two {
+
+  width: 370px;
+  height: 370px;
+
+  left: 25%;
+  bottom: -200px;
+
+  background:
+    rgba(40,108,255,0.18);
+
+}
+
+
+.a5-hero-container {
+
+  width: 100%;
+  max-width: 1180px;
+
+  margin: auto;
+
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0,1.2fr)
+    minmax(330px,0.8fr);
+
+  gap: 85px;
+
+  align-items: center;
+
+}
+
+
+.a5-badge {
+
+  width: max-content;
+
+  margin-bottom: 27px;
+
+  padding:
+    8px 14px;
+
+  border-radius: 30px;
+
+  border:
+    1px solid
+    rgba(34,211,238,0.20);
+
+  color: #9ee8f2;
+
+  background:
+    rgba(34,211,238,0.06);
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.07em;
+
+}
+
+
+.a5-label {
+
+  margin-bottom: 8px;
+
+  color: #7187a8;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+}
+
+
+.a5-hero h1 {
+
+  max-width: 730px;
+
+  font-size:
+    clamp(3.2rem,6vw,5.8rem);
+
+  letter-spacing:
+    -0.055em;
+
+}
+
+
+.a5-hero h1 span {
+
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4f8cff,
+      #22d3ee
+    );
+
+  -webkit-background-clip:
+    text;
+
+  color: transparent;
+
+}
+
+
+.a5-description {
+
+  max-width: 680px;
+
+  margin-top: 27px;
+
+  color: #a7b2c6;
+
+  font-size: 1rem;
+
+  line-height: 1.9;
+
+}
+
+
+.a5-tags {
+
+  margin-top: 31px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+}
+
+
+.a5-tags span {
+
+  padding:
+    8px 13px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.10);
+
+  border-radius: 9px;
+
+  color: #b6c2d4;
+
+  background:
+    rgba(255,255,255,0.035);
+
+  font-size: 0.72rem;
+
+}
+
+
+.a5-main-button {
+
+  margin-top: 35px;
+
+  min-height: 52px;
+
+  padding:
+    0 22px;
+
+  width: max-content;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  border-radius: 11px;
+
+  color: white;
+
+  background:
+    var(--a5-blue);
+
+  box-shadow:
+    0 12px 35px
+    rgba(40,108,255,0.25);
+
+  font-size: 0.82rem;
+
+  font-weight: 600;
+
+  transition: 0.25s;
+
+}
+
+
+.a5-main-button:hover {
+
+  transform:
+    translateY(-3px);
+
+}
+
+
+
+/* =====================================================
+   PANEL DEL CASO
+===================================================== */
+
+.a5-case-panel {
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.10);
+
+  border-radius: 21px;
+
+  background:
+    rgba(9,15,29,0.82);
+
+  box-shadow:
+    0 35px 90px
+    rgba(0,0,0,0.35);
+
+}
+
+
+.a5-panel-header {
+
+  min-height: 50px;
+
+  padding:
+    0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.07);
+
+}
+
+
+.a5-dots {
+
+  display: flex;
+
+  gap: 7px;
+
+}
+
+
+.a5-dots span {
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+}
+
+
+.a5-dots span:nth-child(1) {
+
+  background: #fb7185;
+
+}
+
+
+.a5-dots span:nth-child(2) {
+
+  background: #facc15;
+
+}
+
+
+.a5-dots span:nth-child(3) {
+
+  background: #4ade80;
+
+}
+
+
+.a5-panel-header small {
+
+  color: #5d6c84;
+
+}
+
+
+.a5-panel-content {
+
+  padding: 28px;
+
+}
+
+
+.a5-console {
+
+  margin-bottom: 25px;
+
+  color: #8798b0;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 0.77rem;
+
+}
+
+
+.a5-console span {
+
+  color: #38d9a9;
+
+}
+
+
+.a5-case-data {
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.07);
+
+}
+
+
+.a5-case-data div {
+
+  min-height: 54px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 20px;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.06);
+
+}
+
+
+.a5-case-data span {
+
+  color: #687a95;
+
+  font-size: 0.72rem;
+
+}
+
+
+.a5-case-data strong {
+
+  color: #e2e8f0;
+
+  font-size: 0.78rem;
+
+  text-align: right;
+
+}
+
+
+.a5-status {
+
+  margin-top: 25px;
+
+  color: #4ade80;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 0.76rem;
+
+}
+
+
+
+/* =====================================================
+   SECCIONES
+===================================================== */
+
+.a5-section {
+
+  padding:
+    105px 28px;
+
+}
+
+
+.a5-section.white {
+
+  background: white;
+
+}
+
+
+.a5-section.soft {
+
+  background:
+    var(--a5-background);
+
+}
+
+
+.a5-container {
+
+  max-width: 1180px;
+
+  margin: auto;
+
+}
+
+
+.a5-heading {
+
+  margin-bottom: 50px;
+
+  display: flex;
+
+  gap: 23px;
+
+  align-items:
+    flex-start;
+
+}
+
+
+.a5-number {
+
+  color:
+    var(--a5-blue);
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 0.74rem;
+
+  font-weight: 700;
+
+}
+
+
+.a5-heading small {
+
+  display: block;
+
+  margin-bottom: 6px;
+
+  color:
+    var(--a5-blue);
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+}
+
+
+.a5-heading h2 {
+
+  font-size:
+    clamp(2rem,4vw,3.3rem);
+
+  letter-spacing:
+    -0.045em;
+
+}
+
+
+
+/* =====================================================
+   CONTEXTO
+===================================================== */
+
+.a5-context-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 70px;
+
+}
+
+
+.a5-context-main h3 {
+
+  margin-bottom: 22px;
+
+  font-size: 1.7rem;
+
+  letter-spacing:
+    -0.025em;
+
+}
+
+
+.a5-context-main p {
+
+  margin-bottom: 19px;
+
+  color:
+    var(--a5-soft);
+
+  line-height: 1.85;
+
+}
+
+
+.a5-context-cards {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap: 15px;
+
+}
+
+
+.a5-context-cards article {
+
+  padding: 25px;
+
+  border:
+    1px solid
+    var(--a5-border);
+
+  border-radius: 16px;
+
+  background: white;
+
+}
+
+
+.a5-context-cards article > span {
+
+  display: block;
+
+  margin-bottom: 30px;
+
+  color:
+    var(--a5-blue);
+
+  font-size: 0.67rem;
+
+  font-weight: 700;
+
+}
+
+
+.a5-context-cards h4 {
+
+  margin-bottom: 8px;
+
+}
+
+
+.a5-context-cards p {
+
+  color:
+    var(--a5-soft);
+
+  font-size: 0.8rem;
+
+}
+
+
+
+/* =====================================================
+   CONCEPTOS
+===================================================== */
+
+.a5-concepts-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap: 15px;
+
+}
+
+
+.a5-concept-card {
+
+  min-height: 255px;
+
+  padding: 28px;
+
+  border:
+    1px solid
+    var(--a5-border);
+
+  border-radius: 17px;
+
+  background: white;
+
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+
+}
+
+
+.a5-concept-card:hover {
+
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 18px 45px
+    rgba(16,24,40,0.08);
+
+}
+
+
+.concept-index {
+
+  display: block;
+
+  margin-bottom: 45px;
+
+  color:
+    var(--a5-purple);
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+}
+
+
+.a5-concept-card h3 {
+
+  margin-bottom: 12px;
+
+  font-size: 1.05rem;
+
+}
+
+
+.a5-concept-card p {
+
+  color:
+    var(--a5-soft);
+
+  font-size: 0.8rem;
+
+  line-height: 1.7;
+
+}
+
+
+
+/* =====================================================
+   FLUJO
+===================================================== */
+
+.a5-flow {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr;
+
+  align-items: center;
+
+  gap: 10px;
+
+}
+
+
+.a5-flow-card {
+
+  min-height: 170px;
+
+  padding: 24px;
+
+  border:
+    1px solid
+    var(--a5-border);
+
+  border-radius: 15px;
+
+  background: white;
+
+}
+
+
+.a5-flow-card > span {
+
+  display: block;
+
+  margin-bottom: 38px;
+
+  color:
+    var(--a5-blue);
+
+  font-size: 0.66rem;
+
+  font-weight: 700;
+
+}
+
+
+.a5-flow-card h3 {
+
+  margin-bottom: 8px;
+
+  font-size: 0.9rem;
+
+}
+
+
+.a5-flow-card p {
+
+  color:
+    var(--a5-soft);
+
+  font-size: 0.74rem;
+
+}
+
+
+.a5-flow-arrow {
+
+  color: #a5b1c1;
+
+}
+
+
+
+/* =====================================================
+   CUESTIONARIO
+===================================================== */
+
+.questionnaire-section {
+
+  color: white;
+
+  background:
+    linear-gradient(
+      145deg,
+      #070c17,
+      #101a2e
+    );
+
+}
+
+
+.a5-heading.dark small {
+
+  color: var(--a5-cyan);
+
+}
+
+
+.a5-heading.dark h2 {
+
+  color: white;
+
+}
+
+
+.questionnaire-intro {
+
+  max-width: 620px;
+
+  margin:
+    -25px 0
+    40px 46px;
+
+  color: #8191a8;
+
+  font-size: 0.85rem;
+
+}
+
+
+.question-list {
+
+  display: grid;
+
+  gap: 10px;
+
+}
+
+
+.question-card {
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.08);
+
+  border-radius: 14px;
+
+  background:
+    rgba(255,255,255,0.025);
+
+  transition: 0.25s;
+
+}
+
+
+.question-card:hover {
+
+  border-color:
+    rgba(80,150,255,0.30);
+
+}
+
+
+.question-card[open] {
+
+  background:
+    rgba(255,255,255,0.045);
+
+  border-color:
+    rgba(40,108,255,0.28);
+
+}
+
+
+.question-card summary {
+
+  min-height: 82px;
+
+  padding:
+    18px 23px;
+
+  display: grid;
+
+  grid-template-columns:
+    40px 1fr 40px;
+
+  align-items: center;
+
+  gap: 17px;
+
+  cursor: pointer;
+
+  list-style: none;
+
+}
+
+
+.question-card summary::-webkit-details-marker {
+
+  display: none;
+
+}
+
+
+.question-card summary > span {
+
+  color:
+    var(--a5-blue);
+
+  font-size: 0.69rem;
+
+  font-weight: 700;
+
+}
+
+
+.question-card summary h3 {
+
+  color: #e5eaf2;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 0.92rem;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+}
+
+
+.question-toggle {
+
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+
+  place-items: center;
+
+  justify-self: end;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.10);
+
+  border-radius: 50%;
+
+  color: #7f92ad;
+
+  transition: 0.25s;
+
+}
+
+
+.question-card[open]
+.question-toggle {
+
+  transform:
+    rotate(45deg);
+
+  color: white;
+
+  background:
+    var(--a5-blue);
+
+  border-color:
+    var(--a5-blue);
+
+}
+
+
+.answer {
+
+  padding:
+    0 23px
+    25px 80px;
+
+}
+
+
+.answer > span {
+
+  display: block;
+
+  margin-bottom: 10px;
+
+  color:
+    var(--a5-cyan);
+
+  font-size: 0.63rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.12em;
+
+}
+
+
+.answer p {
+
+  max-width: 850px;
+
+  color: #9aabc1;
+
+  font-size: 0.86rem;
+
+  line-height: 1.8;
+
+}
+
+
+.answer strong {
+
+  color: white;
+
+}
+
+
+
+/* =====================================================
+   APRENDIZAJES
+===================================================== */
+
+.learning-layout {
+
+  display: grid;
+
+  grid-template-columns:
+    1.2fr 0.8fr;
+
+  gap: 65px;
+
+}
+
+
+.learning-text p {
+
+  margin-bottom: 20px;
+
+  color:
+    var(--a5-soft);
+
+  line-height: 1.9;
+
+}
+
+
+.learning-highlight {
+
+  color:
+    var(--a5-text) !important;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 1.55rem;
+
+  line-height: 1.5 !important;
+
+  letter-spacing:
+    -0.025em;
+
+}
+
+
+.learning-points {
+
+  padding: 34px;
+
+  border-radius: 19px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0c1526,
+      #15233c
+    );
+
+}
+
+
+.learning-points > span {
+
+  display: block;
+
+  margin-bottom: 25px;
+
+  color:
+    var(--a5-cyan);
+
+  font-size: 0.67rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.12em;
+
+}
+
+
+.learning-points div {
+
+  padding:
+    14px 0;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.07);
+
+  color: #b4c0d0;
+
+  font-size: 0.81rem;
+
+}
+
+
+.learning-points div:last-child {
+
+  border-bottom: none;
+
+}
+
+
+.learning-points strong {
+
+  margin-right: 12px;
+
+  color:
+    var(--a5-green);
+
+  font-size: 0.68rem;
+
+}
+
+
+
+/* =====================================================
+   DOCUMENTO
+===================================================== */
+
+.document-card {
+
+  padding: 45px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  align-items: center;
+
+  gap: 40px;
+
+  border-radius: 21px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b1426,
+      #142442
+    );
+
+}
+
+
+.document-label {
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  color:
+    var(--a5-cyan);
+
+  font-size: 0.67rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.12em;
+
+}
+
+
+.document-card h2 {
+
+  margin-bottom: 8px;
+
+  font-size: 2rem;
+
+}
+
+
+.document-card p {
+
+  max-width: 620px;
+
+  color: #91a1b8;
+
+  font-size: 0.84rem;
+
+}
+
+
+.document-actions {
+
+  display: flex;
+
+  gap: 10px;
+
+}
+
+
+.document-button {
+
+  min-width: 115px;
+
+  min-height: 44px;
+
+  padding:
+    0 17px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 9px;
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  transition: 0.25s;
+
+}
+
+
+.document-button.primary {
+
+  color: white;
+
+  background:
+    var(--a5-blue);
+
+}
+
+
+.document-button.secondary {
+
+  color: #c7d1df;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.13);
+
+  background:
+    rgba(255,255,255,0.04);
+
+}
+
+
+.document-button:hover {
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.a5-footer {
+
+  padding:
+    35px 28px;
+
+  color: #748399;
+
+  background: #070b14;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.07);
+
+}
+
+
+.a5-footer-container {
+
+  max-width: 1180px;
+
+  margin: auto;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  gap: 30px;
+
+}
+
+
+.a5-footer p {
+
+  font-size: 0.74rem;
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 950px) {
+
+  .a5-hero-container,
+  .a5-context-grid,
+  .learning-layout {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .a5-concepts-grid {
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+
+  .a5-flow {
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+
+  .a5-flow-arrow {
+
+    display: none;
+
+  }
+
+
+  .document-card {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}
+
+
+
+@media (max-width: 650px) {
+
+  .a5-hero {
+
+    padding-top:
+      120px;
+
+  }
+
+
+  .a5-hero h1 {
+
+    font-size:
+      3.1rem;
+
+  }
+
+
+  .a5-section {
+
+    padding:
+      75px 22px;
+
+  }
+
+
+  .a5-context-cards,
+  .a5-concepts-grid,
+  .a5-flow {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .questionnaire-intro {
+
+    margin-left: 0;
+
+  }
+
+
+  .question-card summary {
+
+    grid-template-columns:
+      30px 1fr 34px;
+
+    padding:
+      17px;
+
+  }
+
+
+  .question-card summary h3 {
+
+    font-size:
+      0.82rem;
+
+  }
+
+
+  .answer {
+
+    padding:
+      0 17px
+      22px 47px;
+
+  }
+
+
+  .document-card {
+
+    padding: 30px;
+
+  }
+
+
+  .document-actions {
+
+    flex-direction:
+      column;
+
+  }
+
+
+  .a5-footer-container {
+
+    flex-direction:
+      column;
+
+  }
+
+}
