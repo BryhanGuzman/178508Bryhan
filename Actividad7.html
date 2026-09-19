@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="author"
+    content="Bryhan Eduardo Guzman Martinez"
+  >
+
+  <meta
+    name="description"
+    content="Actividad 07 - File Path Traversal Simple Case"
+  >
+
+  <title>
+    Actividad 07 | File Path Traversal
+  </title>
+
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="logito.ico"
+  >
+
+
+  <!-- Google Fonts -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- CSS general del portafolio -->
+
+  <link
+    rel="stylesheet"
+    href="Estilo.css"
+  >
+
+
+  <!-- CSS exclusivo de Actividad 07 -->
+
+  <link
+    rel="stylesheet"
+    href="Actividad7.css"
+  >
+
+</head>
+
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVEGACIÓN
+  ====================================================== -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <span class="brand-icon">
+          BG
+        </span>
+
+
+        <span class="brand-text">
+
+          <strong>
+            Bryhan Guzman
+          </strong>
+
+          <small>
+            Portafolio Digital
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <nav class="nav-menu">
+
+        <a href="index.html">
+          Inicio
+        </a>
+
+        <a href="#laboratorio">
+          Laboratorio
+        </a>
+
+        <a href="#teoria">
+          Teoría
+        </a>
+
+        <a href="#procedimiento">
+          Procedimiento
+        </a>
+
+        <a href="#evidencias">
+          Evidencias
+        </a>
+
+        <a href="#mitigacion">
+          Mitigación
+        </a>
+
+        <a
+          href="RoadToHallOfFame.html"
+          class="nav-contacto"
+        >
+          Roadmap
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="a7-hero">
+
+      <div class="a7-glow a7-glow-one"></div>
+
+      <div class="a7-glow a7-glow-two"></div>
+
+
+      <div class="a7-hero-container">
+
+
+        <div class="a7-hero-content">
+
+          <div class="a7-badge">
+            PARCIAL II · ROAD TO HALL OF FAME
+          </div>
+
+
+          <p class="a7-label">
+            ACTIVIDAD 07
+          </p>
+
+
+          <h1>
+            File Path Traversal
+            <span>Simple Case.</span>
+          </h1>
+
+
+          <p class="a7-description">
+
+            Laboratorio práctico orientado a comprender una
+            vulnerabilidad de <strong>Directory Traversal</strong>,
+            utilizando Burp Suite para interceptar y modificar
+            peticiones HTTP dentro de un entorno controlado de
+            PortSwigger Web Security Academy.
+
+          </p>
+
+
+          <div class="a7-tags">
+
+            <span>
+              Apprentice
+            </span>
+
+            <span>
+              File Path Traversal
+            </span>
+
+            <span>
+              Burp Suite
+            </span>
+
+            <span>
+              Repeater
+            </span>
+
+            <span>
+              HTTP
+            </span>
+
+            <span>
+              OWASP
+            </span>
+
+          </div>
+
+
+          <div class="a7-buttons">
+
+            <a
+              href="#procedimiento"
+              class="a7-button primary"
+            >
+              Ver laboratorio ↓
+            </a>
+
+
+            <a
+              href="https://portswigger.net/web-security/file-path-traversal/lab-simple"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="a7-button secondary"
+            >
+              PortSwigger ↗
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PANEL -->
+
+        <aside class="a7-lab-panel">
+
+
+          <div class="a7-panel-header">
+
+            <div class="a7-dots">
+
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+
+            <small>
+              lab.info
+            </small>
+
+          </div>
+
+
+
+          <div class="a7-panel-body">
+
+            <p class="a7-console">
+
+              <span>
+                student@lab
+              </span>:~$
+
+              lab_status
+
+            </p>
+
+
+            <div class="a7-panel-data">
+
+
+              <div>
+
+                <span>
+                  Laboratorio
+                </span>
+
+                <strong>
+                  File Path Traversal
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Caso
+                </span>
+
+                <strong>
+                  Simple Case
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Nivel
+                </span>
+
+                <strong>
+                  Apprentice
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Herramienta
+                </span>
+
+                <strong>
+                  Burp Suite
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Estado
+                </span>
+
+                <strong class="a7-green">
+                  Lab Solved
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <p class="a7-success">
+              ✓ Laboratorio completado
+            </p>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         01 INFORMACIÓN DEL LABORATORIO
+    ====================================================== -->
+
+    <section
+      id="laboratorio"
+      class="a7-section white"
+    >
+
+      <div class="a7-container">
+
+
+        <div class="a7-heading">
+
+          <span class="a7-number">
+            01
+          </span>
+
+
+          <div>
+
+            <small>
+              INFORMACIÓN GENERAL
+            </small>
+
+            <h2>
+              Datos del laboratorio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="lab-info-grid">
+
+
+          <article class="lab-info-card">
+
+            <span>
+              01
+            </span>
+
+            <small>
+              NOMBRE
+            </small>
+
+            <h3>
+              File Path Traversal
+            </h3>
+
+            <p>
+              Simple Case
+            </p>
+
+          </article>
+
+
+
+          <article class="lab-info-card">
+
+            <span>
+              02
+            </span>
+
+            <small>
+              NIVEL
+            </small>
+
+            <h3>
+              Apprentice
+            </h3>
+
+            <p>
+              Nivel introductorio.
+            </p>
+
+          </article>
+
+
+
+          <article class="lab-info-card">
+
+            <span>
+              03
+            </span>
+
+            <small>
+              TIPO
+            </small>
+
+            <h3>
+              Path Traversal
+            </h3>
+
+            <p>
+              Acceso no autorizado a archivos.
+            </p>
+
+          </article>
+
+
+
+          <article class="lab-info-card">
+
+            <span>
+              04
+            </span>
+
+            <small>
+              PLATAFORMA
+            </small>
+
+            <h3>
+              PortSwigger
+            </h3>
+
+            <p>
+              Web Security Academy.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         02 OBJETIVO
+    ====================================================== -->
+
+    <section class="a7-section soft">
+
+      <div class="a7-container">
+
+
+        <div class="a7-heading">
+
+          <span class="a7-number">
+            02
+          </span>
+
+
+          <div>
+
+            <small>
+              OBJETIVO
+            </small>
+
+            <h2>
+              ¿Qué busca demostrar el laboratorio?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="objective-layout">
+
+
+          <div class="objective-main">
+
+            <h3>
+              Acceso a archivos fuera del directorio permitido
+            </h3>
+
+
+            <p>
+
+              El objetivo del laboratorio es identificar una
+              vulnerabilidad de File Path Traversal en una
+              aplicación web que utiliza nombres de archivo
+              proporcionados por el usuario.
+
+            </p>
+
+
+            <p>
+
+              Mediante Burp Suite se intercepta una petición HTTP
+              relacionada con la carga de una imagen y posteriormente
+              se modifica el parámetro encargado de indicar el archivo
+              solicitado.
+
+            </p>
+
+
+            <p>
+
+              La prueba permite demostrar cómo una validación
+              insuficiente de rutas puede provocar que el servidor
+              entregue archivos que deberían permanecer fuera del
+              alcance del usuario.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="objective-result">
+
+            <span>
+              OBJETIVO DEL LAB
+            </span>
+
+
+            <h3>
+              Leer el archivo
+            </h3>
+
+
+            <code>
+              /etc/passwd
+            </code>
+
+
+            <p>
+
+              La lectura de este archivo confirma que la aplicación
+              permite navegar fuera del directorio previsto.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         03 MARCO TEÓRICO
+    ====================================================== -->
+
+    <section
+      id="teoria"
+      class="a7-section white"
+    >
+
+      <div class="a7-container">
+
+
+        <div class="a7-heading">
+
+          <span class="a7-number">
+            03
+          </span>
+
+
+          <div>
+
+            <small>
+              MARCO TEÓRICO
+            </small>
+
+            <h2>
+              ¿Qué es File Path Traversal?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="theory-layout">
+
+
+          <div class="theory-main">
+
+            <p class="theory-highlight">
+
+              File Path Traversal es una vulnerabilidad que
+              permite acceder a archivos ubicados fuera del
+              directorio que una aplicación debería permitir.
+
+            </p>
+
+
+            <p>
+
+              Normalmente ocurre cuando una aplicación utiliza
+              nombres de archivo enviados por el usuario para
+              abrir o cargar recursos sin realizar una validación
+              adecuada del contenido recibido.
+
+            </p>
+
+
+            <p>
+
+              Los segmentos:
+
+            </p>
+
+
+            <div class="payload-mini">
+
+              ../
+
+            </div>
+
+
+            <p>
+
+              representan el directorio padre en muchos sistemas.
+              Si una aplicación concatena directamente este valor
+              con una ruta del servidor, es posible recorrer
+              directorios superiores.
+
+            </p>
+
+          </div>
+
+
+
+          <aside class="theory-example">
+
+            <span>
+              EJEMPLO CONCEPTUAL
+            </span>
+
+
+            <p>
+              Solicitud normal:
+            </p>
+
+            <code>
+              /show?file=report.pdf
+            </code>
+
+
+            <p>
+              Ruta manipulada:
+            </p>
+
+            <code class="danger-code">
+              /show?file=../../../etc/passwd
+            </code>
+
+
+            <p class="theory-note">
+
+              El ejemplo se utiliza únicamente dentro de
+              laboratorios autorizados y deliberadamente
+              vulnerables.
+
+            </p>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         04 POSIBLES IMPACTOS
+    ====================================================== -->
+
+    <section class="a7-section soft">
+
+      <div class="a7-container">
+
+
+        <div class="a7-heading">
+
+          <span class="a7-number">
+            04
+          </span>
+
+
+          <div>
+
+            <small>
+              IMPACTO
+            </small>
+
+            <h2>
+              ¿Qué información podría quedar expuesta?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="impact-grid">
+
+
+          <article>
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Archivos del sistema
+            </h3>
+
+            <p>
+              Información de configuración o archivos internos.
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Credenciales
+            </h3>
+
+            <p>
+              Archivos que contengan usuarios, contraseñas o tokens.
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Configuración
+            </h3>
+
+            <p>
+              Información relacionada con aplicaciones y servidores.
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Logs
+            </h3>
+
+            <p>
+              Registros de actividad y metadatos de sesiones.
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Estructura interna
+            </h3>
+
+            <p>
+              Conocimiento de directorios y componentes del sistema.
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              Mayor superficie
+            </h3>
+
+            <p>
+              La información obtenida puede revelar nuevos riesgos.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         05 PROCEDIMIENTO
+    ====================================================== -->
+
+    <section
+      id="procedimiento"
+      class="a7-section procedure-section"
+    >
+
+      <div class="a7-container">
+
+
+        <div class="a7-heading dark">
+
+          <span class="a7-number">
+            05
+          </span>
+
+
+          <div>
+
+            <small>
+              PROCEDIMIENTO
+            </small>
+
+            <h2>
+              Desarrollo del laboratorio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="procedure-list">
+
+
+          <article class="procedure-step">
+
+            <div class="step-number">
+              01
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                PREPARACIÓN
+              </span>
+
+              <h3>
+                Abrir el laboratorio
+              </h3>
+
+              <p>
+
+                Se inicia el laboratorio File Path Traversal,
+                Simple Case dentro de PortSwigger Web Security
+                Academy.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="procedure-step">
+
+            <div class="step-number">
+              02
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                BURP SUITE
+              </span>
+
+              <h3>
+                Interceptar la petición
+              </h3>
+
+              <p>
+
+                Se utiliza Burp Suite Proxy para observar las
+                peticiones generadas cuando el navegador solicita
+                las imágenes de los productos.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="procedure-step">
+
+            <div class="step-number">
+              03
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                REPEATER
+              </span>
+
+              <h3>
+                Send to Repeater
+              </h3>
+
+              <p>
+
+                La petición seleccionada se envía a Repeater para
+                poder editarla y reenviarla de manera controlada.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="procedure-step">
+
+            <div class="step-number">
+              04
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                MODIFICACIÓN
+              </span>
+
+              <h3>
+                Editar el parámetro filename
+              </h3>
+
+              <p>
+
+                Se modifica únicamente el parámetro responsable
+                del archivo solicitado dentro del laboratorio.
+
+              </p>
+
+
+              <div class="procedure-code">
+
+                GET /image?filename=../../../etc/passwd
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="procedure-step">
+
+            <div class="step-number">
+              05
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                RESPUESTA
+              </span>
+
+              <h3>
+                Analizar el servidor
+              </h3>
+
+              <p>
+
+                El servidor devuelve el contenido solicitado,
+                demostrando que el parámetro permite navegar hacia
+                directorios superiores.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="procedure-step">
+
+            <div class="step-number solved">
+              ✓
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                RESULTADO
+              </span>
+
+              <h3>
+                Lab Solved
+              </h3>
+
+              <p>
+
+                La lectura del archivo requerido por el laboratorio
+                confirma la vulnerabilidad y PortSwigger marca la
+                práctica como resuelta.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         06 PAYLOAD
+    ====================================================== -->
+
+    <section class="a7-section white">
+
+      <div class="a7-container">
+
+
+        <div class="a7-heading">
+
+          <span class="a7-number">
+            06
+          </span>
+
+
+          <div>
+
+            <small>
+              EXPLICACIÓN TÉCNICA
+            </small>
+
+            <h2>
+              ¿Por qué funciona el payload?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="payload-layout">
+
+
+          <div class="payload-code">
+
+            <div class="payload-header">
+
+              <span>
+                request.http
+              </span>
+
+            </div>
+
+
+            <pre>GET /image?filename=../../../etc/passwd HTTP/2</pre>
+
+          </div>
+
+
+
+          <div class="payload-explanation">
+
+
+            <div>
+
+              <span>
+                ../../../
+              </span>
+
+              <p>
+
+                Cada segmento <strong>../</strong> indica al sistema
+                que debe subir un nivel dentro de la estructura
+                de directorios.
+
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                /etc/passwd
+              </span>
+
+              <p>
+
+                Corresponde al archivo solicitado como objetivo
+                dentro de este laboratorio específico.
+
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                filename
+              </span>
+
+              <p>
+
+                Es el parámetro utilizado por la aplicación para
+                decidir qué archivo debe recuperar.
+
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         07 EVIDENCIAS
+    ====================================================== -->
+
+    <section
+      id="evidencias"
+      class="a7-section soft"
+    >
+
+      <div class="a7-container">
+
+
+        <div class="a7-heading">
+
+          <span class="a7-number">
+            07
+          </span>
+
+
+          <div>
+
+            <small>
+              EVIDENCIAS
+            </small>
+
+            <h2>
+              Capturas del laboratorio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="evidence-gallery">
+
+
+          <article class="a7-evidence-card">
+
+            <div class="a7-image-wrapper">
+
+              <img
+                src="assets/img/actividad7/laboratorio.png"
+                alt="Laboratorio File Path Traversal en PortSwigger"
+              >
+
+            </div>
+
+
+            <div class="a7-evidence-content">
+
+              <span>
+                EVIDENCIA 01
+              </span>
+
+              <h3>
+                Laboratorio inicial
+              </h3>
+
+              <p>
+                Página vulnerable abierta junto con Burp Suite.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="a7-evidence-card">
+
+            <div class="a7-image-wrapper">
+
+              <img
+                src="assets/img/actividad7/burp-intercept.png"
+                alt="Petición HTTP observada en Burp Suite"
+              >
+
+            </div>
+
+
+            <div class="a7-evidence-content">
+
+              <span>
+                EVIDENCIA 02
+              </span>
+
+              <h3>
+                Petición interceptada
+              </h3>
+
+              <p>
+                Identificación de la solicitud que contiene filename.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="a7-evidence-card">
+
+            <div class="a7-image-wrapper">
+
+              <img
+                src="assets/img/actividad7/send-repeater.png"
+                alt="Send to Repeater en Burp Suite"
+              >
+
+            </div>
+
+
+            <div class="a7-evidence-content">
+
+              <span>
+                EVIDENCIA 03
+              </span>
+
+              <h3>
+                Send to Repeater
+              </h3>
+
+              <p>
+                La petición se prepara para su modificación.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="a7-evidence-card">
+
+            <div class="a7-image-wrapper">
+
+              <img
+                src="assets/img/actividad7/payload.png"
+                alt="Payload de File Path Traversal en Burp Repeater"
+              >
+
+            </div>
+
+
+            <div class="a7-evidence-content">
+
+              <span>
+                EVIDENCIA 04
+              </span>
+
+              <h3>
+                Respuesta vulnerable
+              </h3>
+
+              <p>
+                El servidor devuelve contenido del archivo solicitado.
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         08 MITIGACIÓN
+    ====================================================== -->
+
+    <section
+      id="mitigacion"
+      class="a7-section white"
+    >
+
+      <div class="a7-container">
+
+
+        <div class="a7-heading">
+
+          <span class="a7-number">
+            08
+          </span>
+
+
+          <div>
+
+            <small>
+              MITIGACIÓN
+            </small>
+
+            <h2>
+              ¿Cómo prevenir File Path Traversal?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="mitigation-grid">
+
+
+          <article>
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Evitar rutas proporcionadas por el usuario
+            </h3>
+
+            <p>
+
+              Utilizar identificadores internos en lugar de recibir
+              directamente nombres o rutas de archivos.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Validación estricta
+            </h3>
+
+            <p>
+
+              Validar los valores recibidos utilizando listas
+              permitidas y reglas definidas por la aplicación.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Normalización de rutas
+            </h3>
+
+            <p>
+
+              Resolver y verificar la ruta final antes de abrir
+              cualquier archivo.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Permisos mínimos
+            </h3>
+
+            <p>
+
+              El proceso del servidor debe contar únicamente con
+              los permisos indispensables.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Aislamiento
+            </h3>
+
+            <p>
+
+              Mantener los archivos públicos separados de recursos
+              sensibles del sistema.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              Monitoreo
+            </h3>
+
+            <p>
+
+              Registrar solicitudes anómalas que intenten utilizar
+              patrones relacionados con navegación de directorios.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         09 CONCLUSIÓN
+    ====================================================== -->
+
+    <section class="a7-section conclusion-section">
+
+      <div class="a7-container">
+
+        <div class="a7-conclusion">
+
+          <div class="conclusion-number">
+            09
+          </div>
+
+
+          <p class="conclusion-label">
+            CONCLUSIÓN
+          </p>
+
+
+          <h2>
+            Una ruta manipulada puede convertirse en una fuga de información
+          </h2>
+
+
+          <p>
+
+            El laboratorio permitió comprender cómo una aplicación
+            que utiliza directamente rutas proporcionadas por el
+            usuario puede exponer archivos internos del servidor.
+
+          </p>
+
+
+          <p>
+
+            También permitió practicar el uso de Burp Suite para
+            interceptar, analizar y modificar peticiones HTTP dentro
+            de un entorno específicamente diseñado para pruebas de
+            seguridad.
+
+          </p>
+
+
+          <p>
+
+            La principal enseñanza es que la validación de entradas,
+            la normalización de rutas y el principio de mínimo
+            privilegio son medidas fundamentales para reducir este
+            tipo de vulnerabilidades.
+
+          </p>
+
+
+          <a
+            href="RoadToHallOfFame.html"
+            class="back-roadmap"
+          >
+            ← Volver a Road to Hall of Fame
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="a7-footer">
+
+    <div class="a7-footer-container">
+
+      <p>
+        © 2026 Bryhan Eduardo Guzman Martinez
+      </p>
+
+      <p>
+        Actividad 07 · File Path Traversal
+      </p>
+
+      <p>
+        Universidad Politécnica de San Luis Potosí
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>

@@ -362,6 +362,7 @@ img {
       #23d5e8
     );
 
+  background-clip: text;
   -webkit-background-clip: text;
 
   color: transparent;
@@ -1607,6 +1608,266 @@ footer {
   .footer-center,
   .footer-right {
     text-align: left;
+  }
+
+}
+
+/* =========================================
+  ORGANIZACIÓN POR PARCIALES
+========================================= */
+
+.partials-description {
+  max-width: 700px;
+
+  margin:
+    -25px 0
+    55px 47px;
+
+  color: var(--text-soft);
+
+  line-height: 1.8;
+
+  font-size: 0.9rem;
+}
+
+
+.partial-block {
+  margin-bottom: 70px;
+
+  padding-top: 30px;
+
+  border-top:
+    1px solid var(--border);
+}
+
+
+.partial-header {
+  margin-bottom: 28px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+.partial-number {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--blue);
+
+  font-size: 0.67rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+
+.partial-header h3 {
+  font-size:
+    clamp(1.5rem, 3vw, 2.2rem);
+
+  letter-spacing:
+    -0.035em;
+}
+
+
+.partial-status {
+  padding:
+    7px 13px;
+
+  border-radius: 50px;
+
+  font-size: 0.67rem;
+
+  font-weight: 600;
+}
+
+
+.partial-status.completed {
+  color: #16805b;
+
+  background:
+    #eafaf3;
+
+  border:
+    1px solid #c8f1df;
+}
+
+
+.partial-status.current {
+  color: #1f5fd4;
+
+  background:
+    #edf4ff;
+
+  border:
+    1px solid #d4e3ff;
+}
+
+
+.partial-status.pending {
+  color: #667085;
+
+  background:
+    #f2f4f7;
+
+  border:
+    1px solid #e4e7ec;
+}
+
+
+
+/* =========================================
+  PARCIAL ACTUAL
+========================================= */
+
+.partial-current {
+  padding:
+    35px;
+
+  border:
+    1px solid #d7e3fb;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f6f9ff
+    );
+
+  box-shadow:
+    0 15px 45px
+    rgba(16,24,40,0.04);
+}
+
+
+
+/* =========================================
+  ROAD TO HALL OF FAME
+========================================= */
+
+.hall-of-fame-card {
+  border-color:
+    #cbdcff;
+
+  background:
+    linear-gradient(
+      145deg,
+      white,
+      #f4f8ff
+    );
+}
+
+
+.hall-of-fame-card::after {
+  content: "ROADMAP";
+
+  position: absolute;
+
+  right: 30px;
+  bottom: 25px;
+
+  color: #b0c4ec;
+
+  font-size: 0.61rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+}
+
+
+
+/* =========================================
+  PARCIAL III
+========================================= */
+
+.partial-locked {
+  opacity: 0.82;
+}
+
+
+.partial-empty {
+  padding: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  border:
+    1px dashed #ccd3dd;
+
+  border-radius: 17px;
+
+  background: #fafbfc;
+}
+
+
+.partial-empty > span {
+  min-width: 55px;
+  height: 55px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 14px;
+
+  color: #98a2b3;
+
+  background: white;
+
+  border:
+    1px solid var(--border);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+}
+
+
+.partial-empty h4 {
+  margin-bottom: 5px;
+}
+
+
+.partial-empty p {
+  color: var(--text-soft);
+
+  font-size: 0.82rem;
+}
+
+
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+
+  .partials-description {
+    margin-left: 0;
+  }
+
+
+  .partial-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .partial-current {
+    padding: 22px;
   }
 
 }

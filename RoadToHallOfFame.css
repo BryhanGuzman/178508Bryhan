@@ -1,0 +1,875 @@
+/* =============================================
+   ROAD TO HALL OF FAME
+============================================= */
+
+:root {
+  --hall-blue: #286cff;
+  --hall-cyan: #22d3ee;
+
+  --hall-dark: #070c17;
+  --hall-card: #111a2e;
+
+  --hall-text: #172033;
+  --hall-soft: #667085;
+
+  --hall-border: #e4e8ef;
+  --hall-background: #f6f8fb;
+}
+
+
+/* =============================================
+   HERO
+============================================= */
+
+.hall-hero {
+  min-height: 690px;
+
+  padding:
+    150px 28px
+    90px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      140deg,
+      #060a14,
+      #0b1428 55%,
+      #12213c
+    );
+}
+
+
+.hall-glow {
+  width: 600px;
+  height: 600px;
+
+  position: absolute;
+
+  right: -200px;
+  top: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(40,108,255,0.24);
+
+  filter:
+    blur(130px);
+}
+
+
+.hall-hero-container {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: auto;
+
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    1.25fr 0.75fr;
+
+  gap: 85px;
+
+  align-items: center;
+}
+
+
+.hall-badge {
+  width: max-content;
+
+  margin-bottom: 28px;
+
+  padding:
+    8px 14px;
+
+  border:
+    1px solid
+    rgba(34,211,238,0.20);
+
+  border-radius: 30px;
+
+  color: #9ee9f4;
+
+  background:
+    rgba(34,211,238,0.06);
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+
+.hall-label {
+  color: #7187a8;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+
+.hall-hero h1 {
+  margin-top: 8px;
+
+  font-size:
+    clamp(3.4rem,7vw,6rem);
+
+  letter-spacing:
+    -0.06em;
+}
+
+
+.hall-hero h1 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4f8cff,
+      #22d3ee
+    );
+    
+    background-clip: text;
+    -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+
+.hall-description {
+  max-width: 680px;
+
+  margin-top: 28px;
+
+  color: #a7b2c6;
+
+  line-height: 1.9;
+}
+
+
+.hall-buttons {
+  margin-top: 35px;
+
+  display: flex;
+
+  gap: 12px;
+}
+
+
+.hall-button {
+  min-height: 50px;
+
+  padding:
+    0 21px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 11px;
+
+  font-size: 0.8rem;
+
+  font-weight: 600;
+}
+
+
+.hall-button.primary {
+  color: white;
+
+  background:
+    var(--hall-blue);
+}
+
+
+.hall-button.secondary {
+  color: #d4ddea;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.12);
+
+  background:
+    rgba(255,255,255,0.035);
+}
+
+
+
+/* =============================================
+   PROGRESS
+============================================= */
+
+.hall-progress-card {
+  padding: 38px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.10);
+
+  border-radius: 21px;
+
+  background:
+    rgba(255,255,255,0.035);
+
+  backdrop-filter:
+    blur(15px);
+}
+
+
+.progress-label {
+  color:
+    var(--hall-cyan);
+
+  font-size: 0.66rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.14em;
+}
+
+
+.progress-number {
+  display: block;
+
+  margin:
+    20px 0 0;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 5rem;
+
+  line-height: 1;
+}
+
+
+.hall-progress-card > p {
+  margin-top: 8px;
+
+  color: #92a2b7;
+}
+
+
+.progress-bar {
+  height: 5px;
+
+  margin:
+    32px 0;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background:
+    rgba(255,255,255,0.09);
+}
+
+
+.progress-bar span {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--hall-blue),
+      var(--hall-cyan)
+    );
+}
+
+
+.progress-data {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap: 20px;
+}
+
+
+.progress-data div {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.progress-data small {
+  color: #64748b;
+}
+
+
+.progress-data strong {
+  margin-top: 3px;
+
+  font-size: 0.8rem;
+}
+
+
+
+/* =============================================
+   ROADMAP
+============================================= */
+
+.hall-section {
+  padding:
+    110px 28px;
+
+  background:
+    var(--hall-background);
+}
+
+
+.hall-container {
+  max-width: 1180px;
+
+  margin: auto;
+}
+
+
+.hall-heading {
+  display: flex;
+
+  gap: 22px;
+
+  margin-bottom: 20px;
+}
+
+
+.hall-heading > span {
+  color:
+    var(--hall-blue);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+}
+
+
+.hall-heading small {
+  color:
+    var(--hall-blue);
+
+  font-size: 0.67rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.15em;
+}
+
+
+.hall-heading h2 {
+  margin-top: 5px;
+
+  font-size:
+    clamp(2.2rem,4vw,3.3rem);
+
+  letter-spacing:
+    -0.045em;
+}
+
+
+.roadmap-description {
+  max-width: 650px;
+
+  margin:
+    0 0 70px 43px;
+
+  color:
+    var(--hall-soft);
+
+  line-height: 1.8;
+}
+
+
+
+/* ROAD CENTRAL */
+
+.roadmap {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 40px;
+}
+
+
+.roadmap::before {
+  content: "";
+
+  width: 2px;
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    linear-gradient(
+      var(--hall-blue),
+      var(--hall-cyan)
+    );
+}
+
+
+
+/* ITEM */
+
+.roadmap-item {
+  width: 50%;
+
+  position: relative;
+}
+
+
+.roadmap-item.left {
+  padding-right: 55px;
+
+  align-self:
+    flex-start;
+}
+
+
+.roadmap-item.right {
+  padding-left: 55px;
+
+  align-self:
+    flex-end;
+}
+
+
+
+/* NODO */
+
+.road-point {
+  width: 44px;
+  height: 44px;
+
+  position: absolute;
+
+  top: 34px;
+
+  z-index: 5;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    4px solid
+    var(--hall-background);
+
+  border-radius: 50%;
+
+  color: white;
+
+  background:
+    var(--hall-blue);
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 0 0 1px
+    #a9c4ff;
+}
+
+
+.roadmap-item.left
+.road-point {
+  right: -22px;
+}
+
+
+.roadmap-item.right
+.road-point {
+  left: -22px;
+}
+
+
+
+/* CARD */
+
+.road-card {
+  padding: 27px;
+
+  border:
+    1px solid
+    var(--hall-border);
+
+  border-radius: 18px;
+
+  background: white;
+
+  box-shadow:
+    0 12px 35px
+    rgba(16,24,40,0.04);
+
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+
+
+.road-card:hover {
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 20px 55px
+    rgba(16,24,40,0.08);
+}
+
+
+.lab-number {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color:
+    var(--hall-blue);
+
+  font-size: 0.64rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.13em;
+}
+
+
+.lab-placeholder {
+  height: 180px;
+
+  margin-bottom: 23px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 13px;
+
+  color: #98a2b3;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f1f4f8,
+      #e9eef5
+    );
+
+  font-size: 0.75rem;
+}
+
+
+.road-card h3 {
+  margin-bottom: 10px;
+
+  font-size: 1.15rem;
+}
+
+
+.road-card p {
+  margin-bottom: 20px;
+
+  color:
+    var(--hall-soft);
+
+  font-size: 0.82rem;
+
+  line-height: 1.7;
+}
+
+
+.road-card a {
+  color:
+    var(--hall-blue);
+
+  font-size: 0.78rem;
+
+  font-weight: 600;
+}
+
+
+
+/* =============================================
+   DOCUMENTO
+============================================= */
+
+.hall-document-section {
+  padding:
+    90px 28px;
+
+  background: white;
+}
+
+
+.hall-document {
+  padding: 45px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  align-items: center;
+
+  gap: 40px;
+
+  border-radius: 22px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b1426,
+      #142442
+    );
+}
+
+
+.hall-document > div:first-child > span {
+  color:
+    var(--hall-cyan);
+
+  font-size: 0.67rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.13em;
+}
+
+
+.hall-document h2 {
+  margin:
+    7px 0;
+
+  font-size: 2rem;
+}
+
+
+.hall-document p {
+  max-width: 600px;
+
+  color: #92a2b7;
+}
+
+
+.hall-document-buttons {
+  display: flex;
+
+  gap: 9px;
+}
+
+
+.hall-document-buttons a {
+  min-height: 44px;
+
+  padding:
+    0 17px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  color: #dce5f2;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.12);
+
+  border-radius: 9px;
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+}
+
+
+.hall-document-buttons
+.download {
+  color: white;
+
+  border-color:
+    var(--hall-blue);
+
+  background:
+    var(--hall-blue);
+}
+
+
+
+/* =============================================
+   FOOTER
+============================================= */
+
+.hall-footer {
+  padding:
+    35px 28px;
+
+  color: #748399;
+
+  background: #070b14;
+}
+
+
+.hall-footer-container {
+  max-width: 1180px;
+
+  margin: auto;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  gap: 30px;
+}
+
+
+.hall-footer p {
+  font-size: 0.73rem;
+}
+
+
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+
+@media (max-width: 850px) {
+
+  .hall-hero-container {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .roadmap::before {
+    left: 22px;
+  }
+
+
+  .roadmap-item,
+  .roadmap-item.left,
+  .roadmap-item.right {
+    width: 100%;
+
+    padding:
+      0 0 0 70px;
+
+    align-self:
+      auto;
+  }
+
+
+  .roadmap-item.left
+  .road-point,
+  .roadmap-item.right
+  .road-point {
+    left: 0;
+    right: auto;
+  }
+
+
+  .hall-document {
+    grid-template-columns:
+      1fr;
+  }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+  .hall-hero {
+    padding-top:
+      120px;
+  }
+
+
+  .hall-hero h1 {
+    font-size:
+      3.3rem;
+  }
+
+
+  .hall-buttons {
+    flex-direction:
+      column;
+  }
+
+
+  .roadmap-description {
+    margin-left: 0;
+  }
+
+
+  .hall-document {
+    padding: 30px;
+  }
+
+
+  .hall-document-buttons {
+    flex-direction:
+      column;
+  }
+
+
+  .hall-footer-container {
+    flex-direction:
+      column;
+  }
+
+}
+
+.road-image {
+  width: 100%;
+  height: 180px;
+
+  margin-bottom: 23px;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  border-radius: 13px;
+
+  background: #0b1220;
+}

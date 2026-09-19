@@ -362,6 +362,7 @@ img {
       #23d5e8
     );
 
+  background-clip: text;
   -webkit-background-clip: text;
 
   color: transparent;
