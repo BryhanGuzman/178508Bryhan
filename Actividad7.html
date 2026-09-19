@@ -123,8 +123,8 @@
           Procedimiento
         </a>
 
-        <a href="#evidencias">
-          Evidencias
+        <a href="#documentacion">
+          Documentacion
         </a>
 
         <a href="#mitigacion">
@@ -1236,19 +1236,19 @@
 
     </section>
 
-
-
     <!-- =====================================================
-         07 EVIDENCIAS
+        07 DOCUMENTACIÓN
     ====================================================== -->
 
     <section
-      id="evidencias"
-      class="a7-section soft"
+      id="documentacion"
+      class="a7-section document-section"
     >
 
       <div class="a7-container">
 
+
+        <!-- ENCABEZADO -->
 
         <div class="a7-heading">
 
@@ -1260,11 +1260,11 @@
           <div>
 
             <small>
-              EVIDENCIAS
+              DOCUMENTACIÓN TÉCNICA
             </small>
 
             <h2>
-              Capturas del laboratorio
+              Informe completo del laboratorio
             </h2>
 
           </div>
@@ -1273,134 +1273,357 @@
 
 
 
-        <div class="evidence-gallery">
+        <!-- INTRODUCCIÓN -->
+
+        <div class="document-intro">
 
 
-          <article class="a7-evidence-card">
+          <div class="document-description">
 
-            <div class="a7-image-wrapper">
+            <p class="document-highlight">
 
-              <img
-                src="assets/img/actividad7/laboratorio.png"
-                alt="Laboratorio File Path Traversal en PortSwigger"
-              >
+              El desarrollo completo del laboratorio File Path
+              Traversal se encuentra documentado en un informe técnico
+              que integra teoría, procedimiento, evidencia y mitigación.
 
-            </div>
+            </p>
 
 
-            <div class="a7-evidence-content">
+            <p>
+
+              El documento muestra paso a paso el uso de PortSwigger
+              Web Security Academy y Burp Suite para identificar y
+              analizar la vulnerabilidad dentro de un laboratorio
+              autorizado y deliberadamente vulnerable.
+
+            </p>
+
+          </div>
+
+
+
+          <!-- INFORMACIÓN DEL DOCUMENTO -->
+
+          <div class="document-meta">
+
+
+            <div>
 
               <span>
-                EVIDENCIA 01
+                DOCUMENTO
               </span>
 
-              <h3>
-                Laboratorio inicial
-              </h3>
-
-              <p>
-                Página vulnerable abierta junto con Burp Suite.
-              </p>
+              <strong>
+                File Path Traversal
+              </strong>
 
             </div>
+
+
+            <div>
+
+              <span>
+                LABORATORIO
+              </span>
+
+              <strong>
+                Simple Case
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                NIVEL
+              </span>
+
+              <strong>
+                Apprentice
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                PÁGINAS
+              </span>
+
+              <strong>
+                11
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                FORMATO
+              </span>
+
+              <strong>
+                PDF
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- CONTENIDO DEL INFORME -->
+
+        <div class="document-content-grid">
+
+
+          <article class="document-topic">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Marco teórico
+            </h3>
+
+            <p>
+
+              Concepto de File Path Traversal y su relación
+              con Broken Access Control y el modelo CIA.
+
+            </p>
 
           </article>
 
 
 
-          <article class="a7-evidence-card">
+          <article class="document-topic">
 
-            <div class="a7-image-wrapper">
+            <span>
+              02
+            </span>
 
-              <img
-                src="assets/img/actividad7/burp-intercept.png"
-                alt="Petición HTTP observada en Burp Suite"
-              >
+            <h3>
+              Información del laboratorio
+            </h3>
 
-            </div>
+            <p>
 
+              Nombre, nivel, tipo de explotación y objetivo
+              principal de la práctica.
 
-            <div class="a7-evidence-content">
-
-              <span>
-                EVIDENCIA 02
-              </span>
-
-              <h3>
-                Petición interceptada
-              </h3>
-
-              <p>
-                Identificación de la solicitud que contiene filename.
-              </p>
-
-            </div>
+            </p>
 
           </article>
 
 
 
-          <article class="a7-evidence-card">
+          <article class="document-topic">
 
-            <div class="a7-image-wrapper">
+            <span>
+              03
+            </span>
 
-              <img
-                src="assets/img/actividad7/send-repeater.png"
-                alt="Send to Repeater en Burp Suite"
-              >
+            <h3>
+              Vulnerabilidad
+            </h3>
 
-            </div>
+            <p>
 
+              Explicación del parámetro filename y de la falta
+              de validación de las rutas recibidas.
 
-            <div class="a7-evidence-content">
-
-              <span>
-                EVIDENCIA 03
-              </span>
-
-              <h3>
-                Send to Repeater
-              </h3>
-
-              <p>
-                La petición se prepara para su modificación.
-              </p>
-
-            </div>
+            </p>
 
           </article>
 
 
 
-          <article class="a7-evidence-card">
+          <article class="document-topic">
 
-            <div class="a7-image-wrapper">
+            <span>
+              04
+            </span>
 
-              <img
-                src="assets/img/actividad7/payload.png"
-                alt="Payload de File Path Traversal en Burp Repeater"
-              >
+            <h3>
+              Payload
+            </h3>
 
-            </div>
+            <p>
 
+              Desglose técnico de la navegación entre
+              directorios utilizada por el laboratorio.
 
-            <div class="a7-evidence-content">
-
-              <span>
-                EVIDENCIA 04
-              </span>
-
-              <h3>
-                Respuesta vulnerable
-              </h3>
-
-              <p>
-                El servidor devuelve contenido del archivo solicitado.
-              </p>
-
-            </div>
+            </p>
 
           </article>
+
+
+
+          <article class="document-topic">
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Procedimiento
+            </h3>
+
+            <p>
+
+              Desarrollo paso a paso utilizando Proxy,
+              Intercept y Repeater de Burp Suite.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="document-topic">
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              Evidencias
+            </h3>
+
+            <p>
+
+              El informe incorpora catorce capturas del
+              procedimiento y de la resolución del laboratorio.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="document-topic">
+
+            <span>
+              07
+            </span>
+
+            <h3>
+              Mitigación
+            </h3>
+
+            <p>
+
+              Validación, sanitización, APIs seguras de archivos
+              y aplicación del principio de mínimo privilegio.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+
+        <!-- VISOR DEL PDF -->
+
+        <div class="pdf-shell">
+
+
+          <!-- BARRA SUPERIOR -->
+
+          <div class="pdf-toolbar">
+
+
+            <div class="pdf-file-info">
+
+              <div class="pdf-icon">
+                PDF
+              </div>
+
+
+              <div>
+
+                <strong>
+                  FilePathTraversal.pdf
+                </strong>
+
+                <small>
+                  Documentación completa · Actividad 07
+                </small>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="pdf-actions">
+
+
+              <a
+                href="FilePathTraversal.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="pdf-btn secondary"
+              >
+                Abrir PDF ↗
+              </a>
+
+
+              <a
+                href="FilePathTraversal.pdf"
+                download
+                class="pdf-btn primary"
+              >
+                Descargar PDF
+              </a>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- PDF EMBEBIDO -->
+
+          <div class="pdf-viewer">
+
+            <iframe
+              src="FilePathTraversal.pdf"
+              title="Documentación del laboratorio File Path Traversal"
+            >
+            </iframe>
+
+          </div>
+
+
+
+          <!-- RESPALDO PARA MÓVIL -->
+
+          <div class="pdf-fallback">
+
+            <p>
+              Si el documento no se visualiza en tu navegador,
+              puedes abrirlo directamente.
+            </p>
+
+            <a
+              href="FilePathTraversal.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Abrir documentación completa →
+            </a>
+
+          </div>
 
 
         </div>
@@ -1408,7 +1631,6 @@
       </div>
 
     </section>
-
 
 
     <!-- =====================================================
