@@ -1334,25 +1334,57 @@
       class="a8-section white"
     >
 
-      <div class="a8-container">
+      <div class="pdf-shell">
 
 
-        <div class="a8-heading">
+        <!-- BARRA SUPERIOR -->
 
-          <span class="a8-number">
-            08
-          </span>
+        <div class="pdf-toolbar">
 
 
-          <div>
+          <div class="pdf-file-info">
 
-            <small>
-              DOCUMENTACIÓN TÉCNICA
-            </small>
+            <div class="pdf-icon">
+              PDF
+            </div>
 
-            <h2>
-              Informe del laboratorio
-            </h2>
+
+            <div>
+
+              <strong>
+                File_path_traversal_with_absolute_path_bypass.pdf
+              </strong>
+
+              <small>
+                Documentación completa · Actividad 08
+              </small>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="pdf-actions">
+
+
+            <a
+              href="File_path_traversal_with_absolute_path_bypass.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="pdf-btn secondary"
+            >
+              Abrir PDF ↗
+            </a>
+
+
+            <a
+              href="File_path_traversal_with_absolute_path_bypass.pdf"
+              download
+              class="pdf-btn primary"
+            >
+              Descargar PDF
+            </a>
 
           </div>
 
@@ -1360,49 +1392,42 @@
 
 
 
-        <div class="documentation-placeholder">
+        <!-- PDF EMBEBIDO -->
 
-          <div class="documentation-icon">
-            PDF
-          </div>
+        <div class="pdf-viewer">
 
-
-          <div class="documentation-info">
-
-            <span>
-              PRÓXIMAMENTE
-            </span>
-
-            <h3>
-              Documentación de Actividad 08
-            </h3>
-
-            <p>
-
-              En esta sección se integrará el documento PDF
-              completo con el procedimiento, evidencias,
-              análisis técnico del payload y mitigaciones.
-
-            </p>
-
-          </div>
+          <iframe
+            src="File_path_traversal_with_absolute_path_bypass.pdf"
+            title="Documentación del laboratorio File Path Traversal With Absolute Path Bypass"
+          >
+          </iframe>
 
         </div>
 
 
-        <!--
 
-        CUANDO TENGAS EL PDF, puedes sustituir
-        el bloque anterior por el mismo visor que
-        utilizamos en Actividad 07.
+        <!-- RESPALDO PARA MÓVIL -->
 
-        Ejemplo de nombre:
+        <div class="pdf-fallback">
 
-        FilePathTraversalAbsolutePath.pdf
+          <p>
+            Si el documento no se visualiza en tu navegador,
+            puedes abrirlo directamente.
+          </p>
 
-        -->
+          <a
+            href="File_path_traversal_with_absolute_path_bypass.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Abrir documentación completa →
+          </a>
+
+        </div>
+
 
       </div>
+
 
     </section>
 
