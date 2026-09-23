@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="author"
+    content="Bryhan Eduardo Guzman Martinez"
+  >
+
+  <meta
+    name="description"
+    content="Actividad 08 - File Path Traversal con Absolute Path Bypass"
+  >
+
+  <title>
+    Actividad 08 | Absolute Path Bypass
+  </title>
+
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="logito.ico"
+  >
+
+
+  <!-- Google Fonts -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- CSS GENERAL -->
+
+  <link
+    rel="stylesheet"
+    href="Estilo.css"
+  >
+
+
+  <!-- CSS ACTIVIDAD 08 -->
+
+  <link
+    rel="stylesheet"
+    href="Actividad8.css"
+  >
+
+</head>
+
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <span class="brand-icon">
+          BG
+        </span>
+
+        <span class="brand-text">
+
+          <strong>
+            Bryhan Guzman
+          </strong>
+
+          <small>
+            Portafolio Digital
+          </small>
+
+        </span>
+
+      </a>
+
+
+
+      <nav class="nav-menu">
+
+        <a href="index.html">
+          Inicio
+        </a>
+
+        <a href="#laboratorio">
+          Laboratorio
+        </a>
+
+        <a href="#teoria">
+          Teoría
+        </a>
+
+        <a href="#procedimiento">
+          Procedimiento
+        </a>
+
+        <a href="#payload">
+          Payload
+        </a>
+
+        <a href="#mitigacion">
+          Mitigación
+        </a>
+
+        <a
+          href="RoadToHallOfFame.html"
+          class="nav-contacto"
+        >
+          Roadmap
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="a8-hero">
+
+      <div class="a8-glow a8-glow-one"></div>
+
+      <div class="a8-glow a8-glow-two"></div>
+
+
+      <div class="a8-hero-container">
+
+
+        <div class="a8-hero-content">
+
+          <div class="a8-badge">
+            PARCIAL II · ROAD TO HALL OF FAME
+          </div>
+
+
+          <p class="a8-label">
+            ACTIVIDAD 08
+          </p>
+
+
+          <h1>
+
+            File Path Traversal
+
+            <span>
+              Absolute Path Bypass.
+            </span>
+
+          </h1>
+
+
+          <p class="a8-description">
+
+            Laboratorio orientado al análisis de una variante de
+            <strong>File Path Traversal</strong> donde las secuencias
+            tradicionales de navegación como <code>../</code>
+            son bloqueadas, pero la aplicación continúa aceptando
+            rutas absolutas proporcionadas por el usuario.
+
+          </p>
+
+
+          <div class="a8-tags">
+
+            <span>
+              File Path Traversal
+            </span>
+
+            <span>
+              Absolute Path
+            </span>
+
+            <span>
+              Burp Suite
+            </span>
+
+            <span>
+              Repeater
+            </span>
+
+            <span>
+              HTTP
+            </span>
+
+            <span>
+              PortSwigger
+            </span>
+
+          </div>
+
+
+          <div class="a8-buttons">
+
+            <a
+              href="#procedimiento"
+              class="a8-button primary"
+            >
+              Ver laboratorio ↓
+            </a>
+
+
+            <a
+              href="https://portswigger.net/web-security/file-path-traversal/lab-absolute-path-bypass"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="a8-button secondary"
+            >
+              PortSwigger ↗
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PANEL LATERAL -->
+
+        <aside class="a8-lab-panel">
+
+
+          <div class="a8-panel-header">
+
+            <div class="a8-dots">
+
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+
+            <small>
+              lab.info
+            </small>
+
+          </div>
+
+
+
+          <div class="a8-panel-body">
+
+            <p class="a8-console">
+
+              <span>
+                student@lab
+              </span>:~$
+
+              lab_status
+
+            </p>
+
+
+            <div class="a8-panel-data">
+
+
+              <div>
+
+                <span>
+                  Laboratorio
+                </span>
+
+                <strong>
+                  File Path Traversal
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Variante
+                </span>
+
+                <strong>
+                  Absolute Path Bypass
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Plataforma
+                </span>
+
+                <strong>
+                  PortSwigger
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Herramienta
+                </span>
+
+                <strong>
+                  Burp Suite
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Objetivo
+                </span>
+
+                <strong>
+                  /etc/passwd
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <p class="a8-success">
+              ✓ Laboratorio documentado
+            </p>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         01 INFORMACIÓN GENERAL
+    ====================================================== -->
+
+    <section
+      id="laboratorio"
+      class="a8-section white"
+    >
+
+      <div class="a8-container">
+
+
+        <div class="a8-heading">
+
+          <span class="a8-number">
+            01
+          </span>
+
+
+          <div>
+
+            <small>
+              INFORMACIÓN GENERAL
+            </small>
+
+            <h2>
+              Datos del laboratorio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="lab-info-grid">
+
+
+          <article class="lab-info-card">
+
+            <span>
+              01
+            </span>
+
+            <small>
+              NOMBRE
+            </small>
+
+            <h3>
+              File Path Traversal
+            </h3>
+
+            <p>
+              Traversal sequences blocked with absolute path bypass.
+            </p>
+
+          </article>
+
+
+
+          <article class="lab-info-card">
+
+            <span>
+              02
+            </span>
+
+            <small>
+              TIPO
+            </small>
+
+            <h3>
+              Path Traversal
+            </h3>
+
+            <p>
+              Lectura arbitraria de archivos.
+            </p>
+
+          </article>
+
+
+
+          <article class="lab-info-card">
+
+            <span>
+              03
+            </span>
+
+            <small>
+              TÉCNICA
+            </small>
+
+            <h3>
+              Absolute Path
+            </h3>
+
+            <p>
+              Bypass mediante una ruta absoluta.
+            </p>
+
+          </article>
+
+
+
+          <article class="lab-info-card">
+
+            <span>
+              04
+            </span>
+
+            <small>
+              PLATAFORMA
+            </small>
+
+            <h3>
+              PortSwigger
+            </h3>
+
+            <p>
+              Web Security Academy.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         02 OBJETIVO
+    ====================================================== -->
+
+    <section class="a8-section soft">
+
+      <div class="a8-container">
+
+
+        <div class="a8-heading">
+
+          <span class="a8-number">
+            02
+          </span>
+
+
+          <div>
+
+            <small>
+              OBJETIVO
+            </small>
+
+            <h2>
+              ¿Qué busca demostrar el laboratorio?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="objective-layout">
+
+
+          <div class="objective-main">
+
+            <h3>
+              Evadir un filtro utilizando una ruta absoluta
+            </h3>
+
+
+            <p>
+
+              El laboratorio presenta una aplicación vulnerable
+              a File Path Traversal en la carga de imágenes de
+              productos.
+
+            </p>
+
+
+            <p>
+
+              A diferencia del caso simple de la actividad anterior,
+              la aplicación bloquea las secuencias tradicionales
+              utilizadas para retroceder directorios.
+
+            </p>
+
+
+            <p>
+
+              Sin embargo, el parámetro encargado de seleccionar
+              el archivo continúa aceptando una ruta absoluta,
+              permitiendo solicitar directamente un recurso del
+              sistema operativo.
+
+            </p>
+
+          </div>
+
+
+
+          <aside class="objective-result">
+
+            <span>
+              OBJETIVO DEL LAB
+            </span>
+
+
+            <h3>
+              Recuperar
+            </h3>
+
+
+            <code>
+              /etc/passwd
+            </code>
+
+
+            <p>
+
+              El servidor debe devolver el contenido del archivo
+              solicitado utilizando directamente su ubicación
+              absoluta en el sistema.
+
+            </p>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         03 MARCO TEÓRICO
+    ====================================================== -->
+
+    <section
+      id="teoria"
+      class="a8-section white"
+    >
+
+      <div class="a8-container">
+
+
+        <div class="a8-heading">
+
+          <span class="a8-number">
+            03
+          </span>
+
+
+          <div>
+
+            <small>
+              MARCO TEÓRICO
+            </small>
+
+            <h2>
+              Traversal bloqueado no significa acceso seguro
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="theory-layout">
+
+
+          <div class="theory-main">
+
+            <p class="theory-highlight">
+
+              Bloquear únicamente secuencias como
+              <code>../</code> no elimina necesariamente una
+              vulnerabilidad de acceso a archivos.
+
+            </p>
+
+
+            <p>
+
+              Una aplicación puede intentar protegerse eliminando
+              o rechazando secuencias utilizadas para subir niveles
+              dentro del árbol de directorios.
+
+            </p>
+
+
+            <p>
+
+              El problema aparece cuando el servidor continúa
+              aceptando rutas absolutas introducidas directamente
+              por el usuario.
+
+            </p>
+
+
+            <p>
+
+              De esta manera, en lugar de recorrer desde el
+              directorio actual hasta alcanzar el archivo deseado,
+              puede indicarse directamente su ubicación completa.
+
+            </p>
+
+          </div>
+
+
+
+          <aside class="theory-example">
+
+            <span>
+              COMPARACIÓN
+            </span>
+
+
+            <p>
+              Actividad 07:
+            </p>
+
+            <code class="blocked-code">
+              ../../../../etc/passwd
+            </code>
+
+
+            <div class="compare-status blocked">
+              ✕ Traversal bloqueado
+            </div>
+
+
+            <p>
+              Actividad 08:
+            </p>
+
+            <code class="working-code">
+              /etc/passwd
+            </code>
+
+
+            <div class="compare-status allowed">
+              ✓ Ruta absoluta aceptada
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         04 VULNERABILIDAD
+    ====================================================== -->
+
+    <section class="a8-section soft">
+
+      <div class="a8-container">
+
+
+        <div class="a8-heading">
+
+          <span class="a8-number">
+            04
+          </span>
+
+
+          <div>
+
+            <small>
+              ANÁLISIS TÉCNICO
+            </small>
+
+            <h2>
+              ¿Dónde se encuentra la vulnerabilidad?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="vulnerability-layout">
+
+
+          <div class="request-box">
+
+            <span>
+              SOLICITUD NORMAL
+            </span>
+
+            <pre>GET /image?filename=10.jpg HTTP/2</pre>
+
+          </div>
+
+
+          <div class="vulnerability-arrow">
+            ↓
+          </div>
+
+
+          <div class="request-box filtered">
+
+            <span>
+              TRAVERSAL TRADICIONAL
+            </span>
+
+            <pre>filename=../../../../etc/passwd</pre>
+
+            <small>
+              La aplicación bloquea las secuencias ../
+            </small>
+
+          </div>
+
+
+          <div class="vulnerability-arrow">
+            ↓
+          </div>
+
+
+          <div class="request-box vulnerable">
+
+            <span>
+              ABSOLUTE PATH BYPASS
+            </span>
+
+            <pre>filename=/etc/passwd</pre>
+
+            <small>
+              La ruta absoluta continúa siendo procesada.
+            </small>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         05 PROCEDIMIENTO
+    ====================================================== -->
+
+    <section
+      id="procedimiento"
+      class="a8-section procedure-section"
+    >
+
+      <div class="a8-container">
+
+
+        <div class="a8-heading dark">
+
+          <span class="a8-number">
+            05
+          </span>
+
+
+          <div>
+
+            <small>
+              PROCEDIMIENTO
+            </small>
+
+            <h2>
+              Desarrollo del laboratorio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="procedure-list">
+
+
+          <article class="procedure-step">
+
+            <div class="step-number">
+              01
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                LABORATORIO
+              </span>
+
+              <h3>
+                Iniciar la instancia
+              </h3>
+
+              <p>
+
+                Se abre el laboratorio correspondiente dentro
+                de PortSwigger Web Security Academy y se accede
+                a la aplicación vulnerable.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="procedure-step">
+
+            <div class="step-number">
+              02
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                BURP SUITE
+              </span>
+
+              <h3>
+                Capturar el tráfico HTTP
+              </h3>
+
+              <p>
+
+                Desde Burp Suite se utiliza Proxy para observar
+                las solicitudes generadas al cargar los recursos
+                de la página.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="procedure-step">
+
+            <div class="step-number">
+              03
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                IDENTIFICACIÓN
+              </span>
+
+              <h3>
+                Localizar el parámetro filename
+              </h3>
+
+              <p>
+
+                Entre las solicitudes capturadas se identifica
+                la petición responsable de cargar una imagen.
+
+              </p>
+
+
+              <div class="procedure-code">
+
+                GET /image?filename=10.jpg
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="procedure-step">
+
+            <div class="step-number">
+              04
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                REPEATER
+              </span>
+
+              <h3>
+                Enviar la solicitud a Repeater
+              </h3>
+
+              <p>
+
+                La petición se envía a Burp Repeater para
+                modificar de manera controlada el parámetro
+                filename y analizar las respuestas.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="procedure-step">
+
+            <div class="step-number">
+              05
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                BYPASS
+              </span>
+
+              <h3>
+                Utilizar la ruta absoluta
+              </h3>
+
+              <p>
+
+                En lugar de utilizar secuencias de navegación
+                de directorios, se reemplaza el nombre de la
+                imagen por la ruta absoluta objetivo.
+
+              </p>
+
+
+              <div class="procedure-code success-code">
+
+                GET /image?filename=/etc/passwd
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="procedure-step">
+
+            <div class="step-number">
+              06
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                RESPONSE
+              </span>
+
+              <h3>
+                Analizar la respuesta
+              </h3>
+
+              <p>
+
+                El servidor procesa la ruta absoluta y devuelve
+                el contenido del archivo solicitado, confirmando
+                que el filtro implementado resulta insuficiente.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="procedure-step">
+
+            <div class="step-number solved">
+              ✓
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                RESULTADO
+              </span>
+
+              <h3>
+                Confirmar Lab Solved
+              </h3>
+
+              <p>
+
+                Al obtener correctamente el archivo solicitado,
+                PortSwigger confirma que el laboratorio fue
+                resuelto.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         06 PAYLOAD
+    ====================================================== -->
+
+    <section
+      id="payload"
+      class="a8-section white"
+    >
+
+      <div class="a8-container">
+
+
+        <div class="a8-heading">
+
+          <span class="a8-number">
+            06
+          </span>
+
+
+          <div>
+
+            <small>
+              PAYLOAD
+            </small>
+
+            <h2>
+              Explicación técnica del bypass
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="payload-layout">
+
+
+          <div class="payload-code">
+
+            <div class="payload-header">
+
+              <span>
+                request.http
+              </span>
+
+            </div>
+
+
+            <pre>GET /image?filename=/etc/passwd HTTP/2</pre>
+
+          </div>
+
+
+
+          <div class="payload-explanation">
+
+
+            <div>
+
+              <span>
+                filename=
+              </span>
+
+              <p>
+
+                Parámetro que indica al backend qué archivo debe
+                recuperar y devolver al navegador.
+
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                /
+              </span>
+
+              <p>
+
+                Al comenzar con una barra, el valor representa
+                una ruta absoluta desde la raíz del sistema de
+                archivos.
+
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                /etc/passwd
+              </span>
+
+              <p>
+
+                Archivo objetivo utilizado por el laboratorio
+                para demostrar que se logró salir del directorio
+                destinado a las imágenes.
+
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         07 DIFERENCIA CON ACTIVIDAD 07
+    ====================================================== -->
+
+    <section class="a8-section soft">
+
+      <div class="a8-container">
+
+
+        <div class="a8-heading">
+
+          <span class="a8-number">
+            07
+          </span>
+
+
+          <div>
+
+            <small>
+              COMPARACIÓN
+            </small>
+
+            <h2>
+              Simple Case vs. Absolute Path Bypass
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="comparison-grid">
+
+
+          <article class="comparison-card">
+
+            <span>
+              ACTIVIDAD 07
+            </span>
+
+            <h3>
+              Simple Case
+            </h3>
+
+
+            <code>
+              ../../../../etc/passwd
+            </code>
+
+
+            <p>
+
+              La aplicación acepta directamente las secuencias
+              utilizadas para subir directorios.
+
+            </p>
+
+          </article>
+
+
+
+          <div class="comparison-vs">
+            VS
+          </div>
+
+
+
+          <article class="comparison-card highlighted">
+
+            <span>
+              ACTIVIDAD 08
+            </span>
+
+            <h3>
+              Absolute Path Bypass
+            </h3>
+
+
+            <code>
+              /etc/passwd
+            </code>
+
+
+            <p>
+
+              Las secuencias de traversal son bloqueadas, pero
+              el servidor todavía acepta rutas absolutas.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         08 DOCUMENTACIÓN
+    ====================================================== -->
+
+    <section
+      id="documentacion"
+      class="a8-section white"
+    >
+
+      <div class="a8-container">
+
+
+        <div class="a8-heading">
+
+          <span class="a8-number">
+            08
+          </span>
+
+
+          <div>
+
+            <small>
+              DOCUMENTACIÓN TÉCNICA
+            </small>
+
+            <h2>
+              Informe del laboratorio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="documentation-placeholder">
+
+          <div class="documentation-icon">
+            PDF
+          </div>
+
+
+          <div class="documentation-info">
+
+            <span>
+              PRÓXIMAMENTE
+            </span>
+
+            <h3>
+              Documentación de Actividad 08
+            </h3>
+
+            <p>
+
+              En esta sección se integrará el documento PDF
+              completo con el procedimiento, evidencias,
+              análisis técnico del payload y mitigaciones.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!--
+
+        CUANDO TENGAS EL PDF, puedes sustituir
+        el bloque anterior por el mismo visor que
+        utilizamos en Actividad 07.
+
+        Ejemplo de nombre:
+
+        FilePathTraversalAbsolutePath.pdf
+
+        -->
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         09 MITIGACIÓN
+    ====================================================== -->
+
+    <section
+      id="mitigacion"
+      class="a8-section soft"
+    >
+
+      <div class="a8-container">
+
+
+        <div class="a8-heading">
+
+          <span class="a8-number">
+            09
+          </span>
+
+
+          <div>
+
+            <small>
+              MITIGACIÓN
+            </small>
+
+            <h2>
+              ¿Cómo prevenir este bypass?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="mitigation-grid">
+
+
+          <article>
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              No confiar en rutas del usuario
+            </h3>
+
+            <p>
+
+              La aplicación no debería utilizar directamente
+              rutas recibidas mediante parámetros HTTP.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Bloquear rutas absolutas
+            </h3>
+
+            <p>
+
+              Las validaciones deben impedir tanto traversal
+              relativo como rutas absolutas externas al
+              directorio permitido.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Canonicalización
+            </h3>
+
+            <p>
+
+              Resolver la ruta definitiva antes de acceder
+              al archivo y comprobar que permanezca dentro
+              del directorio autorizado.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Lista permitida
+            </h3>
+
+            <p>
+
+              Limitar los archivos disponibles mediante
+              identificadores o nombres previamente
+              establecidos.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Mínimo privilegio
+            </h3>
+
+            <p>
+
+              El proceso del servidor web debe tener acceso
+              únicamente a los archivos necesarios.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              Validación completa
+            </h3>
+
+            <p>
+
+              No basta con bloquear una sola representación.
+              Deben validarse todas las formas posibles de
+              indicar una ruta.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         10 CONCLUSIÓN
+    ====================================================== -->
+
+    <section class="a8-section conclusion-section">
+
+      <div class="a8-container">
+
+
+        <div class="a8-conclusion">
+
+          <div class="conclusion-number">
+            10
+          </div>
+
+
+          <p class="conclusion-label">
+            CONCLUSIÓN
+          </p>
+
+
+          <h2>
+            Bloquear un payload no significa corregir la vulnerabilidad
+          </h2>
+
+
+          <p>
+
+            Este laboratorio demuestra que bloquear únicamente
+            las secuencias tradicionales de navegación entre
+            directorios no constituye una defensa suficiente.
+
+          </p>
+
+
+          <p>
+
+            Aunque el servidor impida valores que contengan
+            secuencias relativas como ../, la vulnerabilidad
+            continúa existiendo si permite utilizar directamente
+            rutas absolutas para seleccionar archivos.
+
+          </p>
+
+
+          <p>
+
+            Una mitigación adecuada debe validar la ruta final,
+            restringir el acceso al directorio autorizado y aplicar
+            controles de permisos en el sistema operativo.
+
+          </p>
+
+
+          <a
+            href="RoadToHallOfFame.html"
+            class="back-roadmap"
+          >
+            ← Volver a Road to Hall of Fame
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="a8-footer">
+
+    <div class="a8-footer-container">
+
+      <p>
+        © 2026 Bryhan Eduardo Guzman Martinez
+      </p>
+
+      <p>
+        Actividad 08 · Absolute Path Bypass
+      </p>
+
+      <p>
+        Universidad Politécnica de San Luis Potosí
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
