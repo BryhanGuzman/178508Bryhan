@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="author"
+    content="Bryhan Eduardo Guzman Martinez"
+  >
+
+  <meta
+    name="description"
+    content="Actividad 09 - File Path Traversal, traversal sequences stripped non-recursively"
+  >
+
+  <title>
+    Actividad 09 | File Path Traversal Non-Recursive
+  </title>
+
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="logito.ico"
+  >
+
+
+  <!-- FUENTES -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- CSS GENERAL -->
+
+  <link
+    rel="stylesheet"
+    href="Estilo.css"
+  >
+
+
+  <!-- CSS ACTIVIDAD 09 -->
+
+  <link
+    rel="stylesheet"
+    href="Actividad9.css"
+  >
+
+</head>
+
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVEGACIÓN
+  ====================================================== -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <span class="brand-icon">
+          BG
+        </span>
+
+
+        <span class="brand-text">
+
+          <strong>
+            Bryhan Guzman
+          </strong>
+
+          <small>
+            Portafolio Digital
+          </small>
+
+        </span>
+
+      </a>
+
+
+
+      <nav class="nav-menu">
+
+        <a href="index.html">
+          Inicio
+        </a>
+
+        <a href="#laboratorio">
+          Laboratorio
+        </a>
+
+        <a href="#teoria">
+          Teoría
+        </a>
+
+        <a href="#procedimiento">
+          Procedimiento
+        </a>
+
+        <a href="#payload">
+          Payload
+        </a>
+
+        <a href="#documentacion">
+          Documentación
+        </a>
+
+        <a href="#mitigacion">
+          Mitigación
+        </a>
+
+        <a
+          href="RoadToHallOfFame.html"
+          class="nav-contacto"
+        >
+          Roadmap
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="a9-hero">
+
+      <div class="a9-glow a9-glow-one"></div>
+      <div class="a9-glow a9-glow-two"></div>
+
+
+      <div class="a9-hero-container">
+
+
+        <div class="a9-hero-content">
+
+
+          <div class="a9-badge">
+            PARCIAL II · ROAD TO HALL OF FAME
+          </div>
+
+
+          <p class="a9-label">
+            ACTIVIDAD 09
+          </p>
+
+
+          <h1>
+
+            File Path Traversal
+
+            <span>
+              Non-Recursive Filter Bypass.
+            </span>
+
+          </h1>
+
+
+          <p class="a9-description">
+
+            Laboratorio de PortSwigger Web Security Academy enfocado
+            en una variante de <strong>File Path Traversal</strong>
+            donde la aplicación intenta eliminar las secuencias
+            <code>../</code>, pero realiza esta sanitización
+            únicamente una vez.
+
+          </p>
+
+
+          <div class="a9-tags">
+
+            <span>
+              Practitioner
+            </span>
+
+            <span>
+              File Path Traversal
+            </span>
+
+            <span>
+              Non-Recursive Filter
+            </span>
+
+            <span>
+              Burp Suite
+            </span>
+
+            <span>
+              Repeater
+            </span>
+
+            <span>
+              OWASP
+            </span>
+
+          </div>
+
+
+          <div class="a9-buttons">
+
+            <a
+              href="#procedimiento"
+              class="a9-button primary"
+            >
+              Ver laboratorio ↓
+            </a>
+
+
+            <a
+              href="#documentacion"
+              class="a9-button secondary"
+            >
+              Ver documentación
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PANEL DEL LABORATORIO
+        ================================================== -->
+
+        <aside class="a9-lab-panel">
+
+
+          <div class="a9-panel-header">
+
+
+            <div class="a9-dots">
+
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+
+            <small>
+              lab.info
+            </small>
+
+          </div>
+
+
+
+          <div class="a9-panel-body">
+
+
+            <p class="a9-console">
+
+              <span>
+                student@lab
+              </span>:~$
+
+              lab_status
+
+            </p>
+
+
+
+            <div class="a9-panel-data">
+
+
+              <div>
+
+                <span>
+                  Laboratorio
+                </span>
+
+                <strong>
+                  File Path Traversal
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Variante
+                </span>
+
+                <strong>
+                  Non-Recursive
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Nivel
+                </span>
+
+                <strong>
+                  Practitioner
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Herramienta
+                </span>
+
+                <strong>
+                  Burp Suite
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Objetivo
+                </span>
+
+                <strong>
+                  /etc/passwd
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Estado
+                </span>
+
+                <strong class="a9-green">
+                  Solved
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <p class="a9-success">
+              ✓ Laboratorio completado
+            </p>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         01 INFORMACIÓN GENERAL
+    ====================================================== -->
+
+    <section
+      id="laboratorio"
+      class="a9-section white"
+    >
+
+      <div class="a9-container">
+
+
+        <div class="a9-heading">
+
+          <span class="a9-number">
+            01
+          </span>
+
+
+          <div>
+
+            <small>
+              INFORMACIÓN GENERAL
+            </small>
+
+            <h2>
+              Datos del laboratorio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="lab-info-grid">
+
+
+          <article class="lab-info-card">
+
+            <span>
+              01
+            </span>
+
+            <small>
+              NOMBRE
+            </small>
+
+            <h3>
+              File Path Traversal
+            </h3>
+
+            <p>
+              Traversal sequences stripped non-recursively.
+            </p>
+
+          </article>
+
+
+
+          <article class="lab-info-card">
+
+            <span>
+              02
+            </span>
+
+            <small>
+              NIVEL
+            </small>
+
+            <h3>
+              Practitioner
+            </h3>
+
+            <p>
+              Nivel intermedio en Web Security Academy.
+            </p>
+
+          </article>
+
+
+
+          <article class="lab-info-card">
+
+            <span>
+              03
+            </span>
+
+            <small>
+              TIPO
+            </small>
+
+            <h3>
+              Path Traversal
+            </h3>
+
+            <p>
+              Bypass de sanitización de rutas.
+            </p>
+
+          </article>
+
+
+
+          <article class="lab-info-card">
+
+            <span>
+              04
+            </span>
+
+            <small>
+              OBJETIVO
+            </small>
+
+            <h3>
+              /etc/passwd
+            </h3>
+
+            <p>
+              Recuperar el contenido del archivo.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         02 OBJETIVO
+    ====================================================== -->
+
+    <section class="a9-section soft">
+
+      <div class="a9-container">
+
+
+        <div class="a9-heading">
+
+          <span class="a9-number">
+            02
+          </span>
+
+
+          <div>
+
+            <small>
+              OBJETIVO
+            </small>
+
+            <h2>
+              ¿Qué busca demostrar el laboratorio?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="objective-layout">
+
+
+          <div class="objective-main">
+
+
+            <h3>
+              Evadir una sanitización aplicada de manera no recursiva
+            </h3>
+
+
+            <p>
+
+              La aplicación contiene una vulnerabilidad de File Path
+              Traversal dentro del mecanismo encargado de mostrar
+              las imágenes de los productos.
+
+            </p>
+
+
+            <p>
+
+              El servidor intenta protegerse eliminando las secuencias
+              tradicionales de navegación de directorios.
+
+            </p>
+
+
+            <p>
+
+              Sin embargo, el filtro solamente revisa la cadena
+              una vez. Esto permite construir un valor que, después
+              de la eliminación parcial realizada por el filtro,
+              vuelve a formar una secuencia válida de traversal.
+
+            </p>
+
+          </div>
+
+
+
+          <aside class="objective-result">
+
+
+            <span>
+              OBJETIVO FINAL
+            </span>
+
+
+            <h3>
+              Recuperar
+            </h3>
+
+
+            <code>
+              /etc/passwd
+            </code>
+
+
+            <p>
+
+              La lectura correcta del archivo demuestra que el
+              proceso de sanitización utilizado por la aplicación
+              puede ser evadido.
+
+            </p>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         03 MARCO TEÓRICO
+    ====================================================== -->
+
+    <section
+      id="teoria"
+      class="a9-section white"
+    >
+
+      <div class="a9-container">
+
+
+        <div class="a9-heading">
+
+          <span class="a9-number">
+            03
+          </span>
+
+
+          <div>
+
+            <small>
+              MARCO TEÓRICO
+            </small>
+
+            <h2>
+              File Path Traversal y Broken Access Control
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="theory-layout">
+
+
+          <div class="theory-main">
+
+
+            <p class="theory-highlight">
+
+              File Path Traversal permite acceder a archivos
+              arbitrarios del servidor cuando una aplicación no
+              controla correctamente las rutas proporcionadas
+              por el usuario.
+
+            </p>
+
+
+            <p>
+
+              El problema se relaciona con
+              <strong>Broken Access Control</strong>, ya que un usuario
+              consigue acceder a recursos del sistema de archivos
+              que no deberían estar disponibles desde la aplicación.
+
+            </p>
+
+
+            <p>
+
+              Desde la perspectiva de la triada CIA, el principal
+              impacto se produce sobre la
+              <strong>Confidencialidad</strong>, debido a la exposición
+              de información interna o sensible del servidor.
+
+            </p>
+
+          </div>
+
+
+
+          <aside class="cia-card">
+
+
+            <span>
+              TRIADA CIA
+            </span>
+
+
+            <div class="cia-item active">
+
+              <strong>
+                C
+              </strong>
+
+              <div>
+
+                <h4>
+                  Confidentiality
+                </h4>
+
+                <p>
+                  Impacto principal.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="cia-item">
+
+              <strong>
+                I
+              </strong>
+
+              <div>
+
+                <h4>
+                  Integrity
+                </h4>
+
+                <p>
+                  No es el objetivo principal del laboratorio.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="cia-item">
+
+              <strong>
+                A
+              </strong>
+
+              <div>
+
+                <h4>
+                  Availability
+                </h4>
+
+                <p>
+                  No es el objetivo principal del laboratorio.
+                </p>
+
+              </div>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         04 VULNERABILIDAD
+    ====================================================== -->
+
+    <section class="a9-section soft">
+
+      <div class="a9-container">
+
+
+        <div class="a9-heading">
+
+          <span class="a9-number">
+            04
+          </span>
+
+
+          <div>
+
+            <small>
+              ANÁLISIS TÉCNICO
+            </small>
+
+            <h2>
+              ¿Por qué falla la sanitización?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="filter-layout">
+
+
+          <article class="filter-step">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Entrada manipulada
+            </h3>
+
+            <code>
+              ....//
+            </code>
+
+            <p>
+
+              Se proporciona una cadena construida para contener
+              internamente la secuencia que el filtro intenta eliminar.
+
+            </p>
+
+          </article>
+
+
+
+          <div class="filter-arrow">
+            →
+          </div>
+
+
+
+          <article class="filter-step danger">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Sanitización
+            </h3>
+
+            <code>
+              eliminar("../")
+            </code>
+
+            <p>
+
+              El filtro realiza una sola pasada y elimina
+              únicamente el patrón encontrado.
+
+            </p>
+
+          </article>
+
+
+
+          <div class="filter-arrow">
+            →
+          </div>
+
+
+
+          <article class="filter-step success">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Resultado
+            </h3>
+
+            <code>
+              ../
+            </code>
+
+            <p>
+
+              Los caracteres restantes vuelven a formar
+              una secuencia válida de traversal.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         05 PROCEDIMIENTO
+    ====================================================== -->
+
+    <section
+      id="procedimiento"
+      class="a9-section procedure-section"
+    >
+
+      <div class="a9-container">
+
+
+        <div class="a9-heading dark">
+
+          <span class="a9-number">
+            05
+          </span>
+
+
+          <div>
+
+            <small>
+              PROCEDIMIENTO
+            </small>
+
+            <h2>
+              Desarrollo del laboratorio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="procedure-list">
+
+
+          <!-- 01 -->
+
+          <article class="procedure-step">
+
+
+            <div class="step-number">
+              01
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                BURP SUITE
+              </span>
+
+              <h3>
+                Crear un proyecto temporal
+              </h3>
+
+              <p>
+
+                Se inicia Burp Suite utilizando la opción
+                Temporary Project in Memory y posteriormente
+                se selecciona la configuración predeterminada.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 02 -->
+
+          <article class="procedure-step">
+
+
+            <div class="step-number">
+              02
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                PROXY
+              </span>
+
+              <h3>
+                Activar Intercept
+              </h3>
+
+              <p>
+
+                Dentro de Proxy se habilita Intercept para observar
+                las solicitudes generadas desde el navegador
+                proporcionado por Burp Suite.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 03 -->
+
+          <article class="procedure-step">
+
+
+            <div class="step-number">
+              03
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                LABORATORIO
+              </span>
+
+              <h3>
+                Abrir Web Security Academy
+              </h3>
+
+              <p>
+
+                Se accede a la instancia asignada del laboratorio
+                desde el navegador integrado.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 04 -->
+
+          <article class="procedure-step">
+
+
+            <div class="step-number">
+              04
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                HTTP
+              </span>
+
+              <h3>
+                Identificar la solicitud de imagen
+              </h3>
+
+              <p>
+
+                Entre las solicitudes capturadas se localiza aquella
+                cuyo parámetro filename corresponde a una imagen
+                de producto.
+
+              </p>
+
+
+              <div class="procedure-code">
+
+                GET /image?filename=67.jpg
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 05 -->
+
+          <article class="procedure-step">
+
+
+            <div class="step-number">
+              05
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                REPEATER
+              </span>
+
+              <h3>
+                Send to Repeater
+              </h3>
+
+              <p>
+
+                La petición se envía a Repeater para poder modificar
+                el parámetro de manera controlada y analizar
+                directamente la respuesta del servidor.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 06 -->
+
+          <article class="procedure-step">
+
+
+            <div class="step-number">
+              06
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                PAYLOAD
+              </span>
+
+              <h3>
+                Modificar filename
+              </h3>
+
+              <p>
+
+                El nombre del archivo se reemplaza por el payload
+                diseñado para evadir la sanitización no recursiva.
+
+              </p>
+
+
+              <div class="procedure-code success-code">
+
+                GET /image?filename=....//....//....//etc/passwd
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 07 -->
+
+          <article class="procedure-step">
+
+
+            <div class="step-number">
+              07
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                RESPONSE
+              </span>
+
+              <h3>
+                Analizar la respuesta
+              </h3>
+
+              <p>
+
+                La respuesta del servidor devuelve un estado
+                <strong>200 OK</strong> junto con el contenido
+                del archivo solicitado.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 08 -->
+
+          <article class="procedure-step">
+
+
+            <div class="step-number solved">
+              ✓
+            </div>
+
+
+            <div class="step-content">
+
+              <span>
+                RESULTADO
+              </span>
+
+              <h3>
+                Lab Solved
+              </h3>
+
+              <p>
+
+                Finalmente, Web Security Academy confirma que el
+                laboratorio fue resuelto correctamente.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         06 PAYLOAD
+    ====================================================== -->
+
+    <section
+      id="payload"
+      class="a9-section white"
+    >
+
+      <div class="a9-container">
+
+
+        <div class="a9-heading">
+
+          <span class="a9-number">
+            06
+          </span>
+
+
+          <div>
+
+            <small>
+              EXPLICACIÓN DEL PAYLOAD
+            </small>
+
+            <h2>
+              ¿Cómo se evade el filtro?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="payload-layout">
+
+
+          <div class="payload-code">
+
+
+            <div class="payload-header">
+
+              <span>
+                request.http
+              </span>
+
+            </div>
+
+
+            <pre>GET /image?filename=....//....//....//etc/passwd HTTP/2</pre>
+
+          </div>
+
+
+
+          <div class="payload-explanation">
+
+
+            <div>
+
+              <span>
+                ....//
+              </span>
+
+              <p>
+
+                La cadena contiene una secuencia de traversal
+                incrustada dentro de más caracteres.
+
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                Filtro
+              </span>
+
+              <p>
+
+                El servidor elimina la primera coincidencia
+                de <strong>../</strong>, pero no vuelve a procesar
+                el resultado.
+
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                ../
+              </span>
+
+              <p>
+
+                Después de la eliminación, los caracteres restantes
+                se unen y forman nuevamente una secuencia válida
+                para subir un directorio.
+
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                Repetición
+              </span>
+
+              <p>
+
+                Al repetir la técnica varias veces, el laboratorio
+                permite retroceder suficientes niveles para alcanzar
+                el archivo objetivo.
+
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         07 RESULTADO
+    ====================================================== -->
+
+    <section class="a9-section soft">
+
+      <div class="a9-container">
+
+
+        <div class="a9-heading">
+
+          <span class="a9-number">
+            07
+          </span>
+
+
+          <div>
+
+            <small>
+              RESULTADO
+            </small>
+
+            <h2>
+              Confirmación de la vulnerabilidad
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="result-layout">
+
+
+          <div class="http-result">
+
+            <span>
+              HTTP RESPONSE
+            </span>
+
+
+            <strong>
+              200 OK
+            </strong>
+
+
+            <p>
+
+              El servidor acepta la solicitud manipulada y
+              devuelve el contenido del archivo objetivo.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="solved-result">
+
+            <span>
+              PORTSWIGGER
+            </span>
+
+
+            <strong>
+              ✓ Solved
+            </strong>
+
+
+            <p>
+
+              Web Security Academy confirma que el laboratorio
+              fue completado correctamente.
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         08 DOCUMENTACIÓN
+    ====================================================== -->
+
+    <section
+      id="documentacion"
+      class="a9-section document-section"
+    >
+
+      <div class="a9-container">
+
+
+        <div class="a9-heading">
+
+          <span class="a9-number">
+            08
+          </span>
+
+
+          <div>
+
+            <small>
+              DOCUMENTACIÓN TÉCNICA
+            </small>
+
+            <h2>
+              Informe completo del laboratorio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="document-summary">
+
+
+          <article>
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Marco teórico
+            </h3>
+
+            <p>
+              Vulnerabilidad, OWASP y triada CIA.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Vulnerabilidad
+            </h3>
+
+            <p>
+              Sanitización realizada de manera no recursiva.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Payload
+            </h3>
+
+            <p>
+              Explicación del bypass utilizado.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Evidencias
+            </h3>
+
+            <p>
+              Diez capturas del procedimiento.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Resultado
+            </h3>
+
+            <p>
+              Respuesta 200 OK y laboratorio resuelto.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              Mitigación
+            </h3>
+
+            <p>
+              Allowlisting y validación canónica.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             VISOR PDF
+        ================================================== -->
+
+        <div class="pdf-shell">
+
+
+          <div class="pdf-toolbar">
+
+
+            <div class="pdf-file-info">
+
+
+              <div class="pdf-icon">
+                PDF
+              </div>
+
+
+              <div>
+
+                <strong>
+                  Actividad9_FilePathTraversal_NonRecursive.pdf
+                </strong>
+
+                <small>
+                  Documentación completa · Actividad 09
+                </small>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="pdf-actions">
+
+
+              <a
+                href="Actividad9_FilePathTraversal_NonRecursive.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="pdf-btn secondary"
+              >
+                Abrir PDF ↗
+              </a>
+
+
+              <a
+                href="Actividad9_FilePathTraversal_NonRecursive.pdf"
+                download
+                class="pdf-btn primary"
+              >
+                Descargar PDF
+              </a>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="pdf-viewer">
+
+            <iframe
+              src="Actividad9_FilePathTraversal_NonRecursive.pdf"
+              title="Documentación Actividad 09 File Path Traversal Non Recursive"
+            >
+            </iframe>
+
+          </div>
+
+
+
+          <div class="pdf-fallback">
+
+            <p>
+              Si el documento no se visualiza correctamente,
+              puedes abrirlo directamente.
+            </p>
+
+            <a
+              href="Actividad9_FilePathTraversal_NonRecursive.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Abrir documentación completa →
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         09 MITIGACIÓN
+    ====================================================== -->
+
+    <section
+      id="mitigacion"
+      class="a9-section white"
+    >
+
+      <div class="a9-container">
+
+
+        <div class="a9-heading">
+
+          <span class="a9-number">
+            09
+          </span>
+
+
+          <div>
+
+            <small>
+              MITIGACIÓN
+            </small>
+
+            <h2>
+              ¿Cómo prevenir esta vulnerabilidad?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="mitigation-grid">
+
+
+          <article>
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Evitar rutas proporcionadas por usuarios
+            </h3>
+
+            <p>
+
+              No pasar directamente nombres de archivos
+              proporcionados por el usuario a las funciones
+              del sistema de archivos.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Allowlisting
+            </h3>
+
+            <p>
+
+              Validar el valor recibido contra una lista estricta
+              de archivos permitidos o utilizar identificadores
+              internos.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Ruta canónica
+            </h3>
+
+            <p>
+
+              Resolver la ruta absoluta final y verificar que
+              permanezca dentro del directorio base autorizado.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Validación recursiva
+            </h3>
+
+            <p>
+
+              No depender de una sola sustitución de cadenas.
+              La entrada debe validarse completamente antes
+              de utilizarse.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Mínimo privilegio
+            </h3>
+
+            <p>
+
+              El proceso del servidor debe tener únicamente
+              permisos sobre los recursos que realmente necesita.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              Separación de recursos
+            </h3>
+
+            <p>
+
+              Mantener los archivos públicos aislados de
+              información sensible del sistema operativo.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         10 CONCLUSIÓN
+    ====================================================== -->
+
+    <section class="a9-section conclusion-section">
+
+      <div class="a9-container">
+
+
+        <div class="a9-conclusion">
+
+
+          <div class="conclusion-number">
+            10
+          </div>
+
+
+          <p class="conclusion-label">
+            CONCLUSIÓN
+          </p>
+
+
+          <h2>
+            Sanitizar una vez no significa validar correctamente
+          </h2>
+
+
+          <p>
+
+            Este laboratorio demuestra que una defensa basada
+            únicamente en eliminar patrones peligrosos puede ser
+            insuficiente cuando el proceso de sanitización no analiza
+            nuevamente el resultado generado.
+
+          </p>
+
+
+          <p>
+
+            El payload utilizado aprovecha precisamente esa debilidad:
+            una vez que el filtro elimina una secuencia, los caracteres
+            restantes vuelven a formar un patrón de traversal válido.
+
+          </p>
+
+
+          <p>
+
+            El laboratorio también refuerza la importancia de utilizar
+            validación estricta, rutas canónicas, listas permitidas
+            y el principio de mínimo privilegio.
+
+          </p>
+
+
+          <a
+            href="RoadToHallOfFame.html"
+            class="back-roadmap"
+          >
+            ← Volver a Road to Hall of Fame
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="a9-footer">
+
+    <div class="a9-footer-container">
+
+      <p>
+        © 2026 Bryhan Eduardo Guzman Martinez
+      </p>
+
+      <p>
+        Actividad 09 · File Path Traversal
+      </p>
+
+      <p>
+        Universidad Politécnica de San Luis Potosí
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
