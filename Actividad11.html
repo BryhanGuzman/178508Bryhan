@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="author"
+    content="Bryhan Eduardo Guzman Martinez"
+  >
+
+  <meta
+    name="description"
+    content="Actividad 11 - File Path Traversal: Validation of Start of Path"
+  >
+
+  <title>
+    Actividad 11 | Validation of Start of Path
+  </title>
+
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="logito.ico"
+  >
+
+  <!-- Google Fonts -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS GENERAL -->
+  <link
+    rel="stylesheet"
+    href="Estilo.css"
+  >
+
+  <!-- CSS ACTIVIDAD 11 -->
+  <link
+    rel="stylesheet"
+    href="Actividad11.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVEGACIÓN
+========================================== -->
+
+<header class="navbar">
+
+  <div class="nav-container">
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+
+      <span class="brand-icon">
+        BG
+      </span>
+
+      <span class="brand-text">
+
+        <strong>
+          Bryhan Guzman
+        </strong>
+
+        <small>
+          Portafolio Digital
+        </small>
+
+      </span>
+
+    </a>
+
+
+    <nav class="nav-menu">
+
+      <a href="#inicio">
+        Inicio
+      </a>
+
+      <a href="#vulnerabilidad">
+        Vulnerabilidad
+      </a>
+
+      <a href="#payload">
+        Payload
+      </a>
+
+      <a href="#procedimiento">
+        Procedimiento
+      </a>
+
+      <a href="#mitigaciones">
+        Mitigaciones
+      </a>
+
+      <a href="#documentacion">
+        PDF
+      </a>
+
+      <a
+        href="RoadToHallOfFame.html"
+        class="nav-contacto"
+      >
+        Volver
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================== -->
+
+<section
+  id="inicio"
+  class="a11-hero"
+>
+
+  <div class="a11-glow a11-glow-one"></div>
+  <div class="a11-glow a11-glow-two"></div>
+
+
+  <div class="a11-hero-container">
+
+
+    <div class="a11-hero-content">
+
+      <div class="a11-badge">
+
+        <span></span>
+
+        PARCIAL II · ACTIVIDAD 11
+
+      </div>
+
+
+      <p class="a11-label">
+        ROAD TO HALL OF FAME · LABORATORIO 05
+      </p>
+
+
+      <h1>
+        Validation of
+        <span>Start of Path.</span>
+      </h1>
+
+
+      <p class="a11-description">
+
+        Laboratorio de File Path Traversal enfocado en una
+        validación insuficiente del inicio de una ruta. La
+        aplicación comprueba que la ruta proporcionada comience
+        con el directorio esperado, pero permite utilizar
+        secuencias de salto de directorio después de dicha ruta.
+
+      </p>
+
+
+      <div class="a11-buttons">
+
+        <a
+          href="#vulnerabilidad"
+          class="a11-button primary"
+        >
+          Explorar laboratorio ↓
+        </a>
+
+        <a
+          href="RoadToHallOfFame.html"
+          class="a11-button secondary"
+        >
+          Road to Hall of Fame
+        </a>
+
+      </div>
+
+
+      <div class="a11-hero-data">
+
+        <div>
+          <span>Nivel</span>
+          <strong>Practitioner</strong>
+        </div>
+
+        <div>
+          <span>Categoría</span>
+          <strong>Path Traversal</strong>
+        </div>
+
+        <div>
+          <span>Herramienta</span>
+          <strong>Burp Suite</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- TERMINAL -->
+
+    <aside class="a11-terminal-card">
+
+      <div class="a11-terminal-header">
+
+        <div class="a11-window-buttons">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <small>
+          traversal.request
+        </small>
+
+      </div>
+
+
+      <div class="a11-terminal">
+
+        <p class="terminal-comment">
+          # Directorio permitido
+        </p>
+
+        <p class="terminal-folder">
+          /var/www/images/
+        </p>
+
+
+        <p class="terminal-comment">
+          # Payload
+        </p>
+
+        <p class="terminal-payload">
+          /var/www/images/../../../etc/passwd
+        </p>
+
+
+        <p class="terminal-comment">
+          # Ruta resultante
+        </p>
+
+        <p class="terminal-path">
+          /etc/passwd
+        </p>
+
+
+        <p class="terminal-success">
+          ✓ Path validation bypassed
+        </p>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     INFORMACIÓN
+========================================== -->
+
+<section class="a11-section">
+
+  <div class="a11-container">
+
+    <div class="a11-section-heading">
+
+      <span>01</span>
+
+      <div>
+
+        <small>
+          INFORMACIÓN GENERAL
+        </small>
+
+        <h2>
+          Sobre el laboratorio
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="a11-info-grid">
+
+
+      <article class="a11-info-main">
+
+        <p class="a11-large-text">
+
+          Comprobar únicamente el comienzo de una ruta no
+          garantiza que el archivo final permanezca dentro
+          del directorio autorizado.
+
+        </p>
+
+        <p>
+
+          En este laboratorio, la aplicación transmite la ruta
+          completa de las imágenes mediante el parámetro
+          <code>filename</code>.
+
+        </p>
+
+        <p>
+
+          Como mecanismo de defensa, comprueba que la ruta
+          suministrada comience con
+          <code>/var/www/images/</code>. Sin embargo, no elimina
+          correctamente las secuencias de salto de directorio
+          introducidas después de esa ruta.
+
+        </p>
+
+      </article>
+
+
+      <div class="a11-info-cards">
+
+        <article>
+
+          <span>01</span>
+
+          <small>
+            VULNERABILIDAD
+          </small>
+
+          <strong>
+            File Path Traversal
+          </strong>
+
+        </article>
+
+
+        <article>
+
+          <span>02</span>
+
+          <small>
+            VALIDACIÓN
+          </small>
+
+          <strong>
+            Start of Path
+          </strong>
+
+        </article>
+
+
+        <article>
+
+          <span>03</span>
+
+          <small>
+            OBJETIVO
+          </small>
+
+          <strong>
+            /etc/passwd
+          </strong>
+
+        </article>
+
+
+        <article>
+
+          <span>04</span>
+
+          <small>
+            ESTADO
+          </small>
+
+          <strong class="status-solved">
+            ✓ Solved
+          </strong>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     VULNERABILIDAD
+========================================== -->
+
+<section
+  id="vulnerabilidad"
+  class="a11-section a11-section-light"
+>
+
+  <div class="a11-container">
+
+    <div class="a11-section-heading">
+
+      <span>02</span>
+
+      <div>
+
+        <small>
+          ANÁLISIS TÉCNICO
+        </small>
+
+        <h2>
+          ¿Dónde está la vulnerabilidad?
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="a11-vulnerability-grid">
+
+
+      <div class="a11-vulnerability-text">
+
+        <h3>
+          Validar el inicio de la ruta no es suficiente.
+        </h3>
+
+        <p>
+
+          La aplicación utiliza el parámetro
+          <code>filename</code> para determinar qué archivo debe
+          recuperar desde el servidor.
+
+        </p>
+
+        <p>
+
+          Como medida de seguridad, comprueba que el valor
+          recibido comience con el directorio autorizado:
+
+        </p>
+
+        <div class="a11-inline-code">
+          /var/www/images/
+        </div>
+
+        <p>
+
+          El problema es que, después de esta comprobación,
+          todavía es posible agregar secuencias
+          <code>../</code>.
+
+        </p>
+
+        <p>
+
+          Estas secuencias permiten retroceder desde el
+          directorio de imágenes hasta alcanzar otras
+          ubicaciones del sistema de archivos.
+
+        </p>
+
+      </div>
+
+
+
+      <!-- FLUJO -->
+
+      <div class="a11-flow-card">
+
+        <span class="a11-flow-label">
+          FLUJO VULNERABLE
+        </span>
+
+
+        <div class="a11-flow-step">
+
+          <span>01</span>
+
+          <div>
+
+            <strong>
+              Entrada del usuario
+            </strong>
+
+            <small>
+              Se recibe el parámetro filename
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="a11-flow-arrow">
+          ↓
+        </div>
+
+
+        <div class="a11-flow-step">
+
+          <span>02</span>
+
+          <div>
+
+            <strong>
+              Validación inicial
+            </strong>
+
+            <small>
+              ¿Comienza con /var/www/images/?
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="a11-flow-arrow">
+          ↓
+        </div>
+
+
+        <div class="a11-flow-step">
+
+          <span>03</span>
+
+          <div>
+
+            <strong>
+              Validación superada
+            </strong>
+
+            <small>
+              El inicio de la ruta es correcto
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="a11-flow-arrow">
+          ↓
+        </div>
+
+
+        <div class="a11-flow-step dangerous">
+
+          <span>04</span>
+
+          <div>
+
+            <strong>
+              Path Traversal
+            </strong>
+
+            <small>
+              ../ permite abandonar el directorio
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PAYLOAD
+========================================== -->
+
+<section
+  id="payload"
+  class="a11-payload-section"
+>
+
+  <div class="a11-container">
+
+
+    <div class="a11-section-heading dark-heading">
+
+      <span>03</span>
+
+      <div>
+
+        <small>
+          PATH TRAVERSAL
+        </small>
+
+        <h2>
+          Construcción del payload
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <p class="a11-payload-intro">
+
+      Para superar la validación se conserva al inicio el
+      directorio esperado por la aplicación y posteriormente
+      se agregan las secuencias necesarias para retroceder
+      hasta el directorio raíz.
+
+    </p>
+
+
+    <div class="a11-code-window">
+
+      <div class="a11-code-header">
+
+        <div class="a11-window-buttons">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <small>
+          payload.txt
+        </small>
+
+      </div>
+
+
+      <div class="a11-code-content">
+
+        <span class="code-comment">
+          # Payload utilizado
+        </span>
+
+        <code>
+          /var/www/images/../../../etc/passwd
+        </code>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="a11-payload-grid">
+
+
+      <article>
+
+        <span class="payload-number">
+          01
+        </span>
+
+        <p>
+          RUTA VÁLIDA
+        </p>
+
+        <strong>
+          /var/www/images/
+        </strong>
+
+        <small>
+          Permite superar la comprobación inicial de la aplicación.
+        </small>
+
+      </article>
+
+
+      <article>
+
+        <span class="payload-number">
+          02
+        </span>
+
+        <p>
+          TRAVERSAL
+        </p>
+
+        <strong>
+          ../../../
+        </strong>
+
+        <small>
+          Retrocede tres niveles desde el directorio de imágenes.
+        </small>
+
+      </article>
+
+
+      <article>
+
+        <span class="payload-number">
+          03
+        </span>
+
+        <p>
+          ARCHIVO OBJETIVO
+        </p>
+
+        <strong>
+          etc/passwd
+        </strong>
+
+        <small>
+          Archivo solicitado después de abandonar el directorio.
+        </small>
+
+      </article>
+
+    </div>
+
+
+
+    <div class="a11-transform">
+
+      <span>
+        PAYLOAD COMPLETO
+      </span>
+
+      <code>
+        /var/www/images/../../../etc/passwd
+      </code>
+
+
+      <div class="transform-arrow">
+        ↓ RESOLUCIÓN DE RUTA
+      </div>
+
+
+      <code class="decoded">
+        /etc/passwd
+      </code>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PROCEDIMIENTO
+========================================== -->
+
+<section
+  id="procedimiento"
+  class="a11-section"
+>
+
+  <div class="a11-container">
+
+    <div class="a11-section-heading">
+
+      <span>04</span>
+
+      <div>
+
+        <small>
+          PROCEDIMIENTO
+        </small>
+
+        <h2>
+          Desarrollo del laboratorio
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <p class="a11-procedure-description">
+
+      El laboratorio se realizó utilizando PortSwigger Web
+      Security Academy y Burp Suite. Se interceptó la petición
+      utilizada para cargar una imagen y posteriormente se
+      modificó el parámetro filename mediante Repeater.
+
+    </p>
+
+
+    <div class="a11-steps">
+
+
+      <!-- PASO 1 -->
+
+      <article class="a11-step">
+
+        <div class="a11-step-number">
+          01
+        </div>
+
+        <div class="a11-step-content">
+
+          <span>
+            ACCESO
+          </span>
+
+          <h3>
+            Iniciar el laboratorio
+          </h3>
+
+          <p>
+
+            Se accede al laboratorio
+            <strong>
+              File path traversal, validation of start of path
+            </strong>
+            y se selecciona
+            <strong>ACCESS THE LAB</strong>.
+
+          </p>
+
+          <p>
+
+            La plataforma genera una dirección URL específica
+            para la instancia del laboratorio.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PASO 2 -->
+
+      <article class="a11-step">
+
+        <div class="a11-step-number">
+          02
+        </div>
+
+        <div class="a11-step-content">
+
+          <span>
+            BURP SUITE
+          </span>
+
+          <h3>
+            Iniciar Burp Suite
+          </h3>
+
+          <p>
+
+            Se abre Burp Suite Community Edition, se selecciona
+            <strong>Temporary project in memory</strong> y
+            posteriormente <strong>Use Burp defaults</strong>.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PASO 3 -->
+
+      <article class="a11-step">
+
+        <div class="a11-step-number">
+          03
+        </div>
+
+        <div class="a11-step-content">
+
+          <span>
+            PROXY
+          </span>
+
+          <h3>
+            Abrir el laboratorio
+          </h3>
+
+          <p>
+
+            Desde la pestaña Proxy se cambia la interceptación
+            y se utiliza <strong>Open browser</strong> para
+            abrir el navegador integrado de Burp Suite.
+
+          </p>
+
+          <p>
+
+            En este navegador se introduce la URL generada por
+            Web Security Academy.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PASO 4 -->
+
+      <article class="a11-step">
+
+        <div class="a11-step-number">
+          04
+        </div>
+
+        <div class="a11-step-content">
+
+          <span>
+            HTTP REQUEST
+          </span>
+
+          <h3>
+            Identificar la solicitud de imagen
+          </h3>
+
+          <p>
+
+            Dentro del tráfico HTTP se localiza la solicitud
+            correspondiente a una imagen del producto.
+
+          </p>
+
+          <div class="a11-inline-code">
+            GET /image?filename=/var/www/images/42.jpg HTTP/2
+          </div>
+
+          <p>
+
+            La petición seleccionada se envía a
+            <strong>Repeater</strong> mediante la opción
+            <strong>Send to Repeater</strong>.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PASO 5 -->
+
+      <article class="a11-step">
+
+        <div class="a11-step-number">
+          05
+        </div>
+
+        <div class="a11-step-content">
+
+          <span>
+            EXPLOTACIÓN
+          </span>
+
+          <h3>
+            Modificar filename
+          </h3>
+
+          <p>
+
+            En Repeater se reemplaza la ruta original de la
+            imagen por el payload:
+
+          </p>
+
+          <div class="a11-inline-code important">
+            /var/www/images/../../../etc/passwd
+          </div>
+
+          <p>
+
+            Finalmente se presiona <strong>Send</strong> para
+            enviar la petición modificada.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PASO 6 -->
+
+      <article class="a11-step">
+
+        <div class="a11-step-number success">
+          ✓
+        </div>
+
+        <div class="a11-step-content">
+
+          <span>
+            RESULTADO
+          </span>
+
+          <h3>
+            Acceso a /etc/passwd
+          </h3>
+
+          <p>
+
+            En el apartado Response se muestra el contenido
+            del archivo solicitado, demostrando que la
+            validación del inicio de la ruta pudo ser evadida.
+
+          </p>
+
+
+          <div class="a11-result">
+
+            <span>
+              LAB STATUS
+            </span>
+
+            <strong>
+              ✓ SOLVED
+            </strong>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     RESULTADO
+========================================== -->
+
+<section class="a11-result-section">
+
+  <div class="a11-container">
+
+    <div class="a11-result-grid">
+
+
+      <div>
+
+        <span class="a11-result-label">
+          RESULTADO
+        </span>
+
+        <h2>
+          La validación fue superada.
+        </h2>
+
+        <p>
+
+          Aunque la ruta comienza correctamente con
+          /var/www/images/, las secuencias de salto de
+          directorio permiten salir de esa ubicación y acceder
+          a un archivo fuera del directorio autorizado.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="a11-response-card">
+
+        <div class="response-header">
+
+          <span>
+            HTTP/2 200 OK
+          </span>
+
+          <small>
+            Response
+          </small>
+
+        </div>
+
+        <pre>root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+...</pre>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MITIGACIONES
+========================================== -->
+
+<section
+  id="mitigaciones"
+  class="a11-section a11-section-light"
+>
+
+  <div class="a11-container">
+
+    <div class="a11-section-heading">
+
+      <span>05</span>
+
+      <div>
+
+        <small>
+          DEFENSA
+        </small>
+
+        <h2>
+          Mitigaciones recomendadas
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="a11-mitigation-grid">
+
+
+      <article>
+
+        <div class="mitigation-icon">
+          01
+        </div>
+
+        <h3>
+          Evitar rutas directas
+        </h3>
+
+        <p>
+
+          No pasar directamente las entradas proporcionadas
+          por el usuario a las APIs encargadas de acceder al
+          sistema de archivos.
+
+        </p>
+
+      </article>
+
+
+
+      <article>
+
+        <div class="mitigation-icon">
+          02
+        </div>
+
+        <h3>
+          Lista blanca
+        </h3>
+
+        <p>
+
+          Utilizar una whitelist de valores permitidos y
+          aceptar únicamente los caracteres y extensiones
+          necesarias para los archivos esperados.
+
+        </p>
+
+      </article>
+
+
+
+      <article>
+
+        <div class="mitigation-icon">
+          03
+        </div>
+
+        <h3>
+          Rechazar secuencias peligrosas
+        </h3>
+
+        <p>
+
+          La entrada debe validarse para impedir secuencias
+          especiales utilizadas para navegar entre
+          directorios, como ../.
+
+        </p>
+
+      </article>
+
+
+
+      <article>
+
+        <div class="mitigation-icon">
+          04
+        </div>
+
+        <h3>
+          Resolver la ruta absoluta
+        </h3>
+
+        <p>
+
+          Utilizar funciones como realpath() para obtener la
+          ruta absoluta y comprobar que la ruta final
+          permanezca dentro del directorio base autorizado.
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     DOCUMENTACIÓN PDF
+========================================== -->
+
+<section
+  id="documentacion"
+  class="a11-document-section"
+>
+
+  <div class="a11-container">
+
+    <div class="a11-section-heading">
+
+      <span>06</span>
+
+      <div>
+
+        <small>
+          DOCUMENTACIÓN
+        </small>
+
+        <h2>
+          Reporte del laboratorio
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="a11-document-card">
+
+
+      <!-- INFORMACIÓN -->
+
+      <div class="a11-document-info">
+
+        <div class="a11-pdf-icon">
+          PDF
+        </div>
+
+
+        <div class="a11-document-text">
+
+          <span>
+            EVIDENCIA DEL LABORATORIO
+          </span>
+
+          <h3>
+            File Path Traversal:
+            Validation of Start of Path
+          </h3>
+
+          <p>
+
+            Documento completo con el marco teórico, análisis
+            técnico de la vulnerabilidad, explicación del
+            payload, procedimiento realizado en Burp Suite,
+            evidencias y mitigaciones recomendadas.
+
+          </p>
+
+
+          <div class="a11-document-meta">
+
+            <span>
+              <strong>Actividad:</strong>
+              11
+            </span>
+
+            <span>
+              <strong>Laboratorio:</strong>
+              05
+            </span>
+
+            <span>
+              <strong>Formato:</strong>
+              PDF
+            </span>
+
+          </div>
+
+
+          <div class="a11-document-buttons">
+
+            <a
+              href="Validation_of_start_of_path.pdf"
+              target="_blank"
+              class="a11-document-button primary"
+            >
+              Ver documento
+              <span>↗</span>
+            </a>
+
+
+            <a
+              href="Validation_of_start_of_path.pdf"
+              download
+              class="a11-document-button secondary"
+            >
+              Descargar PDF
+              <span>↓</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- VISTA PREVIA -->
+
+      <div class="a11-document-preview">
+
+        <div class="a11-preview-header">
+
+          <div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <small>
+            Validation_of_start_of_path.pdf
+          </small>
+
+        </div>
+
+
+        <div class="a11-pdf-preview">
+
+          <iframe
+            src="Validation_of_start_of_path.pdf"
+            title="Reporte Actividad 11"
+          >
+          </iframe>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONCLUSIÓN
+========================================== -->
+
+<section class="a11-conclusion">
+
+  <div class="a11-container">
+
+    <div class="a11-conclusion-card">
+
+
+      <div>
+
+        <span>
+          CONCLUSIÓN
+        </span>
+
+        <h2>
+          Validar el inicio no garantiza la ruta final.
+        </h2>
+
+        <p>
+
+          Este laboratorio demuestra que verificar únicamente
+          que una ruta comience con un directorio autorizado
+          no evita una vulnerabilidad de Path Traversal.
+
+        </p>
+
+        <p>
+
+          El payload conserva
+          <code>/var/www/images/</code> al inicio para superar
+          la validación, pero utiliza posteriormente
+          <code>../../../</code> para retroceder hasta el
+          directorio raíz y acceder a
+          <code>/etc/passwd</code>.
+
+        </p>
+
+      </div>
+
+
+      <div class="a11-conclusion-status">
+
+        <span>
+          LAB
+        </span>
+
+        <strong>
+          05
+        </strong>
+
+        <small>
+          COMPLETADO
+        </small>
+
+        <div>
+          ✓
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================== -->
+
+<footer class="a11-footer">
+
+  <div class="a11-footer-container">
+
+    <p>
+      © 2026 Bryhan Eduardo Guzman Martinez
+    </p>
+
+    <p>
+      Actividad 11 · Validation of Start of Path
+    </p>
+
+    <p>
+      Universidad Politécnica de San Luis Potosí
+    </p>
+
+  </div>
+
+</footer>
+
+
+</body>
+
+</html>

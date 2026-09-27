@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="author"
+    content="Bryhan Eduardo Guzman Martinez"
+  >
+
+  <meta
+    name="description"
+    content="Actividad 10 - File Path Traversal con Superfluous URL Decode"
+  >
+
+  <title>
+    Actividad 10 | Superfluous URL Decode
+  </title>
+
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="logito.ico"
+  >
+
+  <!-- Google Fonts -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Estilos generales -->
+  <link
+    rel="stylesheet"
+    href="Estilo.css"
+  >
+
+  <!-- Estilos de la actividad -->
+  <link
+    rel="stylesheet"
+    href="Actividad10.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       NAVEGACIÓN
+  ========================================== -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <span class="brand-icon">
+          BG
+        </span>
+
+        <span class="brand-text">
+
+          <strong>
+            Bryhan Guzman
+          </strong>
+
+          <small>
+            Portafolio Digital
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <nav class="nav-menu">
+
+        <a href="#inicio">
+          Inicio
+        </a>
+
+        <a href="#vulnerabilidad">
+          Vulnerabilidad
+        </a>
+
+        <a href="#payload">
+          Payload
+        </a>
+
+        <a href="#procedimiento">
+          Procedimiento
+        </a>
+
+        <a href="#mitigaciones">
+          Mitigaciones
+        </a>
+
+        <a
+          href="RoadToHallOfFame.html"
+          class="nav-contacto"
+        >
+          Volver
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section
+      id="inicio"
+      class="a10-hero"
+    >
+
+      <div class="a10-glow a10-glow-one"></div>
+      <div class="a10-glow a10-glow-two"></div>
+
+
+      <div class="a10-hero-container">
+
+
+        <!-- INFORMACIÓN PRINCIPAL -->
+
+        <div class="a10-hero-content">
+
+          <div class="a10-badge">
+            <span></span>
+            PARCIAL II · ACTIVIDAD 10
+          </div>
+
+
+          <p class="a10-label">
+            ROAD TO HALL OF FAME · LABORATORIO 04
+          </p>
+
+
+          <h1>
+            Superfluous
+            <span>URL Decode.</span>
+          </h1>
+
+
+          <p class="a10-description">
+
+            Laboratorio de File Path Traversal enfocado en la evasión
+            de mecanismos de filtrado mediante doble codificación URL,
+            utilizando Burp Suite para modificar solicitudes HTTP y
+            acceder a archivos fuera del directorio permitido.
+
+          </p>
+
+
+          <div class="a10-buttons">
+
+            <a
+              href="#vulnerabilidad"
+              class="a10-button primary"
+            >
+              Explorar laboratorio ↓
+            </a>
+
+            <a
+              href="RoadToHallOfFame.html"
+              class="a10-button secondary"
+            >
+              Road to Hall of Fame
+            </a>
+
+          </div>
+
+
+          <div class="a10-hero-data">
+
+            <div>
+              <span>Nivel</span>
+              <strong>Practitioner</strong>
+            </div>
+
+            <div>
+              <span>Categoría</span>
+              <strong>Path Traversal</strong>
+            </div>
+
+            <div>
+              <span>Herramienta</span>
+              <strong>Burp Suite</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- TERMINAL -->
+
+        <aside class="a10-terminal-card">
+
+          <div class="a10-terminal-header">
+
+            <div class="a10-window-buttons">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <small>
+              traversal.request
+            </small>
+
+          </div>
+
+
+          <div class="a10-terminal">
+
+            <p class="terminal-comment">
+              # Solicitud original
+            </p>
+
+            <p>
+              <span>GET</span>
+              /image?filename=70.jpg
+            </p>
+
+
+            <p class="terminal-comment">
+              # Payload
+            </p>
+
+            <p class="terminal-payload">
+              ..%252f..%252f..%252fetc/passwd
+            </p>
+
+
+            <p class="terminal-comment">
+              # Decodificación
+            </p>
+
+            <p class="terminal-path">
+              ../../../etc/passwd
+            </p>
+
+
+            <p class="terminal-success">
+              ✓ File traversal successful
+            </p>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         INFORMACIÓN DEL LABORATORIO
+    ========================================== -->
+
+    <section class="a10-section">
+
+      <div class="a10-container">
+
+        <div class="a10-section-heading">
+
+          <span>
+            01
+          </span>
+
+          <div>
+
+            <small>
+              INFORMACIÓN GENERAL
+            </small>
+
+            <h2>
+              Sobre el laboratorio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="a10-info-grid">
+
+
+          <article class="a10-info-main">
+
+            <p class="a10-large-text">
+
+              El laboratorio demuestra cómo una validación aparentemente
+              correcta puede ser evadida cuando el servidor procesa y
+              decodifica la entrada del usuario después de aplicar sus
+              filtros de seguridad.
+
+            </p>
+
+            <p>
+
+              La aplicación utiliza nombres de archivos proporcionados
+              mediante una solicitud HTTP para construir rutas dentro del
+              sistema de archivos. Aunque intenta eliminar las secuencias
+              tradicionales de salto de directorio, existe un problema
+              en el orden en que se realizan la validación y la
+              decodificación URL.
+
+            </p>
+
+          </article>
+
+
+          <div class="a10-info-cards">
+
+            <article>
+
+              <span>01</span>
+
+              <small>
+                VULNERABILIDAD
+              </small>
+
+              <strong>
+                File Path Traversal
+              </strong>
+
+            </article>
+
+
+            <article>
+
+              <span>02</span>
+
+              <small>
+                TÉCNICA
+              </small>
+
+              <strong>
+                Double URL Encoding
+              </strong>
+
+            </article>
+
+
+            <article>
+
+              <span>03</span>
+
+              <small>
+                OBJETIVO
+              </small>
+
+              <strong>
+                /etc/passwd
+              </strong>
+
+            </article>
+
+
+            <article>
+
+              <span>04</span>
+
+              <small>
+                ESTADO
+              </small>
+
+              <strong class="status-solved">
+                ✓ Solved
+              </strong>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         VULNERABILIDAD
+    ========================================== -->
+
+    <section
+      id="vulnerabilidad"
+      class="a10-section a10-section-light"
+    >
+
+      <div class="a10-container">
+
+        <div class="a10-section-heading">
+
+          <span>
+            02
+          </span>
+
+          <div>
+
+            <small>
+              ANÁLISIS TÉCNICO
+            </small>
+
+            <h2>
+              ¿Dónde está la vulnerabilidad?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="a10-vulnerability-grid">
+
+
+          <div class="a10-vulnerability-text">
+
+            <h3>
+              El problema no es únicamente el filtro.
+            </h3>
+
+            <p>
+
+              La vulnerabilidad ocurre cuando la aplicación utiliza
+              entradas proporcionadas por el usuario para construir
+              rutas de acceso a archivos sin realizar una validación
+              y sanitización adecuada.
+
+            </p>
+
+            <p>
+
+              El servidor intenta protegerse filtrando secuencias
+              conocidas de navegación entre directorios, como
+              <code>../</code> o <code>%2f</code>. Sin embargo,
+              posteriormente realiza otra operación de URL-decode.
+
+            </p>
+
+            <p>
+
+              Esto provoca una falla en el orden de procesamiento:
+              una cadena que inicialmente parece segura puede
+              convertirse en una secuencia de Path Traversal después
+              de ser decodificada.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="a10-flow-card">
+
+            <span class="a10-flow-label">
+              FLUJO VULNERABLE
+            </span>
+
+
+            <div class="a10-flow-step">
+
+              <span>01</span>
+
+              <div>
+                <strong>Entrada del usuario</strong>
+                <small>Valor codificado enviado al servidor</small>
+              </div>
+
+            </div>
+
+
+            <div class="a10-flow-arrow">
+              ↓
+            </div>
+
+
+            <div class="a10-flow-step">
+
+              <span>02</span>
+
+              <div>
+                <strong>Filtro inicial</strong>
+                <small>No reconoce la doble codificación</small>
+              </div>
+
+            </div>
+
+
+            <div class="a10-flow-arrow">
+              ↓
+            </div>
+
+
+            <div class="a10-flow-step">
+
+              <span>03</span>
+
+              <div>
+                <strong>URL Decode</strong>
+                <small>El backend transforma la entrada</small>
+              </div>
+
+            </div>
+
+
+            <div class="a10-flow-arrow">
+              ↓
+            </div>
+
+
+            <div class="a10-flow-step dangerous">
+
+              <span>04</span>
+
+              <div>
+                <strong>Path Traversal</strong>
+                <small>Se genera ../../../etc/passwd</small>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PAYLOAD
+    ========================================== -->
+
+    <section
+      id="payload"
+      class="a10-payload-section"
+    >
+
+      <div class="a10-container">
+
+
+        <div class="a10-section-heading dark-heading">
+
+          <span>
+            03
+          </span>
+
+          <div>
+
+            <small>
+              DOUBLE URL ENCODING
+            </small>
+
+            <h2>
+              Construcción del payload
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <p class="a10-payload-intro">
+
+          Para evadir el filtro de seguridad se utilizó una secuencia
+          de navegación entre directorios codificada dos veces.
+
+        </p>
+
+
+
+        <div class="a10-code-window">
+
+          <div class="a10-code-header">
+
+            <div class="a10-window-buttons">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <small>
+              payload.txt
+            </small>
+
+          </div>
+
+
+          <div class="a10-code-content">
+
+            <span class="code-comment">
+              # Payload utilizado
+            </span>
+
+            <code>
+              ..%252f..%252f..%252fetc/passwd
+            </code>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="a10-encoding-grid">
+
+
+          <article>
+
+            <span class="encoding-number">
+              01
+            </span>
+
+            <p>
+              CARÁCTER ORIGINAL
+            </p>
+
+            <strong>
+              /
+            </strong>
+
+            <small>
+              Barra diagonal utilizada para separar directorios.
+            </small>
+
+          </article>
+
+
+          <article>
+
+            <span class="encoding-number">
+              02
+            </span>
+
+            <p>
+              URL ENCODE
+            </p>
+
+            <strong>
+              %2f
+            </strong>
+
+            <small>
+              Representación URL del carácter "/".
+            </small>
+
+          </article>
+
+
+          <article>
+
+            <span class="encoding-number">
+              03
+            </span>
+
+            <p>
+              DOUBLE ENCODE
+            </p>
+
+            <strong>
+              %252f
+            </strong>
+
+            <small>
+              El símbolo % se transforma en %25.
+            </small>
+
+          </article>
+
+
+          <article>
+
+            <span class="encoding-number">
+              04
+            </span>
+
+            <p>
+              RESULTADO
+            </p>
+
+            <strong>
+              ../
+            </strong>
+
+            <small>
+              Después de la decodificación se recupera el traversal.
+            </small>
+
+          </article>
+
+        </div>
+
+
+
+        <div class="a10-transform">
+
+          <span>
+            PAYLOAD
+          </span>
+
+          <code>
+            ..%252f..%252f..%252fetc/passwd
+          </code>
+
+          <div class="transform-arrow">
+            ↓ URL-DECODE
+          </div>
+
+          <code class="decoded">
+            ../../../etc/passwd
+          </code>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PROCEDIMIENTO
+    ========================================== -->
+
+    <section
+      id="procedimiento"
+      class="a10-section"
+    >
+
+      <div class="a10-container">
+
+        <div class="a10-section-heading">
+
+          <span>
+            04
+          </span>
+
+          <div>
+
+            <small>
+              PROCEDIMIENTO
+            </small>
+
+            <h2>
+              Desarrollo del laboratorio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <p class="a10-procedure-description">
+
+          El laboratorio se realizó utilizando PortSwigger Web Security
+          Academy y Burp Suite. El procedimiento consistió en interceptar
+          la solicitud encargada de recuperar una imagen, enviarla a
+          Repeater y modificar el parámetro <code>filename</code>.
+
+        </p>
+
+
+        <div class="a10-steps">
+
+
+          <!-- PASO 1 -->
+
+          <article class="a10-step">
+
+            <div class="a10-step-number">
+              01
+            </div>
+
+            <div class="a10-step-content">
+
+              <span>
+                ACCESO
+              </span>
+
+              <h3>
+                Iniciar el laboratorio
+              </h3>
+
+              <p>
+
+                Se accede al laboratorio
+                <strong>
+                  File path traversal, traversal sequences stripped
+                  with superfluous URL-decode
+                </strong>
+                y se selecciona la opción
+                <strong>ACCESS THE LAB</strong>.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PASO 2 -->
+
+          <article class="a10-step">
+
+            <div class="a10-step-number">
+              02
+            </div>
+
+            <div class="a10-step-content">
+
+              <span>
+                BURP SUITE
+              </span>
+
+              <h3>
+                Preparar el proxy
+              </h3>
+
+              <p>
+
+                Se inicia Burp Suite utilizando un proyecto temporal
+                y la configuración predeterminada. Desde la pestaña
+                Proxy se abre el navegador integrado para acceder
+                al laboratorio.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PASO 3 -->
+
+          <article class="a10-step">
+
+            <div class="a10-step-number">
+              03
+            </div>
+
+            <div class="a10-step-content">
+
+              <span>
+                INTERCEPT
+              </span>
+
+              <h3>
+                Localizar la solicitud
+              </h3>
+
+              <p>
+
+                Al navegar por la aplicación se identifica la solicitud:
+
+              </p>
+
+              <div class="a10-inline-code">
+                GET /image?filename=70.jpg HTTP/2
+              </div>
+
+              <p>
+
+                Esta petición utiliza el parámetro
+                <code>filename</code> para indicar el archivo que
+                debe recuperar el servidor.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PASO 4 -->
+
+          <article class="a10-step">
+
+            <div class="a10-step-number">
+              04
+            </div>
+
+            <div class="a10-step-content">
+
+              <span>
+                REPEATER
+              </span>
+
+              <h3>
+                Enviar la solicitud a Repeater
+              </h3>
+
+              <p>
+
+                La solicitud HTTP correspondiente a la imagen se
+                selecciona y se utiliza la opción
+                <strong>Send to Repeater</strong> para poder
+                modificarla y enviarla manualmente.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PASO 5 -->
+
+          <article class="a10-step">
+
+            <div class="a10-step-number">
+              05
+            </div>
+
+            <div class="a10-step-content">
+
+              <span>
+                EXPLOTACIÓN
+              </span>
+
+              <h3>
+                Sustituir el nombre del archivo
+              </h3>
+
+              <p>
+
+                Dentro de Repeater se sustituye
+                <code>70.jpg</code> por el payload:
+
+              </p>
+
+              <div class="a10-inline-code important">
+                ..%252f..%252f..%252fetc/passwd
+              </div>
+
+              <p>
+
+                Posteriormente se presiona
+                <strong>Send</strong> para enviar la solicitud
+                modificada al servidor.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PASO 6 -->
+
+          <article class="a10-step">
+
+            <div class="a10-step-number success">
+              ✓
+            </div>
+
+            <div class="a10-step-content">
+
+              <span>
+                RESULTADO
+              </span>
+
+              <h3>
+                Acceso al archivo /etc/passwd
+              </h3>
+
+              <p>
+
+                La respuesta del servidor muestra el contenido del
+                archivo solicitado, confirmando que la secuencia
+                doblemente codificada logró evadir el filtro de la
+                aplicación.
+
+              </p>
+
+              <div class="a10-result">
+
+                <span>
+                  LAB STATUS
+                </span>
+
+                <strong>
+                  ✓ SOLVED
+                </strong>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         RESULTADO TÉCNICO
+    ========================================== -->
+
+    <section class="a10-result-section">
+
+      <div class="a10-container">
+
+        <div class="a10-result-grid">
+
+
+          <div>
+
+            <span class="a10-result-label">
+              RESULTADO
+            </span>
+
+            <h2>
+              El filtro fue evadido.
+            </h2>
+
+            <p>
+
+              La aplicación permitió recuperar un archivo situado
+              fuera del directorio destinado a las imágenes. Esto
+              demuestra que la validación se realizó antes de que
+              la entrada alcanzara su representación final.
+
+            </p>
+
+          </div>
+
+
+          <div class="a10-response-card">
+
+            <div class="response-header">
+
+              <span>
+                HTTP/2 200 OK
+              </span>
+
+              <small>
+                Response
+              </small>
+
+            </div>
+
+            <pre>root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+...</pre>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         MITIGACIONES
+    ========================================== -->
+
+    <section
+      id="mitigaciones"
+      class="a10-section a10-section-light"
+    >
+
+      <div class="a10-container">
+
+        <div class="a10-section-heading">
+
+          <span>
+            05
+          </span>
+
+          <div>
+
+            <small>
+              DEFENSA
+            </small>
+
+            <h2>
+              Mitigaciones recomendadas
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="a10-mitigation-grid">
+
+
+          <article>
+
+            <div class="mitigation-icon">
+              01
+            </div>
+
+            <h3>
+              Evitar rutas del usuario
+            </h3>
+
+            <p>
+
+              Evitar utilizar directamente nombres o rutas de archivos
+              enviados desde el cliente. Es preferible utilizar
+              identificadores asociados a una lista de archivos
+              permitidos.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <div class="mitigation-icon">
+              02
+            </div>
+
+            <h3>
+              Decodificar primero
+            </h3>
+
+            <p>
+
+              Cualquier proceso de URL-decode debe realizarse antes
+              de aplicar las reglas de validación y sanitización
+              sobre la entrada recibida.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <div class="mitigation-icon">
+              03
+            </div>
+
+            <h3>
+              Canonicalización
+            </h3>
+
+            <p>
+
+              Resolver la ruta absoluta del archivo y comprobar que
+              permanezca dentro del directorio autorizado para los
+              recursos públicos.
+
+            </p>
+
+          </article>
+
+
+
+          <article>
+
+            <div class="mitigation-icon">
+              04
+            </div>
+
+            <h3>
+              Mínimo privilegio
+            </h3>
+
+            <p>
+
+              El proceso del servidor web debe ejecutarse con permisos
+              restringidos para evitar que pueda leer archivos
+              sensibles del sistema operativo.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================
+        DOCUMENTACIÓN PDF
+    ========================================== -->
+
+    <section
+        id="documentacion"
+        class="a10-document-section"
+    >
+
+        <div class="a10-container">
+
+            <div class="a10-section-heading">
+
+            <span>
+                06
+            </span>
+
+            <div>
+
+                <small>
+                DOCUMENTACIÓN
+                </small>
+
+                <h2>
+                Reporte del laboratorio
+                </h2>
+
+            </div>
+
+            </div>
+
+
+            <div class="a10-document-card">
+
+
+            <!-- INFORMACIÓN DEL DOCUMENTO -->
+
+            <div class="a10-document-info">
+
+                <div class="a10-pdf-icon">
+                PDF
+                </div>
+
+                <div class="a10-document-text">
+
+                <span>
+                    EVIDENCIA DEL LABORATORIO
+                </span>
+
+                <h3>
+                    File Path Traversal:
+                    Superfluous URL Decode
+                </h3>
+
+                <p>
+                    Documento completo con el análisis de la vulnerabilidad,
+                    payload utilizado, procedimiento realizado en Burp Suite,
+                    evidencias del laboratorio y medidas de mitigación.
+                </p>
+
+
+                <div class="a10-document-meta">
+
+                    <span>
+                    <strong>Actividad:</strong>
+                    10
+                    </span>
+
+                    <span>
+                    <strong>Laboratorio:</strong>
+                    04
+                    </span>
+
+                    <span>
+                    <strong>Formato:</strong>
+                    PDF
+                    </span>
+
+                </div>
+
+
+                <div class="a10-document-buttons">
+
+                    <a
+                    href="Traversal_sequences_stripped_with_superfluous_URL_decode.pdf"
+                    target="_blank"
+                    class="a10-document-button primary"
+                    >
+                    Ver documento
+                    <span>↗</span>
+                    </a>
+
+                    <a
+                    href="Traversal_sequences_stripped_with_superfluous_URL_decode.pdf"
+                    download
+                    class="a10-document-button secondary"
+                    >
+                    Descargar PDF
+                    <span>↓</span>
+                    </a>
+
+                </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- VISTA PREVIA -->
+
+            <div class="a10-document-preview">
+
+                <div class="a10-preview-header">
+
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <small>
+                    Actividad10.pdf
+                </small>
+
+                </div>
+
+
+                <div class="a10-pdf-preview">
+
+                <iframe
+                    src="Traversal_sequences_stripped_with_superfluous_URL_decode.pdf"
+                    title="Reporte Actividad 10"
+                >
+                </iframe>
+
+                </div>
+
+            </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         CONCLUSIÓN
+    ========================================== -->
+
+    <section class="a10-conclusion">
+
+      <div class="a10-container">
+
+        <div class="a10-conclusion-card">
+
+          <div>
+
+            <span>
+              CONCLUSIÓN
+            </span>
+
+            <h2>
+              La codificación no sustituye a la validación.
+            </h2>
+
+            <p>
+
+              Este laboratorio permitió observar cómo una aplicación
+              puede seguir siendo vulnerable a File Path Traversal
+              incluso cuando intenta eliminar secuencias peligrosas.
+              El problema aparece cuando la validación se realiza antes
+              de completar todas las transformaciones de la entrada.
+
+            </p>
+
+            <p>
+
+              Mediante doble codificación URL fue posible ocultar
+              temporalmente la secuencia de traversal, superar el filtro
+              inicial y conseguir que el servidor reconstruyera
+              posteriormente una ruta válida hacia
+              <code>/etc/passwd</code>.
+
+            </p>
+
+          </div>
+
+
+          <div class="a10-conclusion-status">
+
+            <span>
+              LAB
+            </span>
+
+            <strong>
+              04
+            </strong>
+
+            <small>
+              COMPLETADO
+            </small>
+
+            <div>
+              ✓
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer class="a10-footer">
+
+    <div class="a10-footer-container">
+
+      <p>
+        © 2026 Bryhan Eduardo Guzman Martinez
+      </p>
+
+      <p>
+        Actividad 10 · Superfluous URL Decode
+      </p>
+
+      <p>
+        Universidad Politécnica de San Luis Potosí
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
