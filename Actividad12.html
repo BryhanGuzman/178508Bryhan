@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="author"
+    content="Bryhan Eduardo Guzman Martinez"
+  >
+
+  <meta
+    name="description"
+    content="Actividad 12 - File Path Traversal: Validation of File Extension with Null Byte Bypass"
+  >
+
+  <title>
+    Actividad 12 | Null Byte Bypass
+  </title>
+
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="logito.ico"
+  >
+
+  <!-- Google Fonts -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS GENERAL -->
+  <link
+    rel="stylesheet"
+    href="Estilo.css"
+  >
+
+  <!-- CSS ACTIVIDAD 12 -->
+  <link
+    rel="stylesheet"
+    href="Actividad12.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVEGACIÓN
+========================================== -->
+
+<header class="navbar">
+
+  <div class="nav-container">
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+
+      <span class="brand-icon">
+        BG
+      </span>
+
+      <span class="brand-text">
+
+        <strong>
+          Bryhan Guzman
+        </strong>
+
+        <small>
+          Portafolio Digital
+        </small>
+
+      </span>
+
+    </a>
+
+
+    <nav class="nav-menu">
+
+      <a href="#inicio">
+        Inicio
+      </a>
+
+      <a href="#vulnerabilidad">
+        Vulnerabilidad
+      </a>
+
+      <a href="#payload">
+        Payload
+      </a>
+
+      <a href="#procedimiento">
+        Procedimiento
+      </a>
+
+      <a href="#mitigaciones">
+        Mitigaciones
+      </a>
+
+      <a href="#documentacion">
+        PDF
+      </a>
+
+      <a
+        href="RoadToHallOfFame.html"
+        class="nav-contacto"
+      >
+        Volver
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================== -->
+
+<section
+  id="inicio"
+  class="a12-hero"
+>
+
+  <div class="a12-glow a12-glow-one"></div>
+  <div class="a12-glow a12-glow-two"></div>
+
+
+  <div class="a12-hero-container">
+
+
+    <!-- CONTENIDO -->
+
+    <div class="a12-hero-content">
+
+      <div class="a12-badge">
+
+        <span></span>
+
+        PARCIAL II · ACTIVIDAD 12
+
+      </div>
+
+
+      <p class="a12-label">
+        ROAD TO HALL OF FAME · LABORATORIO 06
+      </p>
+
+
+      <h1>
+        File Extension
+        <span>Null Byte Bypass.</span>
+      </h1>
+
+
+      <p class="a12-description">
+
+        Laboratorio de File Path Traversal enfocado en la
+        evasión de una validación de extensión mediante un
+        null byte. La aplicación exige una extensión de imagen,
+        pero el procesamiento posterior de la ruta permite
+        acceder a un archivo fuera del directorio autorizado.
+
+      </p>
+
+
+      <div class="a12-buttons">
+
+        <a
+          href="#vulnerabilidad"
+          class="a12-button primary"
+        >
+          Explorar laboratorio ↓
+        </a>
+
+        <a
+          href="RoadToHallOfFame.html"
+          class="a12-button secondary"
+        >
+          Road to Hall of Fame
+        </a>
+
+      </div>
+
+
+      <div class="a12-hero-data">
+
+        <div>
+          <span>Nivel</span>
+          <strong>Practitioner</strong>
+        </div>
+
+        <div>
+          <span>Categoría</span>
+          <strong>Path Traversal</strong>
+        </div>
+
+        <div>
+          <span>Técnica</span>
+          <strong>Null Byte Bypass</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- TERMINAL -->
+
+    <aside class="a12-terminal-card">
+
+      <div class="a12-terminal-header">
+
+        <div class="a12-window-buttons">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <small>
+          traversal.request
+        </small>
+
+      </div>
+
+
+      <div class="a12-terminal">
+
+        <p class="terminal-comment">
+          # Archivo esperado
+        </p>
+
+        <p class="terminal-normal">
+          image.jpg
+        </p>
+
+
+        <p class="terminal-comment">
+          # Archivo objetivo
+        </p>
+
+        <p class="terminal-path">
+          ../../../etc/passwd
+        </p>
+
+
+        <p class="terminal-comment">
+          # Null byte bypass
+        </p>
+
+        <p class="terminal-payload">
+          ../../../etc/passwd%00.png
+        </p>
+
+
+        <p class="terminal-comment">
+          # Resultado
+        </p>
+
+        <p class="terminal-success">
+          ✓ Extension validation bypassed
+        </p>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     INFORMACIÓN GENERAL
+========================================== -->
+
+<section class="a12-section">
+
+  <div class="a12-container">
+
+    <div class="a12-section-heading">
+
+      <span>
+        01
+      </span>
+
+      <div>
+
+        <small>
+          INFORMACIÓN GENERAL
+        </small>
+
+        <h2>
+          Sobre el laboratorio
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="a12-info-grid">
+
+
+      <article class="a12-info-main">
+
+        <p class="a12-large-text">
+
+          Comprobar únicamente la extensión aparente de un
+          archivo puede resultar insuficiente cuando existen
+          diferencias entre la validación de la aplicación y
+          el procesamiento final de la ruta.
+
+        </p>
+
+        <p>
+
+          El laboratorio presenta una vulnerabilidad de
+          <strong>File Path Traversal</strong> en la
+          funcionalidad encargada de mostrar las imágenes
+          de los productos.
+
+        </p>
+
+        <p>
+
+          La aplicación incorpora una validación relacionada
+          con la extensión del archivo. El objetivo consiste
+          en comprender cómo un null byte puede utilizarse
+          para alterar la interpretación de la ruta y acceder
+          al archivo objetivo.
+
+        </p>
+
+      </article>
+
+
+
+      <div class="a12-info-cards">
+
+
+        <article>
+
+          <span>01</span>
+
+          <small>
+            VULNERABILIDAD
+          </small>
+
+          <strong>
+            File Path Traversal
+          </strong>
+
+        </article>
+
+
+        <article>
+
+          <span>02</span>
+
+          <small>
+            BYPASS
+          </small>
+
+          <strong>
+            Null Byte
+          </strong>
+
+        </article>
+
+
+        <article>
+
+          <span>03</span>
+
+          <small>
+            OBJETIVO
+          </small>
+
+          <strong>
+            /etc/passwd
+          </strong>
+
+        </article>
+
+
+        <article>
+
+          <span>04</span>
+
+          <small>
+            HERRAMIENTA
+          </small>
+
+          <strong>
+            Burp Suite
+          </strong>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     VULNERABILIDAD
+========================================== -->
+
+<section
+  id="vulnerabilidad"
+  class="a12-section a12-section-light"
+>
+
+  <div class="a12-container">
+
+    <div class="a12-section-heading">
+
+      <span>
+        02
+      </span>
+
+      <div>
+
+        <small>
+          ANÁLISIS TÉCNICO
+        </small>
+
+        <h2>
+          ¿Dónde está la vulnerabilidad?
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="a12-vulnerability-grid">
+
+
+      <div class="a12-vulnerability-text">
+
+        <h3>
+          La extensión válida no garantiza una ruta segura.
+        </h3>
+
+        <p>
+
+          La aplicación recibe mediante el parámetro
+          <code>filename</code> el nombre del archivo que
+          desea recuperar desde el servidor.
+
+        </p>
+
+        <p>
+
+          Como mecanismo de protección, la aplicación
+          comprueba que el valor proporcionado termine con
+          una extensión permitida para las imágenes.
+
+        </p>
+
+        <p>
+
+          Sin embargo, el laboratorio presenta un escenario
+          donde puede utilizarse un
+          <strong>null byte</strong> para conseguir que la
+          entrada satisfaga la comprobación de extensión y,
+          al mismo tiempo, que la ruta procesada apunte a un
+          archivo diferente.
+
+        </p>
+
+      </div>
+
+
+
+      <!-- FLUJO -->
+
+      <div class="a12-flow-card">
+
+        <span class="a12-flow-label">
+          FLUJO VULNERABLE
+        </span>
+
+
+        <div class="a12-flow-step">
+
+          <span>01</span>
+
+          <div>
+
+            <strong>
+              Entrada del usuario
+            </strong>
+
+            <small>
+              filename es recibido por la aplicación
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="a12-flow-arrow">
+          ↓
+        </div>
+
+
+        <div class="a12-flow-step">
+
+          <span>02</span>
+
+          <div>
+
+            <strong>
+              Validación de extensión
+            </strong>
+
+            <small>
+              Se espera una extensión permitida
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="a12-flow-arrow">
+          ↓
+        </div>
+
+
+        <div class="a12-flow-step">
+
+          <span>03</span>
+
+          <div>
+
+            <strong>
+              Null byte
+            </strong>
+
+            <small>
+              Se introduce %00 antes de la extensión
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="a12-flow-arrow">
+          ↓
+        </div>
+
+
+        <div class="a12-flow-step dangerous">
+
+          <span>04</span>
+
+          <div>
+
+            <strong>
+              Path Traversal
+            </strong>
+
+            <small>
+              Se alcanza el archivo objetivo
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PAYLOAD
+========================================== -->
+
+<section
+  id="payload"
+  class="a12-payload-section"
+>
+
+  <div class="a12-container">
+
+
+    <div class="a12-section-heading dark-heading">
+
+      <span>
+        03
+      </span>
+
+      <div>
+
+        <small>
+          NULL BYTE BYPASS
+        </small>
+
+        <h2>
+          Construcción del payload
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <p class="a12-payload-intro">
+
+      El payload combina una secuencia de Path Traversal,
+      el archivo objetivo, un null byte codificado como
+      <code>%00</code> y una extensión aparentemente válida.
+
+    </p>
+
+
+
+    <div class="a12-code-window">
+
+      <div class="a12-code-header">
+
+        <div class="a12-window-buttons">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <small>
+          payload.txt
+        </small>
+
+      </div>
+
+
+      <div class="a12-code-content">
+
+        <span class="code-comment">
+          # Payload del laboratorio
+        </span>
+
+        <code>
+          ../../../etc/passwd%00.png
+        </code>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="a12-payload-grid">
+
+
+      <article>
+
+        <span class="payload-number">
+          01
+        </span>
+
+        <p>
+          TRAVERSAL
+        </p>
+
+        <strong>
+          ../../../
+        </strong>
+
+        <small>
+          Permite retroceder desde el directorio de imágenes.
+        </small>
+
+      </article>
+
+
+      <article>
+
+        <span class="payload-number">
+          02
+        </span>
+
+        <p>
+          ARCHIVO
+        </p>
+
+        <strong>
+          etc/passwd
+        </strong>
+
+        <small>
+          Archivo del sistema que se intenta recuperar.
+        </small>
+
+      </article>
+
+
+      <article>
+
+        <span class="payload-number">
+          03
+        </span>
+
+        <p>
+          NULL BYTE
+        </p>
+
+        <strong>
+          %00
+        </strong>
+
+        <small>
+          Representación URL del byte nulo utilizado en el bypass.
+        </small>
+
+      </article>
+
+
+      <article>
+
+        <span class="payload-number">
+          04
+        </span>
+
+        <p>
+          EXTENSIÓN
+        </p>
+
+        <strong>
+          .png
+        </strong>
+
+        <small>
+          Permite que la entrada aparente contener una extensión válida.
+        </small>
+
+      </article>
+
+
+    </div>
+
+
+
+    <div class="a12-transform">
+
+      <span>
+        PAYLOAD ENVIADO
+      </span>
+
+      <code>
+        ../../../etc/passwd%00.png
+      </code>
+
+
+      <div class="transform-arrow">
+        ↓ INTERPRETACIÓN VULNERABLE
+      </div>
+
+
+      <code class="decoded">
+        ../../../etc/passwd
+      </code>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PROCEDIMIENTO
+========================================== -->
+
+<section
+  id="procedimiento"
+  class="a12-section"
+>
+
+  <div class="a12-container">
+
+    <div class="a12-section-heading">
+
+      <span>
+        04
+      </span>
+
+      <div>
+
+        <small>
+          PROCEDIMIENTO
+        </small>
+
+        <h2>
+          Desarrollo del laboratorio
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <p class="a12-procedure-description">
+
+      El procedimiento mantiene el flujo utilizado en los
+      laboratorios anteriores: acceder al laboratorio,
+      configurar Burp Suite, analizar el tráfico HTTP,
+      identificar la solicitud de una imagen y modificar
+      el parámetro filename desde Repeater.
+
+    </p>
+
+
+    <div class="a12-steps">
+
+
+      <!-- PASO 1 -->
+
+      <article class="a12-step">
+
+        <div class="a12-step-number">
+          01
+        </div>
+
+        <div class="a12-step-content">
+
+          <span>
+            ACCESO
+          </span>
+
+          <h3>
+            Iniciar el laboratorio
+          </h3>
+
+          <p>
+
+            Se accede al laboratorio
+            <strong>
+              File path traversal, validation of file extension
+              with null byte bypass
+            </strong>
+            desde PortSwigger Web Security Academy.
+
+          </p>
+
+          <p>
+
+            Posteriormente se selecciona
+            <strong>ACCESS THE LAB</strong> para iniciar
+            la instancia correspondiente.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PASO 2 -->
+
+      <article class="a12-step">
+
+        <div class="a12-step-number">
+          02
+        </div>
+
+        <div class="a12-step-content">
+
+          <span>
+            BURP SUITE
+          </span>
+
+          <h3>
+            Preparar Burp Suite
+          </h3>
+
+          <p>
+
+            Se inicia Burp Suite Community Edition utilizando
+            un proyecto temporal y la configuración
+            predeterminada.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PASO 3 -->
+
+      <article class="a12-step">
+
+        <div class="a12-step-number">
+          03
+        </div>
+
+        <div class="a12-step-content">
+
+          <span>
+            PROXY
+          </span>
+
+          <h3>
+            Capturar el tráfico HTTP
+          </h3>
+
+          <p>
+
+            Desde la pestaña Proxy se utiliza el navegador
+            integrado de Burp Suite para acceder al
+            laboratorio y generar las solicitudes
+            correspondientes a las imágenes.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PASO 4 -->
+
+      <article class="a12-step">
+
+        <div class="a12-step-number">
+          04
+        </div>
+
+        <div class="a12-step-content">
+
+          <span>
+            HTTP REQUEST
+          </span>
+
+          <h3>
+            Identificar filename
+          </h3>
+
+          <p>
+
+            En el historial HTTP se localiza una petición
+            encargada de recuperar una de las imágenes
+            mostradas por la aplicación.
+
+          </p>
+
+          <div class="a12-inline-code">
+            GET /image?filename=...jpg HTTP/2
+          </div>
+
+          <p>
+
+            La solicitud se envía a
+            <strong>Repeater</strong> para poder modificar
+            manualmente su parámetro.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PASO 5 -->
+
+      <article class="a12-step">
+
+        <div class="a12-step-number">
+          05
+        </div>
+
+        <div class="a12-step-content">
+
+          <span>
+            EXPLOTACIÓN
+          </span>
+
+          <h3>
+            Introducir el null byte
+          </h3>
+
+          <p>
+
+            Desde Repeater se sustituye el valor original
+            del parámetro <code>filename</code> por:
+
+          </p>
+
+          <div class="a12-inline-code important">
+            ../../../etc/passwd%00.png
+          </div>
+
+          <p>
+
+            Posteriormente se utiliza
+            <strong>Send</strong> para enviar la solicitud
+            modificada.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PASO 6 -->
+
+      <article class="a12-step">
+
+        <div class="a12-step-number success">
+          ✓
+        </div>
+
+        <div class="a12-step-content">
+
+          <span>
+            RESULTADO
+          </span>
+
+          <h3>
+            Comprobar la respuesta
+          </h3>
+
+          <p>
+
+            La respuesta vulnerable permite verificar si
+            el servidor ha procesado la ruta hacia
+            <code>/etc/passwd</code> a pesar de la
+            validación de extensión.
+
+          </p>
+
+
+          <div class="a12-result">
+
+            <span>
+              OBJETIVO
+            </span>
+
+            <strong>
+              /etc/passwd
+            </strong>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     RESULTADO TÉCNICO
+========================================== -->
+
+<section class="a12-result-section">
+
+  <div class="a12-container">
+
+    <div class="a12-result-grid">
+
+
+      <div>
+
+        <span class="a12-result-label">
+          RESULTADO ESPERADO
+        </span>
+
+        <h2>
+          La validación de extensión es evadida.
+        </h2>
+
+        <p>
+
+          La solicitud combina una ruta de traversal con
+          un null byte y una extensión válida. El objetivo
+          del laboratorio es conseguir que el servidor
+          devuelva el contenido de /etc/passwd.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="a12-response-card">
+
+        <div class="response-header">
+
+          <span>
+            HTTP RESPONSE
+          </span>
+
+          <small>
+            /etc/passwd
+          </small>
+
+        </div>
+
+
+        <pre>root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+...</pre>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MITIGACIONES
+========================================== -->
+
+<section
+  id="mitigaciones"
+  class="a12-section a12-section-light"
+>
+
+  <div class="a12-container">
+
+    <div class="a12-section-heading">
+
+      <span>
+        05
+      </span>
+
+      <div>
+
+        <small>
+          DEFENSA
+        </small>
+
+        <h2>
+          Mitigaciones recomendadas
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="a12-mitigation-grid">
+
+
+      <article>
+
+        <div class="mitigation-icon">
+          01
+        </div>
+
+        <h3>
+          Evitar rutas proporcionadas por el usuario
+        </h3>
+
+        <p>
+
+          No utilizar directamente el valor recibido desde
+          el cliente para construir rutas del sistema de
+          archivos. Es preferible trabajar con
+          identificadores internos.
+
+        </p>
+
+      </article>
+
+
+
+      <article>
+
+        <div class="mitigation-icon">
+          02
+        </div>
+
+        <h3>
+          Lista blanca
+        </h3>
+
+        <p>
+
+          Utilizar una lista de archivos o valores permitidos
+          en lugar de confiar únicamente en la extensión
+          incluida en el nombre solicitado.
+
+        </p>
+
+      </article>
+
+
+
+      <article>
+
+        <div class="mitigation-icon">
+          03
+        </div>
+
+        <h3>
+          Normalizar la entrada
+        </h3>
+
+        <p>
+
+          La entrada debe ser decodificada y normalizada antes
+          de realizar las comprobaciones de seguridad,
+          rechazando caracteres o secuencias no permitidas.
+
+        </p>
+
+      </article>
+
+
+
+      <article>
+
+        <div class="mitigation-icon">
+          04
+        </div>
+
+        <h3>
+          Verificar la ruta final
+        </h3>
+
+        <p>
+
+          Resolver la ruta absoluta del archivo y comprobar
+          que permanezca dentro del directorio base autorizado
+          antes de realizar cualquier operación de lectura.
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     DOCUMENTACIÓN PDF
+========================================== -->
+
+<section
+  id="documentacion"
+  class="a12-document-section"
+>
+
+  <div class="a12-container">
+
+    <div class="a12-section-heading">
+
+      <span>
+        06
+      </span>
+
+      <div>
+
+        <small>
+          DOCUMENTACIÓN
+        </small>
+
+        <h2>
+          Reporte del laboratorio
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="a12-document-card">
+
+
+      <!-- INFORMACIÓN DEL PDF -->
+
+      <div class="a12-document-info">
+
+        <div class="a12-pdf-icon">
+          PDF
+        </div>
+
+
+        <div class="a12-document-text">
+
+          <span>
+            EVIDENCIA DEL LABORATORIO
+          </span>
+
+          <h3>
+            File Path Traversal:
+            Validation of File Extension
+            with Null Byte Bypass
+          </h3>
+
+
+          <p>
+
+            Documento completo del laboratorio con marco
+            teórico, análisis de la vulnerabilidad,
+            explicación técnica del payload, procedimiento
+            realizado en Burp Suite, evidencias y
+            mitigaciones recomendadas.
+
+          </p>
+
+
+          <div class="a12-document-meta">
+
+            <span>
+              <strong>Actividad:</strong>
+              12
+            </span>
+
+            <span>
+              <strong>Laboratorio:</strong>
+              06
+            </span>
+
+            <span>
+              <strong>Formato:</strong>
+              PDF
+            </span>
+
+          </div>
+
+
+          <div class="a12-document-buttons">
+
+            <a
+              href="validation_of_file_extension_with_null_byte_bypass.pdf"
+              target="_blank"
+              class="a12-document-button primary"
+            >
+              Ver documento
+              <span>↗</span>
+            </a>
+
+
+            <a
+              href="validation_of_file_extension_with_null_byte_bypass.pdf"
+              download
+              class="a12-document-button secondary"
+            >
+              Descargar PDF
+              <span>↓</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- VISTA PREVIA -->
+
+      <div class="a12-document-preview">
+
+        <div class="a12-preview-header">
+
+          <div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <small>
+            validation_of_file_extension_with_null_byte_bypass.pdf
+          </small>
+
+        </div>
+
+
+        <div class="a12-pdf-preview">
+
+          <iframe
+            src="validation_of_file_extension_with_null_byte_bypass.pdf"
+            title="Reporte Actividad 12"
+          >
+          </iframe>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONCLUSIÓN
+========================================== -->
+
+<section class="a12-conclusion">
+
+  <div class="a12-container">
+
+    <div class="a12-conclusion-card">
+
+
+      <div>
+
+        <span>
+          CONCLUSIÓN
+        </span>
+
+        <h2>
+          Validar una extensión no garantiza una ruta segura.
+        </h2>
+
+        <p>
+
+          Este laboratorio permite analizar cómo una
+          validación basada únicamente en la extensión
+          aparente de un archivo puede resultar insuficiente
+          cuando existen diferencias entre la validación de
+          la aplicación y el procesamiento posterior de la
+          ruta.
+
+        </p>
+
+        <p>
+
+          La combinación de
+          <code>../../../etc/passwd</code>,
+          el null byte <code>%00</code> y una extensión
+          permitida demuestra la importancia de validar la
+          ruta final y no solamente el formato del valor
+          recibido.
+
+        </p>
+
+      </div>
+
+
+      <div class="a12-conclusion-status">
+
+        <span>
+          LAB
+        </span>
+
+        <strong>
+          06
+        </strong>
+
+        <small>
+          ROAD TO HALL OF FAME
+        </small>
+
+        <div>
+          ✓
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================== -->
+
+<footer class="a12-footer">
+
+  <div class="a12-footer-container">
+
+    <p>
+      © 2026 Bryhan Eduardo Guzman Martinez
+    </p>
+
+    <p>
+      Actividad 12 · Null Byte Bypass
+    </p>
+
+    <p>
+      Universidad Politécnica de San Luis Potosí
+    </p>
+
+  </div>
+
+</footer>
+
+
+</body>
+
+</html>
