@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Actividad 13: Red Team Report, pentesting de My File Server 1">
+  <title>Actividad 13 | Red Team Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Estilo.css">
+  <link rel="stylesheet" href="Actividad13.css">
+</head>
+<body>
+  <header class="a13-header">
+    <div class="a13-container a13-nav">
+      <a class="a13-brand" href="index.html"><span class="a13-brand-mark">BG</span><span>Bryhan Guzman<small>Portafolio digital</small></span></a>
+      <nav aria-label="Navegación de la actividad">
+        <a href="#contexto">Contexto</a><a href="#metodologia">Metodología</a><a href="#hallazgos">Hallazgos</a><a href="#entregables">Entregables</a><a class="a13-nav-back" href="index.html">Volver al portafolio ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="a13-hero" id="inicio">
+      <div class="a13-container a13-hero-grid">
+        <div>
+          <p class="a13-eyebrow"><span class="a13-dot"></span> PARCIAL II · ACTIVIDAD 13</p>
+          <p class="a13-kicker">SEGURIDAD INFORMÁTICA · RED TEAM</p>
+          <h1>Red Team <span>Report.</span></h1>
+          <h2>Pentesting de My File Server 1</h2>
+          <p class="a13-hero-desc">Evaluación de seguridad de un entorno de laboratorio que simula un servidor corporativo de archivos vulnerable. La actividad contempla un informe técnico de pruebas de penetración y una presentación ejecutiva orientada a la toma de decisiones.</p>
+          <div class="a13-actions"><a class="a13-btn a13-btn-primary" href="#contexto">Explorar actividad ↓</a><a class="a13-btn a13-btn-outline" href="#entregables">Ver entregables ↗</a></div>
+          <div class="a13-stats"><div><small>ENTORNO</small><strong>My File Server 1</strong></div><div><small>ENFOQUE</small><strong>Red Team</strong></div><div><small>DURACIÓN ESTIMADA</small><strong>6 h 30 min</strong></div></div>
+        </div>
+        <div class="a13-console" aria-label="Resumen de las fases de evaluación">
+          <div class="a13-console-top"><div class="a13-lights"><i></i><i></i><i></i></div><span>security-assessment / overview</span></div>
+          <div class="a13-console-body"><p class="a13-console-comment">// Evaluación autorizada de laboratorio</p><p><em>target</em> = <b>"My File Server 1"</b></p><p><em>framework</em> = <b>"PTES / OWASP"</b></p><div class="a13-console-line"></div><p><span class="a13-console-number">01</span> Reconocimiento y enumeración</p><p><span class="a13-console-number">02</span> Validación de vulnerabilidades</p><p><span class="a13-console-number">03</span> Explotación y privilegios</p><p><span class="a13-console-number">04</span> Análisis de impacto y reporte</p><div class="a13-console-state">● Evidencias pendientes de documentar</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="a13-section" id="contexto"><div class="a13-container">
+      <div class="a13-heading"><span>01 / CONTEXTO</span><h2>Sobre la evaluación</h2><p>La máquina My File Server 1 representa un entorno corporativo vulnerable orientado al almacenamiento y servicio de archivos.</p></div>
+      <div class="a13-two-col"><article class="a13-panel"><h3>Objetivo general</h3><p>Desarrollar un informe técnico profesional de pruebas de penetración, aplicando una metodología estructurada de evaluación de seguridad para documentar hallazgos, evidencias técnicas, riesgos y propuestas de mitigación.</p><h3>Alcance</h3><p>La práctica se limita a la máquina de laboratorio <strong>My File Server 1</strong>. Las acciones, servicios examinados y resultados específicos deberán describirse en el informe una vez realizada la evaluación.</p></article><div class="a13-mini-grid"><article><span>01</span><strong>Identificar</strong><p>Reconocer servicios y posibles vectores de ataque.</p></article><article><span>02</span><strong>Verificar</strong><p>Comprobar vulnerabilidades dentro del alcance.</p></article><article><span>03</span><strong>Evaluar</strong><p>Analizar el impacto sobre confidencialidad, integridad y disponibilidad.</p></article><article><span>04</span><strong>Comunicar</strong><p>Documentar evidencia y recomendaciones técnicas.</p></article></div></div>
+    </div></section>
+
+    <section class="a13-section a13-white" id="metodologia"><div class="a13-container"><div class="a13-heading"><span>02 / METODOLOGÍA</span><h2>Fases del pentesting</h2><p>Secuencia de trabajo basada en las etapas solicitadas para la actividad, con referencia a PTES y OWASP.</p></div>
+      <div class="a13-timeline">
+        <article><div class="a13-step-index">01</div><div><small>DESCUBRIMIENTO</small><h3>Reconocimiento</h3><p>Identificación del objetivo, conectividad y superficie de exposición dentro del laboratorio autorizado.</p></div></article>
+        <article><div class="a13-step-index">02</div><div><small>ANÁLISIS</small><h3>Enumeración</h3><p>Inspección de puertos, servicios, versiones y recursos accesibles para identificar posibles debilidades.</p></div></article>
+        <article><div class="a13-step-index">03</div><div><small>VALIDACIÓN</small><h3>Explotación</h3><p>Comprobación controlada de las vulnerabilidades detectadas, registrando solicitudes, respuestas y evidencia verificable.</p></div></article>
+        <article><div class="a13-step-index">04</div><div><small>PRIVILEGIOS</small><h3>Post-explotación y escalada</h3><p>Evaluación del alcance de los accesos obtenidos y de los posibles privilegios adicionales, cuando corresponda.</p></div></article>
+        <article><div class="a13-step-index">05</div><div><small>DOCUMENTACIÓN</small><h3>Análisis y remediación</h3><p>Valoración de impacto mediante el modelo CIA, clasificación de riesgos y recomendaciones para reducir la exposición.</p></div></article>
+      </div>
+    </div></section>
+
+    <section class="a13-section a13-dark-section" id="hallazgos"><div class="a13-container"><div class="a13-heading"><span>03 / RESULTADOS</span><h2>Hallazgos y análisis de riesgo</h2><p>Espacio preparado para presentar los resultados documentados en el informe. No se asignan severidades ni vulnerabilidades hasta contar con evidencias.</p></div>
+      <div class="a13-risk-grid"><article><span>C</span><h3>Confidencialidad</h3><p>Posible exposición de información y recursos no autorizados.</p></article><article><span>I</span><h3>Integridad</h3><p>Posibles modificaciones indebidas de datos o configuraciones.</p></article><article><span>A</span><h3>Disponibilidad</h3><p>Posibles interrupciones o degradación de los servicios.</p></article></div>
+      <div class="a13-table-wrap"><table><thead><tr><th>ID</th><th>Vulnerabilidad</th><th>Severidad</th><th>Evidencia</th><th>Impacto</th><th>Recomendación</th></tr></thead><tbody><tr><td>—</td><td>Pendiente de documentar</td><td>Por evaluar</td><td>Informe técnico</td><td>Por determinar</td><td>Por definir</td></tr></tbody></table></div>
+      <p class="a13-table-note">La tabla es una plantilla visual; reemplaza esta fila cuando el reporte esté terminado.</p>
+    </div></section>
+
+    <section class="a13-section" id="recomendaciones"><div class="a13-container"><div class="a13-heading"><span>04 / PROPUESTA</span><h2>Remediación y comunicación</h2><p>La documentación final debe relacionar cada recomendación con una vulnerabilidad comprobada y su impacto.</p></div><div class="a13-recommend-grid"><article><span>01</span><h3>Correcciones prioritarias</h3><p>Definir medidas específicas a partir de los hallazgos verificados, su severidad y su exposición.</p></article><article><span>02</span><h3>Validación de soluciones</h3><p>Planificar nuevas pruebas para confirmar que las vulnerabilidades identificadas fueron corregidas.</p></article><article><span>03</span><h3>Enfoque ejecutivo</h3><p>Explicar los riesgos para el negocio, las acciones recomendadas y un roadmap de remediación.</p></article></div></div></section>
+
+    <section class="a13-section a13-white" id="entregables"><div class="a13-container"><div class="a13-heading"><span>05 / EVIDENCIAS</span><h2>Documentación de la actividad</h2><p>Los archivos pueden añadirse más adelante a la misma carpeta de GitHub que contiene esta página.</p></div>
+      <div class="a13-deliverables">
+        <article class="a13-deliverable"><div class="a13-deliverable-info"><span class="a13-file-icon">PDF</span><small>ENTREGABLE 01 · INFORME TÉCNICO</small><h3>Red Team Pentesting Report</h3><p>Documento con portada, resumen ejecutivo, alcance, metodología, reconocimiento, enumeración, explotación, escalada de privilegios, análisis CIA, hallazgos y recomendaciones.</p><div class="a13-file-actions"><a href="actividad13_informe.pdf" target="_blank" rel="noopener noreferrer">Ver informe ↗</a><a href="actividad13_informe.pdf" download>Descargar ↓</a></div></div><div class="a13-preview"><div class="a13-preview-top">actividad13_informe.pdf</div><iframe src="actividad13_informe.pdf" title="Vista previa del informe técnico" loading="lazy"></iframe></div></article>
+        <article class="a13-deliverable"><div class="a13-deliverable-info"><span class="a13-file-icon a13-file-icon-ppt">PPT</span><small>ENTREGABLE 02 · PRESENTACIÓN EJECUTIVA</small><h3>Presentación corporativa</h3><p>Presentación de máximo 12 diapositivas, orientada al Consejo Directivo: contexto, metodología, riesgos, hallazgos, impacto empresarial, matriz de riesgo, recomendaciones y roadmap.</p><div class="a13-file-actions"><a href="actividad13_presentacion.pdf" target="_blank" rel="noopener noreferrer">Ver diapositivas ↗</a><a href="actividad13_presentacion.pdf" download>Descargar ↓</a></div><p class="a13-hint">Para la vista previa en GitHub Pages, exporta las diapositivas a PDF. Puedes conservar también tu archivo .pptx por separado.</p></div><div class="a13-preview"><div class="a13-preview-top">actividad13_presentacion.pdf</div><iframe src="actividad13_presentacion.pdf" title="Vista previa de la presentación ejecutiva" loading="lazy"></iframe></div></article>
+      </div>
+    </div></section>
+
+    <section class="a13-conclusion"><div class="a13-container"><div class="a13-conclusion-card"><div><span>06 / CIERRE</span><h2>Del hallazgo técnico a la decisión empresarial.</h2><p>El propósito de esta actividad es integrar una evaluación de seguridad reproducible con una comunicación profesional de los riesgos. Las conclusiones específicas se incorporarán al informe y a la presentación una vez finalizadas las pruebas.</p><a href="index.html">← Regresar al portafolio</a></div><div class="a13-conclusion-number">13<small>ACTIVIDAD</small></div></div></div></section>
+  </main>
+  <footer class="a13-footer"><div class="a13-container"><span>© 2026 Bryhan Eduardo Guzman Martinez</span><span>Seguridad Informática · UPSLP</span></div></footer>
+</body>
+</html>
