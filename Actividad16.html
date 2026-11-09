@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Actividad 16: adquisición forense bit a bit con FTK Imager.">
+  <title>Actividad 16 | Adquisición forense con FTK Imager</title>
+  <link rel="stylesheet" href="Estilo.css"><link rel="stylesheet" href="Actividad16.css">
+</head>
+<body>
+<header class="hero">
+  <nav class="topbar"><a class="brand" href="index.html">PORTAFOLIO <span>· CIBERSEGURIDAD</span></a><a class="back-link" href="index.html">← Volver al inicio</a></nav>
+  <div class="hero-content"><p class="eyebrow">ROAD TO HALL OF FAME · ACTIVIDAD 16</p>
+    <h1>La verdad en los bits:<br><span>adquisición forense con FTK Imager</span></h1>
+    <p class="hero-description">Creación y verificación de una imagen forense bit a bit de una memoria USB, documentando el procedimiento, los datos de evidencia y los valores hash.</p>
+    <div class="hero-tags"><span>Informática forense</span><span>FTK Imager</span><span>Imagen RAW (dd)</span></div>
+  </div>
+</header>
+<main class="container">
+  <section class="intro-grid">
+    <article class="panel"><p class="section-kicker">01 · PROPÓSITO</p><h2>Objetivo de la actividad</h2>
+      <p>Desarrollar habilidades prácticas en la adquisición de evidencia digital mediante una imagen forense, comprender la importancia de preservar los datos originales y analizar la información obtenida para documentar los resultados de una investigación.</p>
+      <p>El procedimiento se realizó con FTK Imager, utilizando una memoria USB como evidencia y generando una copia bit a bit en formato Raw (dd).</p>
+    </article>
+    <article class="panel detail-panel"><p class="section-kicker">02 · DATOS DE LA PRÁCTICA</p><h2>Ficha técnica</h2>
+      <dl class="detail-list">
+        <div><dt>Herramienta</dt><dd>FTK Imager 4.7.1.2</dd></div><div><dt>Tipo de adquisición</dt><dd>Physical Drive</dd></div>
+        <div><dt>Formato de imagen</dt><dd>Raw (dd)</dd></div><div><dt>Dispositivo</dt><dd>Memoria USB · Generic Flash Disk</dd></div>
+        <div><dt>Fecha</dt><dd>08 de noviembre de 2026</dd></div><div><dt>Duración registrada</dt><dd>16 minutos y 49 segundos</dd></div>
+      </dl>
+    </article>
+  </section>
+  <section class="section-block"><div class="section-heading"><p class="section-kicker">03 · FUNDAMENTO</p><h2>Adquisición forense digital</h2></div>
+    <div class="phase-grid">
+      <article class="phase-card"><span>01</span><h3>Adquisición</h3><p>Obtención de una copia bit a bit de la evidencia, procurando no alterar el dispositivo original.</p></article>
+      <article class="phase-card"><span>02</span><h3>Preservación</h3><p>Conservación de la evidencia y protección de su integridad durante el proceso.</p></article>
+      <article class="phase-card"><span>03</span><h3>Análisis</h3><p>Examen de la copia obtenida para localizar información relevante para la investigación.</p></article>
+      <article class="phase-card"><span>04</span><h3>Documentación</h3><p>Registro de los pasos, configuraciones, tiempos y resultados de la adquisición.</p></article>
+      <article class="phase-card"><span>05</span><h3>Presentación</h3><p>Comunicación clara de los resultados y de la información que respalda el procedimiento.</p></article>
+    </div>
+  </section>
+  <section class="section-block"><div class="section-heading"><p class="section-kicker">04 · PROCEDIMIENTO</p><h2>Proceso realizado en FTK Imager</h2><p class="section-lead">Secuencia de trabajo documentada en el informe de la práctica.</p></div>
+    <div class="timeline">
+      <article class="timeline-item"><span class="step">01</span><div><h3>Preparación de la herramienta</h3><p>Se obtuvo e instaló FTK Imager y posteriormente se ejecutó la aplicación para iniciar la adquisición.</p></div></article>
+      <article class="timeline-item"><span class="step">02</span><div><h3>Selección de la evidencia</h3><p>Se conectó la memoria USB y, desde <strong>File → Create Disk Image</strong>, se seleccionó <strong>Physical Drive</strong> como origen.</p></div></article>
+      <article class="timeline-item"><span class="step">03</span><div><h3>Configuración del destino</h3><p>Se eligió el formato Raw (dd), se capturaron los datos del caso y del examinador, y se indicó la carpeta y el nombre del archivo de imagen.</p></div></article>
+      <article class="timeline-item"><span class="step">04</span><div><h3>Adquisición y verificación</h3><p>Se inició la creación de la imagen y después se verificó su integridad mediante los hashes MD5 y SHA-1.</p></div></article>
+      <article class="timeline-item"><span class="step">05</span><div><h3>Registro de resultados</h3><p>Se documentaron los sectores, los hashes, los archivos generados y el reporte de texto producido por FTK Imager.</p></div></article>
+    </div>
+  </section>
+  <section class="section-block results-section"><div class="section-heading"><p class="section-kicker">05 · RESULTADOS</p><h2>Resultados de la adquisición</h2></div>
+    <div class="metrics-grid">
+      <article class="metric-card"><span>Sectores copiados</span><strong>30,720,000</strong><small>Sector count reportado</small></article>
+      <article class="metric-card"><span>Archivos generados</span><strong>11</strong><small>Segmentos y archivo de información</small></article>
+      <article class="metric-card"><span>Tiempo de adquisición</span><strong>16:49</strong><small>Minutos : segundos</small></article>
+      <article class="metric-card"><span>Verificación</span><strong class="verified">MATCH</strong><small>MD5 y SHA-1 coincidentes</small></article>
+    </div>
+    <div class="hash-grid">
+      <article class="hash-card"><h3>Hash MD5</h3><code>dca69a3c9c5a68857cd0fa646cb04a0e</code><p>El valor calculado coincide con el valor reportado por la verificación.</p></article>
+      <article class="hash-card"><h3>Hash SHA-1</h3><code>7319dcc41198a200623c371c4f2a67d356f0ad03</code><p>El valor calculado coincide con el valor reportado por la verificación.</p></article>
+    </div>
+    <div class="note"><strong>Integridad de la imagen:</strong> FTK Imager reportó el resultado <em>Match</em> para ambos algoritmos y no encontró bloques defectuosos en la imagen.</div>
+  </section>
+  <section class="section-block"><div class="section-heading"><p class="section-kicker">06 · CONCEPTOS</p><h2>Formatos de imagen forense</h2></div>
+    <div class="concept-grid">
+      <article class="panel"><h3>Raw (dd)</h3><p>Formato crudo que conserva una copia directa, sector por sector, del dispositivo. No incorpora una estructura adicional propia del formato ni compresión, y puede ser utilizado por distintas herramientas de análisis.</p></article>
+      <article class="panel"><h3>E01</h3><p>Formato Expert Witness asociado con EnCase. Puede almacenar la imagen junto con información del caso, del examinador, descripciones y valores hash para apoyar la documentación y verificación.</p></article>
+      <article class="panel"><h3>SMART y E01</h3><p>SMART es un formato propietario asociado con ASR Data, mientras que E01 corresponde al formato Expert Witness. Ambos permiten almacenar imágenes forenses; E01 cuenta con una adopción más amplia y funciones integradas de documentación.</p></article>
+    </div>
+  </section>
+  <section class="section-block"><div class="section-heading"><p class="section-kicker">07 · CIERRE</p><h2>Conclusión</h2></div>
+    <article class="panel conclusion"><p>La práctica permitió realizar la adquisición de una memoria USB mediante FTK Imager, generar una imagen forense en formato Raw (dd) y comprobar su integridad utilizando los hashes MD5 y SHA-1. La coincidencia de los valores calculados y reportados respalda que la imagen obtenida corresponde a la evidencia adquirida.</p>
+      <p>Asimismo, el registro de los parámetros, tiempos, sectores y archivos generados demuestra la importancia de documentar cada etapa para facilitar la reproducibilidad y trazabilidad de un procedimiento de informática forense.</p></article>
+  </section>
+  <section class="resources-section"><div class="section-heading"><p class="section-kicker">08 · EVIDENCIA</p><h2>Documento de la actividad</h2><p class="section-lead">Consulta el informe completo con el procedimiento y las capturas de pantalla.</p></div>
+    <div class="resource-card"><div class="resource-icon">PDF</div><div class="resource-info"><h3>Actividad 16 – Adquisición forense con FTK Imager</h3><p>Informe técnico de nueve páginas con pasos, resultados, hashes y evidencia visual.</p>
+      <div class="resource-actions"><a class="btn btn-primary" href="GuzmanMartinezBryhanEduardo_ACT16.pdf" target="_blank" rel="noopener">Ver PDF</a><a class="btn btn-secondary" href="GuzmanMartinezBryhanEduardo_ACT16.pdf" download>Descargar informe</a></div>
+    </div></div>
+    <div class="pdf-viewer"><iframe src="GuzmanMartinezBryhanEduardo_ACT16.pdf" title="Vista previa del informe de la Actividad 16"></iframe></div>
+  </section>
+</main>
+<footer class="footer"><p>ROAD TO HALL OF FAME · FUNDAMENTOS DE CIBERSEGURIDAD</p><a href="index.html">Regresar al portafolio ↑</a></footer>
+</body></html>
