@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Bryhan Eduardo Guzman Martinez">
+<meta name="description" content="Actividad 17: análisis forense de un volcado de memoria RAM con Volatility 2.6.">
+<title>Actividad 17 | La memoria del crimen</title>
+<link rel="icon" href="logito.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Estilo.css">
+<link rel="stylesheet" href="Actividad17.css">
+</head>
+<body>
+<header class="navbar"><div class="nav-container">
+<a class="brand" href="index.html"><span class="brand-icon">BG</span><span class="brand-text"><strong>Bryhan Guzman</strong><small>Portafolio Digital</small></span></a>
+<nav class="nav-menu" aria-label="Navegación de la actividad"><a href="#resumen">Resumen</a><a href="#procedimiento">Análisis</a><a href="#hallazgos">Hallazgos</a><a href="#comandos">Comandos</a><a href="#reporte">PDF</a><a class="nav-contacto" href="index.html">Volver</a></nav>
+</div></header>
+<main>
+<section class="act17-hero" id="inicio"><div class="act17-wrap act17-hero-grid">
+<div><span class="act17-eyebrow"><span class="act17-dot"></span> SEGURIDAD INFORMÁTICA · ACTIVIDAD 17</span>
+<p class="act17-kicker">ANÁLISIS FORENSE DE MEMORIA VOLÁTIL</p>
+<h1>La memoria <span>del crimen.</span></h1>
+<p class="act17-lead">Extracción de evidencia de un volcado de memoria RAM mediante <strong>Volatility 2.6</strong>. Análisis del archivo <strong>OtterCTF.vmem</strong> para identificar el sistema operativo, procesos, conexiones, datos del registro y otros indicios de interés.</p>
+<div class="act17-actions"><a class="act17-btn act17-primary" href="#resumen">Explorar actividad ↓</a><a class="act17-btn act17-outline" href="#reporte">Consultar reporte PDF</a></div>
+<div class="act17-meta"><div><small>Herramienta</small><strong>Volatility 2.6</strong></div><div><small>Evidencia</small><strong>OtterCTF.vmem</strong></div><div><small>Perfil</small><strong>Win7SP1x64</strong></div></div>
+</div>
+<aside class="act17-console" aria-label="Terminal ilustrativa de análisis forense"><div class="act17-console-top"><span class="act17-lights"><i></i><i></i><i></i></span><small>memory-analysis.log</small></div>
+<div class="act17-console-body"><p class="act17-muted"># Análisis del volcado RAM</p><p><span class="act17-green">PS&gt;</span> volatility -f OtterCTF.vmem imageinfo</p><p><span class="act17-cyan">Profile</span> : Win7SP1x64</p><p><span class="act17-cyan">Local time</span> : 2018-08-04 22:34:22 UTC+3</p><p><span class="act17-cyan">OS</span> : Windows 7 (x64)</p><p><span class="act17-cyan">Local IP</span> : 192.168.202.131</p><p class="act17-green">✓ Memory artifacts identified</p></div></aside>
+</div></section>
+<section class="act17-section" id="resumen"><div class="act17-wrap">
+<div class="act17-heading"><span>01 / INTRODUCCIÓN</span><h2>La memoria RAM conserva rastros de actividad.</h2><p>La actividad plantea un caso de investigación forense basado en una imagen de memoria volátil. El objetivo es localizar artefactos que ayuden a reconstruir el entorno del equipo, sus procesos y conexiones, y contrastar las hipótesis de la investigación.</p></div>
+<div class="act17-cards">
+<article class="act17-card"><span>01</span><h3>Identificación del sistema</h3><p>Se obtuvo la marca temporal del volcado y se identificó el perfil <code>Win7SP1x64</code>.</p></article>
+<article class="act17-card"><span>02</span><h3>Análisis de procesos</h3><p>Se revisaron procesos y datos del Registro de Windows para relacionar actividad y configuraciones.</p></article>
+<article class="act17-card"><span>03</span><h3>Recuperación de indicios</h3><p>Se examinaron conexiones de red, credenciales, correos y cadenas presentes en la memoria.</p></article>
+</div><div class="act17-note"><strong>Alcance:</strong> los nombres, direcciones y relaciones descritos proceden de un escenario académico de análisis forense. Los indicios requieren corroboración adicional antes de establecer responsabilidades.</div>
+</div></section>
+<section class="act17-section act17-white" id="procedimiento"><div class="act17-wrap">
+<div class="act17-heading"><span>02 / PROCEDIMIENTO</span><h2>Diez ejercicios de análisis con Volatility</h2><p>El informe documenta el uso de complementos de Volatility 2.6 sobre el volcado <code>OtterCTF.vmem</code>, junto con capturas de pantalla y análisis de los resultados.</p></div>
+<div class="act17-process">
+<div><b>01</b><h3>Marca de tiempo</h3><p><code>imageinfo</code> identificó la fecha local 4 de agosto de 2018, 22:34:22 (UTC+3).</p></div>
+<div><b>02</b><h3>Sistema operativo</h3><p><code>verinfo</code> y el perfil sugerido permitieron identificar Windows 7 de 64 bits.</p></div>
+<div><b>03</b><h3>Credenciales</h3><p><code>hashdump</code> recuperó hashes y <code>lsadump</code> permitió identificar una contraseña almacenada como secreto LSA.</p></div>
+<div><b>04</b><h3>Red local</h3><p><code>netscan</code> identificó la dirección privada <code>192.168.202.131</code> y conexiones asociadas a procesos.</p></div>
+<div><b>05</b><h3>Registro de Windows</h3><p><code>hivelist</code> mostró estructuras como SYSTEM, SOFTWARE, SECURITY, SAM y NTUSER.DAT.</p></div>
+<div><b>06</b><h3>Nombre del ordenador</h3><p><code>printkey</code> permitió recuperar el nombre <code>WIN-LO6FAF3DTFE</code>.</p></div>
+<div><b>07</b><h3>Procesos relevantes</h3><p>Se examinaron BitTorrent.exe, LunarMS.exe y vmware-tray.exe, con sus respectivos PID.</p></div>
+<div><b>08</b><h3>Conexión remota</h3><p><code>netscan</code> identificó una conexión de LunarMS.exe hacia una IP remota mediante el puerto 7575.</p></div>
+<div><b>09</b><h3>Correos electrónicos</h3><p><code>yarascan</code> localizó direcciones de correo en memoria del proceso de Google Chrome.</p></div>
+<div><b>10</b><h3>Memoria del proceso</h3><p><code>memdump</code> y PowerShell permitieron recuperar cadenas de interés del proceso con PID 3720.</p></div>
+</div></div></section>
+<section class="act17-section" id="hallazgos"><div class="act17-wrap">
+<div class="act17-heading"><span>03 / RESULTADOS</span><h2>Hallazgos documentados</h2><p>Los siguientes datos se recuperaron durante el análisis descrito en el reporte. Se muestran como indicios técnicos, sin asumir que cada artefacto constituye por sí solo prueba de actividad maliciosa.</p></div>
+<div class="act17-stat-grid">
+<article class="act17-stat"><small>SISTEMA OPERATIVO</small><strong>Windows 7</strong><p>Arquitectura de 64 bits.</p></article>
+<article class="act17-stat"><small>IP LOCAL</small><strong>192.168.202.131</strong><p>Dirección privada del equipo.</p></article>
+<article class="act17-stat"><small>PROCESO EXAMINADO</small><strong>PID 3720</strong><p>vmware-tray.exe.</p></article>
+<article class="act17-stat"><small>PUERTO REMOTO</small><strong>7575</strong><p>Conexión asociada a LunarMS.exe.</p></article>
+</div>
+<div class="act17-findings" style="margin-top:20px">
+<article class="act17-finding"><span class="tag">REGISTRO DEL SISTEMA</span><h3>Nombre del equipo</h3><code>WIN-LO6FAF3DTFE</code><p>El nombre contiene las secuencias FAF3 y TFE mencionadas en el planteamiento. La coincidencia requiere corroboración.</p></article>
+<article class="act17-finding"><span class="tag">ANÁLISIS DE RED</span><h3>Conexión externa</h3><code>77.102.199.102:7575</code><p>El reporte la vincula con LunarMS.exe (PID 708), en estado CLOSED. La geolocalización aproximada apunta a Londres, sin confirmar la ubicación de una persona.</p></article>
+<article class="act17-finding"><span class="tag">PROCESOS IDENTIFICADOS</span><h3>Actividad en memoria</h3><code>BitTorrent.exe · LunarMS.exe · vmware-tray.exe</code><p>PID 2836, 708 y 3720 respectivamente. El último se ejecutó desde una carpeta temporal y motivó un análisis adicional.</p></article>
+<article class="act17-finding"><span class="tag">NAVEGADOR</span><h3>Referencias de correo</h3><code>rickypinky@mail.com<br>rickopicko@mail.com</code><p>Recuperadas mediante yarascan en el proceso de Google Chrome (PID 4076), junto con referencias a Gmail.</p></article>
+<article class="act17-finding"><span class="tag">CREDENCIALES</span><h3>Secreto LSA</h3><code>MortyIsReallyAnOtter</code><p>Cadena recuperada en la entrada DefaultPassword. El reporte advierte que su asociación definitiva a una cuenta requiere correlación adicional.</p></article>
+<article class="act17-finding"><span class="tag">INDICIO DE CRIPTOMONEDA</span><h3>Dirección Bitcoin</h3><code>1MmpEmebJkqXG8nQv4cjJSmxZQFVmFo63M</code><p>Recuperada del volcado del proceso 3720. Se documentó una solicitud de 0.16 BTC y una consulta a BTCBlack que no reportó la dirección en su lista negra en ese momento.</p></article>
+</div><div class="act17-note"><strong>Interpretación responsable:</strong> una IP privada no identifica la ubicación física del equipo; una geolocalización de IP pública es aproximada; y la presencia de software o cadenas en memoria no confirma por sí sola una conducta delictiva.</div>
+</div></section>
+<section class="act17-section act17-white" id="comandos"><div class="act17-wrap">
+<div class="act17-heading"><span>04 / HERRAMIENTAS</span><h2>Comandos utilizados</h2><p>Ejemplos de los comandos documentados en el PDF, ejecutados con Volatility 2.6 sobre Windows y el perfil <code>Win7SP1x64</code>.</p></div>
+<div class="act17-commands"><pre><span class="comment"># Identificación inicial</span>
+.\volatility_2.6_win64_standalone.exe -f .\OtterCTF.vmem imageinfo
+
+<span class="comment"># Sistema operativo y artefactos del Registro</span>
+.\volatility_2.6_win64_standalone.exe -f .\OtterCTF.vmem --profile=Win7SP1x64 verinfo
+.\volatility_2.6_win64_standalone.exe -f .\OtterCTF.vmem --profile=Win7SP1x64 hivelist
+
+<span class="comment"># Credenciales y conexiones</span>
+.\volatility_2.6_win64_standalone.exe -f .\OtterCTF.vmem --profile=Win7SP1x64 hashdump
+.\volatility_2.6_win64_standalone.exe -f .\OtterCTF.vmem --profile=Win7SP1x64 lsadump
+.\volatility_2.6_win64_standalone.exe -f .\OtterCTF.vmem --profile=Win7SP1x64 netscan
+
+<span class="comment"># Volcado del proceso de interés</span>
+.\volatility_2.6_win64_standalone.exe -f .\OtterCTF.vmem --profile=Win7SP1x64 memdump -p 3720 --dump-dir=.\Evidencia10</pre></div>
+<p class="act17-disclaimer">Estos comandos son ejemplos del trabajo realizado con la muestra académica. Para consultar las capturas, parámetros completos y análisis de cada ejercicio, revisa el PDF.</p>
+</div></section>
+<section class="act17-section act17-report" id="reporte"><div class="act17-wrap">
+<div class="act17-heading"><span>05 / EVIDENCIA DOCUMENTAL</span><h2>Reporte completo de la Actividad 17</h2><p>Consulta las 11 páginas del informe, que incluyen los comandos, las capturas de pantalla, los hallazgos y las interpretaciones del análisis forense.</p></div>
+<div class="act17-report-grid"><div class="act17-report-info"><div class="act17-pdf-symbol">PDF</div><h3>La memoria del crimen</h3><p>Extracción de evidencia de un volcado RAM · Análisis con Volatility 2.6.</p><div class="act17-actions"><a class="act17-btn act17-primary" href="GuzmanMartinezBryhanEduardo_ACT17.pdf" target="_blank" rel="noopener">Abrir PDF ↗</a><a class="act17-btn act17-light" href="GuzmanMartinezBryhanEduardo_ACT17.pdf" download>Descargar ↓</a></div><small>GuzmanMartinezBryhanEduardo_ACT17.pdf</small></div>
+<div class="act17-preview"><div class="act17-preview-bar"><span>● ● ●</span><small>Vista previa del documento</small></div><iframe src="GuzmanMartinezBryhanEduardo_ACT17.pdf" title="Reporte de la Actividad 17" loading="lazy"></iframe></div></div>
+</div></section>
+<section class="act17-ending"><div class="act17-wrap act17-ending-grid"><div><span>CONCLUSIÓN</span><h2>Los artefactos de memoria permiten reconstruir indicios.</h2><p>El análisis del volcado RAM permitió identificar información del sistema, procesos, conexiones, credenciales y cadenas de interés. El ejercicio demuestra la utilidad de Volatility para recuperar evidencia volátil y la importancia de documentar los resultados y contrastarlos con otras fuentes antes de formular conclusiones.</p></div><strong>17 <small>ACTIVIDAD</small></strong></div></section>
+</main>
+<footer class="act17-footer"><div class="act17-wrap"><span>© 2026 Bryhan Eduardo Guzman Martinez</span><span>Seguridad Informática · Actividad 17</span><a href="index.html">Volver al portafolio ↑</a></div></footer>
+</body></html>
