@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="author" content="Bryhan Eduardo Guzman Martinez">
+<meta name="description" content="Actividad 19: adquisición forense en vivo de un sistema Windows mediante CMD y PowerShell.">
+<title>Actividad 19 | Los primeros minutos cuentan</title>
+<link rel="icon" href="logito.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Estilo.css"><link rel="stylesheet" href="Actividad19.css">
+</head>
+<body>
+<header class="navbar"><div class="nav-container">
+<a class="brand" href="index.html"><span class="brand-icon">BG</span><span class="brand-text"><strong>Bryhan Guzman</strong><small>Portafolio Digital</small></span></a>
+<nav class="nav-menu" aria-label="Navegación"><a href="#resumen">Resumen</a><a href="#procedimiento">Procedimiento</a><a href="#resultados">Resultados</a><a href="#comandos">Comandos</a><a href="#reporte">PDF</a><a class="nav-contacto" href="index.html">Volver</a></nav>
+</div></header>
+<main>
+<section class="act19-hero" id="inicio"><div class="act19-wrap act19-hero-grid"><div>
+<span class="act19-eyebrow"><span class="act19-dot"></span> SEGURIDAD INFORMÁTICA · ACTIVIDAD 19</span>
+<p class="act19-kicker">ADQUISICIÓN FORENSE EN VIVO · WINDOWS</p>
+<h1>Los primeros <span>minutos cuentan.</span></h1>
+<p class="act19-lead">Recopilación de evidencia de un sistema Windows en funcionamiento mediante <strong>CMD y PowerShell</strong>. Registro de procesos, servicios, usuarios, conexiones, configuración del equipo y artefactos relevantes para una investigación digital.</p>
+<div class="act19-actions"><a class="act19-btn act19-primary" href="#resumen">Explorar actividad ↓</a><a class="act19-btn act19-outline" href="#reporte">Consultar reporte PDF</a></div>
+<div class="act19-meta"><div><small>Entorno</small><strong>Windows en vivo</strong></div><div><small>Herramientas</small><strong>CMD + PowerShell</strong></div><div><small>Ejercicios</small><strong>20 puntos</strong></div></div>
+</div><aside class="act19-console" aria-label="Ejemplo ilustrativo de comandos de adquisición">
+<div class="act19-console-top"><span class="act19-lights"><i></i><i></i><i></i></span><small>live-acquisition.log</small></div>
+<div class="act19-console-body"><p class="act19-muted"># Adquisición inicial de evidencia</p>
+<p><span class="act19-green">PS&gt;</span> Get-Date</p><p><span class="act19-green">PS&gt;</span> tasklist</p><p><span class="act19-green">PS&gt;</span> Get-Service</p><p><span class="act19-green">PS&gt;</span> ipconfig /all</p><p><span class="act19-green">PS&gt;</span> netstat -an</p><p><span class="act19-cyan">Status</span> : Evidence collected</p></div></aside></div></section>
+<section class="act19-section" id="resumen"><div class="act19-wrap">
+<div class="act19-heading"><span>01 / INTRODUCCIÓN</span><h2>La primera respuesta define la evidencia disponible.</h2><p>La práctica simula la intervención de un investigador forense digital ante un equipo Windows comprometido y encendido. El propósito es documentar la información disponible mediante comandos del sistema, antes de que los datos volátiles cambien o desaparezcan.</p></div>
+<div class="act19-cards">
+<article class="act19-card"><span>01</span><h3>Información del sistema</h3><p>Fecha, hora, procesos, servicios, usuarios y características del equipo.</p></article>
+<article class="act19-card"><span>02</span><h3>Actividad de red</h3><p>Adaptadores, conexiones, puertos, nombres NetBIOS, caché DNS, ARP y redes Wi-Fi.</p></article>
+<article class="act19-card"><span>03</span><h3>Artefactos y registros</h3><p>Historial de comandos, recursos compartidos, tareas programadas, eventos y archivos del sistema.</p></article>
+</div><div class="act19-note"><strong>Alcance:</strong> el reporte presenta salidas de comandos y su importancia forense; la presencia de un proceso, servicio o conexión no confirma por sí misma actividad maliciosa.</div></div></section>
+<section class="act19-section act19-white" id="procedimiento"><div class="act19-wrap">
+<div class="act19-heading"><span>02 / PROCEDIMIENTO</span><h2>Veinte actividades de adquisición</h2><p>El informe documenta veinte consultas y capturas realizadas sobre el sistema Windows. Se agrupan aquí para facilitar su lectura dentro del portafolio.</p></div>
+<div class="act19-group-label">SISTEMA, PROCESOS Y USUARIOS · 01–05</div><div class="act19-process"><div><b>01</b><h3>Fecha y hora del sistema</h3><p><code>Get-Date</code></p><p>Se estableció una referencia temporal para relacionar los acontecimientos investigados.</p></div><div><b>02</b><h3>Procesos en ejecución</h3><p><code>tasklist</code></p><p>Se registraron los procesos activos para revisar programas o ejecuciones desconocidas.</p></div><div><b>03</b><h3>Servicios del sistema</h3><p><code>sc query / Get-Service</code></p><p>Se compararon CMD y PowerShell: el primero presenta detalles técnicos y el segundo una tabla que facilita el filtrado.</p></div><div><b>04</b><h3>Usuarios conectados</h3><p><code>NetUsers.exe</code></p><p>Se consultaron sesiones de usuario activas mediante la utilidad proporcionada para la práctica.</p></div><div><b>05</b><h3>Cuentas del equipo</h3><p><code>net user</code></p><p>Se enumeraron cuentas locales; este listado no demuestra por sí solo inicios de sesión históricos.</p></div></div>
+<div class="act19-group-label">RED Y COMUNICACIONES · 06–12</div><div class="act19-process"><div><b>06</b><h3>Configuración de red</h3><p><code>ipconfig /all</code></p><p>Se obtuvo información de adaptadores, direcciones y configuración de conectividad.</p></div><div><b>07</b><h3>Nombres NetBIOS</h3><p><code>nbtstat</code></p><p>Se revisaron los nombres registrados para identificar referencias de red local.</p></div><div><b>08</b><h3>Conexiones de red</h3><p><code>netstat -an</code></p><p>Se registraron conexiones y puertos en escucha en formato numérico.</p></div><div><b>09</b><h3>Aplicaciones y puertos</h3><p><code>netstat -bnoa</code></p><p>Se relacionaron ejecutables, conexiones, puertos y PID.</p></div><div><b>10</b><h3>Dominios consultados</h3><p><code>ipconfig /displaydns</code></p><p>Se revisó la caché DNS para identificar dominios resueltos recientemente.</p></div><div><b>11</b><h3>Relaciones IP y MAC</h3><p><code>arp -a</code></p><p>Se consultó la caché ARP para revisar dispositivos detectados en la red local.</p></div><div><b>12</b><h3>Perfiles de Wi-Fi</h3><p><code>netsh wlan show profiles</code></p><p>Se listaron los perfiles inalámbricos almacenados en el equipo.</p></div></div>
+<div class="act19-group-label">ARTEFACTOS Y CONFIGURACIÓN · 13–20</div><div class="act19-process"><div><b>13</b><h3>Historial de comandos</h3><p><code>Get-History</code></p><p>Se recuperaron los comandos disponibles en el historial de la sesión de PowerShell.</p></div><div><b>14</b><h3>Unidades del sistema</h3><p><code>Get-PSDrive</code></p><p>Se examinaron las unidades y proveedores accesibles desde PowerShell.</p></div><div><b>15</b><h3>Recursos compartidos</h3><p><code>Get-SmbShare</code></p><p>Se identificaron recursos compartidos, incluidos los administrativos.</p></div><div><b>16</b><h3>Información del equipo</h3><p><code>Get-ComputerInfo</code></p><p>Se documentaron características del sistema operativo y del dispositivo.</p></div><div><b>17</b><h3>Tareas programadas</h3><p><code>Get-ScheduledTask</code></p><p>Se enumeraron tareas que podrían iniciar procesos automáticamente.</p></div><div><b>18</b><h3>Registros del sistema</h3><p><code>wevtutil epl</code></p><p>Se exportaron registros de eventos para su análisis posterior.</p></div><div><b>19</b><h3>Archivo hosts</h3><p><code>Get-Content hosts</code></p><p>Se consultó el archivo hosts para revisar asignaciones locales de nombres.</p></div><div><b>20</b><h3>Archivos por fecha de creación</h3><p><code>Get-ChildItem / Sort-Object CreationTime</code></p><p>Se ordenó el listado de archivos por fecha de creación para buscar elementos de interés.</p></div></div>
+</div></section>
+<section class="act19-section" id="resultados"><div class="act19-wrap">
+<div class="act19-heading"><span>03 / RESULTADOS</span><h2>Evidencia documentada</h2><p>Los resultados se conservaron mediante capturas y archivos de texto, con especial atención a la actividad del equipo y sus comunicaciones.</p></div>
+<div class="act19-stat-grid">
+<article class="act19-stat"><small>CONSULTAS DOCUMENTADAS</small><strong>20</strong><p>Actividades descritas en el informe.</p></article>
+<article class="act19-stat"><small>HERRAMIENTAS PRINCIPALES</small><strong>2</strong><p>CMD y PowerShell.</p></article>
+<article class="act19-stat"><small>DOCUMENTO</small><strong>12 páginas</strong><p>Capturas y explicaciones de importancia forense.</p></article>
+<article class="act19-stat"><small>TIPO DE EVIDENCIA</small><strong>En vivo</strong><p>Datos del sistema en funcionamiento.</p></article>
+</div>
+<div class="act19-findings" style="margin-top:20px">
+<article class="act19-finding"><span class="tag">SERVICIOS</span><h3>Comparación CMD y PowerShell</h3><p>CMD presenta datos técnicos del servicio, mientras que PowerShell ofrece una tabla que facilita la lectura y el filtrado de los resultados.</p></article>
+<article class="act19-finding"><span class="tag">USUARIOS</span><h3>Sesiones y cuentas</h3><p>Se utilizó NetUsers.exe para consultar usuarios conectados y <code>net user</code> para listar cuentas locales. Son consultas diferentes y no equivalen a un historial completo de inicios de sesión.</p></article>
+<article class="act19-finding"><span class="tag">CONECTIVIDAD</span><h3>Red y puertos</h3><p>Se obtuvieron detalles de adaptadores y conexiones; <code>netstat -bnoa</code> permitió relacionar aplicaciones y PID con puertos.</p></article>
+<article class="act19-finding"><span class="tag">REGISTROS</span><h3>Artefactos de investigación</h3><p>Se recopilaron tareas programadas, recursos compartidos, registros de eventos y datos del archivo hosts para su revisión posterior.</p></article>
+</div></div></section>
+<section class="act19-section act19-white" id="comandos"><div class="act19-wrap">
+<div class="act19-heading"><span>04 / COMANDOS</span><h2>Ejemplos de adquisición</h2><p>Estos ejemplos ilustran comandos utilizados en la práctica. La ruta de salida debe adaptarse al entorno del investigador.</p></div>
+<div class="act19-commands"><pre><span class="comment"># Hora y procesos</span>
+Get-Date | Out-File FechaHora.txt
+tasklist > ListaProcesos.txt
+
+<span class="comment"># Servicios y usuarios</span>
+Get-Service | Out-File ServiciosPS.txt
+net user > UsuariosLocales.txt
+
+<span class="comment"># Configuración y conexiones de red</span>
+ipconfig /all > InfoRed.txt
+netstat -an > Conexiones.txt
+netstat -bnoa > Puertos.txt
+
+<span class="comment"># Evidencia complementaria</span>
+Get-History > HistorialComandos.txt
+Get-SmbShare > RecursosCompartidos.txt
+Get-ScheduledTask > TareasProgramadas.txt</pre></div>
+<div class="act19-note"><strong>Consideración técnica:</strong> algunos comandos requieren permisos elevados; la información capturada depende del equipo, de los privilegios y del estado del sistema al momento de ejecutarlos.</div>
+</div></section>
+<section class="act19-section act19-report" id="reporte"><div class="act19-wrap">
+<div class="act19-heading"><span>05 / EVIDENCIA DOCUMENTAL</span><h2>Informe de la Actividad 19</h2><p>Consulta el PDF completo con capturas de pantalla de los veinte ejercicios y sus explicaciones de importancia forense.</p></div>
+<div class="act19-report-grid"><div class="act19-report-info"><div class="act19-pdf-symbol">PDF</div><h3>Los primeros minutos cuentan</h3><p>Adquisición forense en escenas del crimen digital · Parte I: adquisición de evidencia.</p>
+<div class="act19-actions"><a class="act19-btn act19-primary" href="GuzmanMartinezBryhanEduardo_ACT19.pdf" target="_blank" rel="noopener">Abrir PDF ↗</a><a class="act19-btn act19-light" href="GuzmanMartinezBryhanEduardo_ACT19.pdf" download>Descargar ↓</a></div>
+<small>GuzmanMartinezBryhanEduardo_ACT19.pdf</small></div>
+<div class="act19-preview"><div class="act19-preview-bar"><span>● ● ●</span><small>Vista previa del documento</small></div><iframe src="GuzmanMartinezBryhanEduardo_ACT19.pdf" title="Informe de la Actividad 19" loading="lazy"></iframe></div></div>
+</div></section>
+<section class="act19-ending"><div class="act19-wrap act19-ending-grid"><div><span>CONCLUSIÓN</span><h2>La adquisición inicial permite conservar el contexto digital.</h2><p>La actividad permitió documentar información del sistema, procesos, servicios, usuarios, conexiones y otros artefactos mediante comandos de Windows. El registro organizado de estos resultados facilita el análisis posterior y ayuda a establecer líneas de investigación sin confundir indicadores técnicos con pruebas concluyentes de un incidente.</p></div><strong>19 <small>ACTIVIDAD</small></strong></div></section>
+</main><footer class="act19-footer"><div class="act19-wrap"><span>© 2026 Bryhan Eduardo Guzman Martinez</span><span>Seguridad Informática · Actividad 19</span><a href="index.html">Volver al portafolio ↑</a></div></footer>
+</body></html>
